@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1.2 (64-bit)
+# SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
+# IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
+# Start of session at: Wed Nov 13 18:46:36 2019
+# Process ID: 32200
+# Current directory: /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ip_repo/edit_master_axi_test_v1_0.sim/sim_1/behav/xsim
+# Command line: wbtcv -mode batch -source /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ip_repo/edit_master_axi_test_v1_0.sim/sim_1/behav/xsim/xsim.dir/sim_test_axi_ip_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ip_repo/edit_master_axi_test_v1_0.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ip_repo/edit_master_axi_test_v1_0.sim/sim_1/behav/xsim/webtalk.jou
+#-----------------------------------------------------------
+source /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ip_repo/edit_master_axi_test_v1_0.sim/sim_1/behav/xsim/xsim.dir/sim_test_axi_ip_behav/webtalk/xsim_webtalk.tcl -notrace

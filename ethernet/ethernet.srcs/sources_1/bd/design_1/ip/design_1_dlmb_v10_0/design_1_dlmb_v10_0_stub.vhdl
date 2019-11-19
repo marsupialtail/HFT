@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
--- Date        : Fri Oct 25 13:32:42 2019
+-- Date        : Fri Nov  1 15:47:38 2019
 -- Host        : EECS-DIGITAL-45 running 64-bit Ubuntu 16.04.6 LTS
 -- Command     : write_vhdl -force -mode synth_stub -rename_top design_1_dlmb_v10_0 -prefix
 --               design_1_dlmb_v10_0_ design_1_ilmb_v10_0_stub.vhdl

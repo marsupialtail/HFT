@@ -1,8 +1,8 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-//Date        : Fri Oct 25 13:31:27 2019
-//Host        : EECS-DIGITAL-45 running 64-bit Ubuntu 16.04.6 LTS
+//Date        : Thu Nov 14 21:11:40 2019
+//Host        : eecs-digital-37 running 64-bit Ubuntu 14.04.6 LTS
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
 //Purpose     : IP block netlist
@@ -35,9 +35,7 @@ module design_1_wrapper
     reset,
     sys_clock,
     usb_uart_rxd,
-    usb_uart_txd,
-    ja,
-    led16_b);
+    usb_uart_txd);
   output [12:0]DDR2_0_addr;
   output [2:0]DDR2_0_ba;
   output DDR2_0_cas_n;
@@ -62,10 +60,8 @@ module design_1_wrapper
   output [1:0]eth_rmii_txd;
   input reset;
   input sys_clock;
-  output usb_uart_rxd;
-  input usb_uart_txd;
-  output [1:0] ja;
-  output led16_b;
+  input usb_uart_rxd;
+  output usb_uart_txd;
 
   wire [12:0]DDR2_0_addr;
   wire [2:0]DDR2_0_ba;
@@ -96,17 +92,6 @@ module design_1_wrapper
   wire sys_clock;
   wire usb_uart_rxd;
   wire usb_uart_txd;
-  wire [1:0] ja;
-  wire led16_b;
-  
-  assign led16_b = 1;
-  
-  wire debug;
-  //always @(posedge sys_clock) begin
-  //  led16_b <= led16_b == 1 ? led16_b : debug;
-  //end
-
- // assign ja[1] = 0;
 
   design_1 design_1_i
        (.DDR2_0_addr(DDR2_0_addr),
@@ -135,8 +120,8 @@ module design_1_wrapper
         .eth_rmii_txd(eth_rmii_txd),
         .reset(reset),
         .sys_clock(sys_clock),
-        .usb_uart_rxd(usb_uart_txd),
-        .usb_uart_txd(usb_uart_rxd));
+        .usb_uart_rxd(usb_uart_rxd),
+        .usb_uart_txd(usb_uart_txd));
   IOBUF eth_mdio_mdc_mdio_iobuf
        (.I(eth_mdio_mdc_mdio_o),
         .IO(eth_mdio_mdc_mdio_io),

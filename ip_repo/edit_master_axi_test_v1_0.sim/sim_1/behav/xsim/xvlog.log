@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ip_repo/master_axi_test_1.0/hdl/master_axi_test_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module master_axi_test_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ip_repo/master_axi_test_1.0/hdl/master_axi_test_v1_0_M00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module master_axi_test_v1_0_M00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ip_repo/master_axi_test_1.0/hdl/master_axi_test_v1_0_S00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module master_axi_test_v1_0_S00_AXIS

@@ -1,0 +1,12 @@
+
+{ 
+    crc :  587704927781492288  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 107cb7c3f3e34026890e910d8ff94533 --incr --debug typical --relax --mt 8 -L axi_lite_ipif_v3_0_4 -L lib_pkg_v1_0_2 -L lib_srl_fifo_v1_0_2 -L lib_cdc_v1_0_2 -L axi_uartlite_v2_0_23 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot uart_sim_behav xil_defaultlib.uart_sim xil_defaultlib.glbl" , 
+    buildDate : "Aug  9 2019" , 
+    buildTime : "16:44:31" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--no-as-needed  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/uart_sim_behav/xsimk\"   \"xsim.dir/uart_sim_behav/obj/xsim_0.lnx64.o\" \"xsim.dir/uart_sim_behav/obj/xsim_1.lnx64.o\" -L\"/var/local/xilinx-local/Vivado/2019.1/lib/lnx64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 
