@@ -62,7 +62,7 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/master_axi_test_1.0/hdl/master_axi_test_v1_0_M00_AXIS.v">
+      <File Path="$PPRDIR/master_axi_test_1.0/hdl/master_axi_test_v1_0.v">
         <FileInfo>
           <Attr Name="Library" Val="xil_defaultlib"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -73,14 +73,16 @@
       <File Path="$PPRDIR/master_axi_test_1.0/hdl/master_axi_test_v1_0_S00_AXIS.v">
         <FileInfo>
           <Attr Name="Library" Val="xil_defaultlib"/>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/master_axi_test_1.0/hdl/master_axi_test_v1_0.v">
+      <File Path="$PPRDIR/master_axi_test_1.0/hdl/master_axi_test_v1_0_M00_AXIS.v">
         <FileInfo>
           <Attr Name="Library" Val="xil_defaultlib"/>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

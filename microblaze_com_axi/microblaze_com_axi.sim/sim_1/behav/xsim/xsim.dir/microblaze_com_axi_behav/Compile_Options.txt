@@ -1,0 +1,1 @@
+-wto "b7ae87e5902e46ae920651dbea441a10" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "microblaze_com_axi_behav" "xil_defaultlib.microblaze_com_axi" "xil_defaultlib.glbl" -log "elaborate.log" 

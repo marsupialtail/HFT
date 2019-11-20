@@ -187,8 +187,5 @@ create_waiver -internal -quiet -user microblaze -tags 12436 -type CDC -id CDC-15
   -from [get_pins -quiet MicroBlaze_Core_I/*.Core/*Debug_Logic.Master_Core.Debug*/Using_*_Breakpoints.All_*\[*\].*/*Compare\[*\].*/*/CLK] \
   -to   *PIN
 create_waiver -internal -quiet -user microblaze -tags 12436 -type CDC -id CDC-1 -description "Debug protocol ensures stable signals" \
-  -from [get_pins -quiet MicroBlaze_Core_I/Performance.Core/Decode_I/ex_sleep_i_reg/C] \
-  -to   [get_pins -quiet MicroBlaze_Core_I/*.Core/*Debug_Logic.Master_Core.Debug*/Serial_Dbg_Intf.sync_sleep/Single_Synchronize.use_async_reset.sync_reg/D]
-create_waiver -internal -quiet -user microblaze -tags 12436 -type CDC -id CDC-1 -description "Debug protocol ensures stable signals" \
   -from [get_pins -quiet MicroBlaze_Core_I/*.Core/*Debug_Logic.Master_Core.Debug*/*Debug_Control.dbg_stop_instr_fetch_nohalt_reg/C] \
   -to   [get_pins -quiet MicroBlaze_Core_I/*.Core/*Debug_Logic.Master_Core.Debug*/Serial_Dbg_Intf.sync_stop_CPU/Single_Synchronize.use_async_reset.sync_reg/D]

@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-//Date        : Thu Nov 14 21:11:40 2019
+//Date        : Tue Nov 19 18:54:40 2019
 //Host        : eecs-digital-37 running 64-bit Ubuntu 14.04.6 LTS
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=28,numReposBlks=21,numNonXlnxBlks=1,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=8,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=29,numReposBlks=22,numNonXlnxBlks=2,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=8,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (DDR2_0_addr,
     DDR2_0_ba,
@@ -68,7 +68,6 @@ module design_1
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart RxD" *) input usb_uart_rxd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart TxD" *) output usb_uart_txd;
 
-  wire [7:0]Net;
   wire axi_ethernetlite_0_MDIO_MDC;
   wire axi_ethernetlite_0_MDIO_MDIO_I;
   wire axi_ethernetlite_0_MDIO_MDIO_O;
@@ -132,6 +131,10 @@ module design_1
   wire microblaze_0_M0_AXIS_TLAST;
   wire microblaze_0_M0_AXIS_TREADY;
   wire microblaze_0_M0_AXIS_TVALID;
+  wire [31:0]microblaze_0_M1_AXIS_TDATA;
+  wire microblaze_0_M1_AXIS_TLAST;
+  wire microblaze_0_M1_AXIS_TREADY;
+  wire microblaze_0_M1_AXIS_TVALID;
   wire [31:0]microblaze_0_M_AXI_DC_ARADDR;
   wire [1:0]microblaze_0_M_AXI_DC_ARBURST;
   wire [3:0]microblaze_0_M_AXI_DC_ARCACHE;
@@ -299,6 +302,10 @@ module design_1
   wire [31:0]microblaze_0_interrupt_ADDRESS;
   wire microblaze_0_interrupt_INTERRUPT;
   wire [1:0]microblaze_0_intr;
+  wire [31:0]microblaze_com_axi_0_m00_axis_TDATA;
+  wire microblaze_com_axi_0_m00_axis_TLAST;
+  wire microblaze_com_axi_0_m00_axis_TREADY;
+  wire microblaze_com_axi_0_m00_axis_TVALID;
   wire [12:0]mig_7series_0_DDR2_ADDR;
   wire [2:0]mig_7series_0_DDR2_BA;
   wire mig_7series_0_DDR2_CAS_N;
@@ -327,6 +334,7 @@ module design_1
   wire [0:0]rst_clk_wiz_1_100M_peripheral_aresetn;
   wire [0:0]rst_mig_7series_0_81M_peripheral_aresetn;
   wire sys_clock_1;
+  wire [7:0]util_vector_logic_0_Res;
 
   assign DDR2_0_addr[12:0] = mig_7series_0_DDR2_ADDR;
   assign DDR2_0_ba[2:0] = mig_7series_0_DDR2_BA;
@@ -525,20 +533,20 @@ module design_1
         .clk_out3(clk_wiz_1_clk_out3),
         .locked(clk_wiz_1_locked),
         .resetn(reset_1));
-  design_1_master_axi_test_0_0 master_axi_test_0
+  design_1_master_axi_test_0_1 master_axi_test_0
        (.m00_axis_aclk(microblaze_0_Clk),
-        .m00_axis_aresetn(Net[0]),
+        .m00_axis_aresetn(util_vector_logic_0_Res[0]),
         .m00_axis_tdata(master_axi_test_0_M00_AXIS_TDATA),
         .m00_axis_tlast(master_axi_test_0_M00_AXIS_TLAST),
         .m00_axis_tready(master_axi_test_0_M00_AXIS_TREADY),
         .m00_axis_tvalid(master_axi_test_0_M00_AXIS_TVALID),
         .s00_axis_aclk(microblaze_0_Clk),
-        .s00_axis_aresetn(Net[0]),
-        .s00_axis_tdata(microblaze_0_M0_AXIS_TDATA),
-        .s00_axis_tlast(microblaze_0_M0_AXIS_TLAST),
-        .s00_axis_tready(microblaze_0_M0_AXIS_TREADY),
+        .s00_axis_aresetn(util_vector_logic_0_Res[0]),
+        .s00_axis_tdata(microblaze_0_M1_AXIS_TDATA),
+        .s00_axis_tlast(microblaze_0_M1_AXIS_TLAST),
+        .s00_axis_tready(microblaze_0_M1_AXIS_TREADY),
         .s00_axis_tstrb({1'b1,1'b1,1'b1,1'b1}),
-        .s00_axis_tvalid(microblaze_0_M0_AXIS_TVALID));
+        .s00_axis_tvalid(microblaze_0_M1_AXIS_TVALID));
   design_1_mdm_1_0 mdm_1
        (.Dbg_Capture_0(microblaze_0_debug_CAPTURE),
         .Dbg_Clk_0(microblaze_0_debug_CLK),
@@ -587,6 +595,10 @@ module design_1
         .M0_AXIS_TLAST(microblaze_0_M0_AXIS_TLAST),
         .M0_AXIS_TREADY(microblaze_0_M0_AXIS_TREADY),
         .M0_AXIS_TVALID(microblaze_0_M0_AXIS_TVALID),
+        .M1_AXIS_TDATA(microblaze_0_M1_AXIS_TDATA),
+        .M1_AXIS_TLAST(microblaze_0_M1_AXIS_TLAST),
+        .M1_AXIS_TREADY(microblaze_0_M1_AXIS_TREADY),
+        .M1_AXIS_TVALID(microblaze_0_M1_AXIS_TVALID),
         .M_AXI_DC_ARADDR(microblaze_0_M_AXI_DC_ARADDR),
         .M_AXI_DC_ARBURST(microblaze_0_M_AXI_DC_ARBURST),
         .M_AXI_DC_ARCACHE(microblaze_0_M_AXI_DC_ARCACHE),
@@ -664,10 +676,14 @@ module design_1
         .M_AXI_IC_WREADY(1'b0),
         .Read_Strobe(microblaze_0_dlmb_1_READSTROBE),
         .Reset(rst_clk_wiz_1_100M_mb_reset),
-        .S0_AXIS_TDATA(master_axi_test_0_M00_AXIS_TDATA),
-        .S0_AXIS_TLAST(master_axi_test_0_M00_AXIS_TLAST),
-        .S0_AXIS_TREADY(master_axi_test_0_M00_AXIS_TREADY),
-        .S0_AXIS_TVALID(master_axi_test_0_M00_AXIS_TVALID),
+        .S0_AXIS_TDATA(microblaze_com_axi_0_m00_axis_TDATA),
+        .S0_AXIS_TLAST(microblaze_com_axi_0_m00_axis_TLAST),
+        .S0_AXIS_TREADY(microblaze_com_axi_0_m00_axis_TREADY),
+        .S0_AXIS_TVALID(microblaze_com_axi_0_m00_axis_TVALID),
+        .S1_AXIS_TDATA(master_axi_test_0_M00_AXIS_TDATA),
+        .S1_AXIS_TLAST(master_axi_test_0_M00_AXIS_TLAST),
+        .S1_AXIS_TREADY(master_axi_test_0_M00_AXIS_TREADY),
+        .S1_AXIS_TVALID(master_axi_test_0_M00_AXIS_TVALID),
         .Write_Strobe(microblaze_0_dlmb_1_WRITESTROBE));
   design_1_microblaze_0_axi_intc_0 microblaze_0_axi_intc
        (.interrupt_address(microblaze_0_interrupt_ADDRESS),
@@ -821,6 +837,20 @@ module design_1
        (.In0(axi_timer_0_interrupt),
         .In1(axi_ethernetlite_0_ip2intc_irpt),
         .dout(microblaze_0_intr));
+  design_1_microblaze_com_axi_0_0 microblaze_com_axi_0
+       (.m00_axis_aclk(microblaze_0_Clk),
+        .m00_axis_aresetn(util_vector_logic_0_Res[0]),
+        .m00_axis_tdata(microblaze_com_axi_0_m00_axis_TDATA),
+        .m00_axis_tlast(microblaze_com_axi_0_m00_axis_TLAST),
+        .m00_axis_tready(microblaze_com_axi_0_m00_axis_TREADY),
+        .m00_axis_tvalid(microblaze_com_axi_0_m00_axis_TVALID),
+        .s00_axis_aclk(microblaze_0_Clk),
+        .s00_axis_aresetn(util_vector_logic_0_Res[0]),
+        .s00_axis_tdata(microblaze_0_M0_AXIS_TDATA),
+        .s00_axis_tlast(microblaze_0_M0_AXIS_TLAST),
+        .s00_axis_tready(microblaze_0_M0_AXIS_TREADY),
+        .s00_axis_tstrb({1'b1,1'b1,1'b1,1'b1}),
+        .s00_axis_tvalid(microblaze_0_M0_AXIS_TVALID));
   design_1_mig_7series_0_0 mig_7series_0
        (.aresetn(rst_mig_7series_0_81M_peripheral_aresetn),
         .ddr2_addr(mig_7series_0_DDR2_ADDR),
@@ -913,7 +943,7 @@ module design_1
         .slowest_sync_clk(mig_7series_0_ui_clk));
   design_1_util_vector_logic_0_0 util_vector_logic_0
        (.Op1({rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset}),
-        .Res(Net));
+        .Res(util_vector_logic_0_Res));
 endmodule
 
 module design_1_microblaze_0_axi_periph_0
