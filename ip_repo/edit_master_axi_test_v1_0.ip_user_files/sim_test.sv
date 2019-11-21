@@ -81,15 +81,18 @@ module sim_test_axi_ip(
           
         for(integer i = 0; i < 32;  ) begin
             #10
-            s00_axis_tvalid = 1;
-            if(s00_axis_tready) begin
+            if( i % 4 == 2 && s00_axis_tvalid) begin
+                s00_axis_tvalid = 0;
+            end else begin
+                s00_axis_tvalid = 1;
+            end
+            if(s00_axis_tready && s00_axis_tvalid) begin
                 s00_axis_tdata = i;
                 i = i +1;
                 
             end
             if(i % 4 == 3) begin
                 s00_axis_tlast = 1;
-                s00_axis_tvalid = 0;
                 //i = 0;
             end else begin
                 s00_axis_tlast = 0;

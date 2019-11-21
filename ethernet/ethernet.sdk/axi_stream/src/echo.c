@@ -31,6 +31,7 @@
 
 #include "lwip/err.h"
 #include "lwip/tcp.h"
+#include "fsl.h"
 #if defined (__arm__) || defined (__aarch64__)
 #include "xil_printf.h"
 #endif
@@ -52,6 +53,7 @@ void print_app_header()
 err_t recv_callback(void *arg, struct tcp_pcb *tpcb,
                                struct pbuf *p, err_t err)
 {
+
 	/* do not read the packet if we are not in ESTABLISHED state */
 	if (!p) {
 		tcp_close(tpcb);
@@ -62,17 +64,71 @@ err_t recv_callback(void *arg, struct tcp_pcb *tpcb,
 	/* indicate that the packet has been received */
 	tcp_recved(tpcb, p->len);
 
+
+    /* axi stream put and get*/
+	char buffer [32];
+	void * payload = &buffer;
+
+	for(int i = 0; i < 32; i += 1) {
+		buffer[i] = i + 40;
+	}
+
+	char * rec_data = p->payload;
+	int validity;
+	int errority;
+	for(int i = 0; i < p->len; i += 1 ) {
+		putfslx(p->payload + i*4, 1, FSL_DEFAULT); //putfslx(p->payload + i*4, 1, FSL_NONBLOCKING);
+		fsl_isinvalid(validity);
+		fsl_iserror(errority);
+		getfslx(buffer[i], 1, FSL_NONBLOCKING_EXCEPTION_CONTROL_ATOMIC); //getfslx(buffer[i], 1, FSL_NONBLOCKING);
+	}
+	tcp_write(tpcb, payload, p->len , 1);
+
+	/* axi stream get only */
+
+	u32_t var_axi;
+	//  void *payload = &var_axi;
+	u16_t len;
+	len = 8;
+//	u16_t loop_length = 4;
+//	int i = 0;
+//	for(; i < loop_length; i += 1) {
+//	  getfsl(buffer[i], 0);//EXCEPTION_CONTROL_ATOMIC);
+//	}
+////	  getfslx(var_axi,0, FSL_DEFAULT);
+//    buffer[loop_length] = '\n';
+//    i += 1;
+//
+//    tcp_write(tpcb, payload, len , 1);
+//    int len2 = (p -> len) >> 2;
+//    for(; i < loop_length + len2 + 1; i += 1 ) {
+//    	putfslx(p->payload , 1), FSL_NONBLOCKING);
+//    	getfslx(buffer[i], 1, FSL_NONBLOCKING);
+//    }
+//    //buffer[loop_length  + len2 + 1] = '\n';
+//	tcp_write(tpcb, payload, loop_length  + len2 + 1, 1);
+
+//	for(int i = 0; i < 2; i += 1) {
+//	  getfsl(buffer[i], 0);//EXCEPTION_CONTROL_ATOMIC);
+//	}
+////	  getfslx(var_axi,0, FSL_DEFAULT);
+////	  void *payload = &var_axi;
+//      void * payload = &buffer;
+//
+//    tcp_write(tpcb, payload, len , 1);
+
 	/* echo back the payload */
 	/* in this case, we assume that the payload is < TCP_SND_BUF */
-	if (tcp_sndbuf(tpcb) > p->len) {
-		err = tcp_write(tpcb, p->payload, p->len, 1);
-	} else
-		xil_printf("no space in tcp_sndbuf\n\r");
+//	if (tcp_sndbuf(tpcb) > p->len) {
+//		err = tcp_write(tpcb, p->payload, p->len, 1);
+//	} else
+//		xil_printf("no space in tcp_sndbuf\n\r");
 
 	/* free the received pbuf */
 	pbuf_free(p);
 
 	return ERR_OK;
+
 }
 
 err_t accept_callback(void *arg, struct tcp_pcb *newpcb, err_t err)

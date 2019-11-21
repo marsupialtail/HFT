@@ -1,4 +1,4 @@
-Running: xsim.dir/sim_test_axi_ip_behav/xsimk -simmode gui -wdb sim_test_axi_ip_behav.wdb -simrunnum 0 -socket 54279
+Running: xsim.dir/sim_test_axi_ip_behav/xsimk -simmode gui -wdb sim_test_axi_ip_behav.wdb -simrunnum 0 -socket 40574
 Design successfully loaded
 Design Loading Memory Usage: 43068 KB (Peak: 43068 KB)
 Design Loading CPU Usage: 10 ms
