@@ -4,13 +4,13 @@
    "PinnedPorts":"",
    "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 TLS
 #  -string -flagsOSRD
-preplace port usb_uart -pg 1 -lvl 8 -x 2700 -y 380 -defaultsOSRD
-preplace port eth_mdio_mdc -pg 1 -lvl 8 -x 2700 -y 660 -defaultsOSRD
-preplace port eth_rmii -pg 1 -lvl 8 -x 2700 -y 570 -defaultsOSRD
-preplace port DDR2_0 -pg 1 -lvl 8 -x 2700 -y 140 -defaultsOSRD
+preplace port usb_uart -pg 1 -lvl 8 -x 2710 -y 380 -defaultsOSRD
+preplace port eth_mdio_mdc -pg 1 -lvl 8 -x 2710 -y 660 -defaultsOSRD
+preplace port eth_rmii -pg 1 -lvl 8 -x 2710 -y 570 -defaultsOSRD
+preplace port DDR2_0 -pg 1 -lvl 8 -x 2710 -y 140 -defaultsOSRD
 preplace port reset -pg 1 -lvl 0 -x -50 -y 720 -defaultsOSRD
 preplace port sys_clock -pg 1 -lvl 0 -x -50 -y 820 -defaultsOSRD
-preplace port eth_ref_clk -pg 1 -lvl 8 -x 2700 -y 640 -defaultsOSRD
+preplace port eth_ref_clk -pg 1 -lvl 8 -x 2710 -y 640 -defaultsOSRD
 preplace inst microblaze_0 -pg 1 -lvl 5 -x 1680 -y 840 -defaultsOSRD
 preplace inst microblaze_0_local_memory -pg 1 -lvl 6 -x 2210 -y 830 -defaultsOSRD
 preplace inst microblaze_0_axi_periph -pg 1 -lvl 3 -x 840 -y 460 -defaultsOSRD
@@ -48,28 +48,28 @@ preplace netloc axi_ethernetlite_0_ip2intc_irpt 1 2 5 660 -40 NJ -40 1410J 190 N
 preplace netloc rst_clk_wiz_1_100M_mb_reset 1 2 3 NJ 760 1030 700 1320
 preplace netloc util_vector_logic_0_Res 1 4 2 1400 -20 1940
 preplace netloc microblaze_0_axi_periph_M02_AXI 1 3 3 1050J 140 1380J 210 2040
-preplace netloc microblaze_0_M_AXI_DC 1 5 1 2010 430n
-preplace netloc microblaze_0_M_AXI_IC 1 5 1 2030 450n
-preplace netloc mii_to_rmii_0_RMII_PHY_M 1 7 1 NJ 570
-preplace netloc microblaze_0_axi_periph_M03_AXI 1 3 1 1000 200n
-preplace netloc axi_uartlite_0_UART 1 7 1 NJ 380
-preplace netloc microblaze_0_debug 1 4 1 1330 760n
-preplace netloc microblaze_0_dlmb_1 1 5 1 1980 780n
-preplace netloc axi_ethernetlite_0_MII 1 6 1 2390 550n
-preplace netloc microblaze_0_ilmb_1 1 5 1 1960 800n
-preplace netloc mig_7series_0_DDR2 1 7 1 NJ 140
-preplace netloc axi_smc_M00_AXI 1 6 1 2360 160n
-preplace netloc microblaze_0_interrupt 1 4 1 1340 480n
 preplace netloc microblaze_0_axi_periph_M01_AXI 1 3 4 990 370 1360J 430 2000J 370 NJ
-preplace netloc microblaze_0_axi_dp 1 2 4 670 -10 NJ -10 NJ -10 1930
-preplace netloc axi_ethernetlite_0_MDIO 1 6 2 NJ 660 NJ
-preplace netloc microblaze_0_intc_axi 1 3 1 N 430
+preplace netloc microblaze_0_dlmb_1 1 5 1 1980 780n
+preplace netloc microblaze_0_interrupt 1 4 1 1340 480n
+preplace netloc axi_smc_M00_AXI 1 6 1 2360 160n
+preplace netloc microblaze_0_M_AXI_DC 1 5 1 2010 430n
+preplace netloc microblaze_0_axi_periph_M03_AXI 1 3 1 1000 200n
+preplace netloc microblaze_0_debug 1 4 1 1330 760n
+preplace netloc mig_7series_0_DDR2 1 7 1 NJ 140
+preplace netloc microblaze_0_M_AXI_IC 1 5 1 2030 450n
+preplace netloc axi_ethernetlite_0_MII 1 6 1 2390 550n
+preplace netloc axi_uartlite_0_UART 1 7 1 NJ 380
+preplace netloc microblaze_0_ilmb_1 1 5 1 1960 800n
 preplace netloc microblaze_0_M1_AXIS 1 5 1 1950 370n
+preplace netloc mii_to_rmii_0_RMII_PHY_M 1 7 1 NJ 570
 preplace netloc master_axi_test_0_M00_AXIS 1 4 1 1430 330n
+preplace netloc microblaze_0_intc_axi 1 3 1 N 430
+preplace netloc axi_ethernetlite_0_MDIO 1 6 2 NJ 660 NJ
+preplace netloc microblaze_0_axi_dp 1 2 4 670 -10 NJ -10 NJ -10 1930
 preplace netloc microblaze_com_axi_0_m00_axis 1 4 1 1440 570n
 preplace netloc microblaze_0_M0_AXIS 1 5 1 1920 610n
-levelinfo -pg 1 -50 110 470 840 1180 1680 2210 2530 2700
-pagesize -pg 1 -db -bbox -sgen -170 -60 2860 1110
+levelinfo -pg 1 -50 110 470 840 1180 1680 2210 2530 2710
+pagesize -pg 1 -db -bbox -sgen -170 -60 2870 1110
 "
 }
 {

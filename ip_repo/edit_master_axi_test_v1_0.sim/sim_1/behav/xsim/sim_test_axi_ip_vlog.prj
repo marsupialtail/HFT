@@ -1,8 +1,6 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
 "../../../../master_axi_test_1.0/hdl/master_axi_test_v1_0.v" \
-"../../../../master_axi_test_1.0/hdl/master_axi_test_v1_0_M00_AXIS.v" \
-"../../../../master_axi_test_1.0/hdl/master_axi_test_v1_0_S00_AXIS.v" \
 
 sv xil_defaultlib  \
 "../../../../edit_master_axi_test_v1_0.ip_user_files/sim_test.sv" \

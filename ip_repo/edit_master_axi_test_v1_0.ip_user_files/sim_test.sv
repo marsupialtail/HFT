@@ -89,6 +89,7 @@ module sim_test_axi_ip(
             end
             if(i % 4 == 3) begin
                 s00_axis_tlast = 1;
+                s00_axis_tvalid = 0;
                 //i = 0;
             end else begin
                 s00_axis_tlast = 0;

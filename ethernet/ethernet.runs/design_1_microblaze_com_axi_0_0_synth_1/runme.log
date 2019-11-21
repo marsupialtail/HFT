@@ -1,0 +1,495 @@
+
+*** Running vivado
+    with args -log design_1_microblaze_com_axi_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_microblaze_com_axi_0_0.tcl
+
+
+****** Vivado v2019.1.2 (64-bit)
+  **** SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
+  **** IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source design_1_microblaze_com_axi_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ip_repo/k_bit_axi_stream_1.0'.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ip_repo/k_bit_axi_stream_slave_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ip_repo/k_bit_axi_stream_master_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ip_repo/master_axi_test_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ip_repo/parser_feed_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/microblaze_com_axi'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/var/local/xilinx-local/Vivado/2019.1/data/ip'.
+Command: synth_design -top design_1_microblaze_com_axi_0_0 -part xc7a100tcsg324-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 14131 
+WARNING: [Synth 8-2507] parameter declaration becomes local in master_axi_stream with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ipshared/2842/master_axi_stream.sv:66]
+WARNING: [Synth 8-2507] parameter declaration becomes local in slave_axi_stream with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ipshared/2842/slave_axi_stream.sv:53]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1810.410 ; gain = 158.496 ; free physical = 214 ; free virtual = 8338
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_microblaze_com_axi_0_0' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ip/design_1_microblaze_com_axi_0_0/synth/design_1_microblaze_com_axi_0_0.sv:57]
+INFO: [Synth 8-6157] synthesizing module 'microblaze_com_axi' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ipshared/2842/axi_com_top.sv:4]
+	Parameter C_M00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M00_AXIS_START_COUNT bound to: 32 - type: integer 
+	Parameter C_S00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'master_axi_stream' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ipshared/2842/master_axi_stream.sv:4]
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_START_COUNT bound to: 32 - type: integer 
+	Parameter NUMBER_OF_OUTPUT_WORDS bound to: 8 - type: integer 
+	Parameter WAIT_COUNT_BITS bound to: 5 - type: integer 
+	Parameter bit_num bound to: 4 - type: integer 
+	Parameter IDLE bound to: 2'b00 
+	Parameter INIT_COUNTER bound to: 2'b01 
+	Parameter SEND_STREAM bound to: 2'b10 
+INFO: [Synth 8-155] case statement is not full and has no default [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ipshared/2842/master_axi_stream.sv:109]
+WARNING: [Synth 8-6014] Unused sequential element tx_done_reg was removed.  [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ipshared/2842/master_axi_stream.sv:188]
+INFO: [Synth 8-6155] done synthesizing module 'master_axi_stream' (1#1) [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ipshared/2842/master_axi_stream.sv:4]
+WARNING: [Synth 8-7023] instance 'master_axi_test_v1_0_M00_AXIS_inst' of module 'master_axi_stream' has 10 connections declared, but only 7 given [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ipshared/2842/axi_com_top.sv:48]
+INFO: [Synth 8-6157] synthesizing module 'slave_axi_stream' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ipshared/2842/slave_axi_stream.sv:4]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter NUMBER_OF_INPUT_WORDS bound to: 8 - type: integer 
+	Parameter bit_num bound to: 3 - type: integer 
+	Parameter IDLE bound to: 2'b00 
+	Parameter WRITE_FIFO bound to: 2'b01 
+WARNING: [Synth 8-6014] Unused sequential element FIFO_GEN[0].stream_data_fifo_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element FIFO_GEN[1].stream_data_fifo_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element FIFO_GEN[2].stream_data_fifo_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element FIFO_GEN[3].stream_data_fifo_reg was removed. 
+INFO: [Synth 8-6155] done synthesizing module 'slave_axi_stream' (2#1) [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ipshared/2842/slave_axi_stream.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'microblaze_com_axi' (3#1) [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ipshared/2842/axi_com_top.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_microblaze_com_axi_0_0' (4#1) [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ip/design_1_microblaze_com_axi_0_0/synth/design_1_microblaze_com_axi_0_0.sv:57]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[31]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[30]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[29]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[28]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[27]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[26]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[25]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[24]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[23]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[22]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[21]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[20]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[19]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[18]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[17]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[16]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[15]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[14]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[13]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[12]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[11]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[10]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[9]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[8]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[7]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[6]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[5]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[4]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[3]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[2]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[1]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TDATA[0]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TSTRB[3]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TSTRB[2]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TSTRB[1]
+WARNING: [Synth 8-3331] design slave_axi_stream has unconnected port S_AXIS_TSTRB[0]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port valid
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[31]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[30]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[29]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[28]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[27]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[26]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[25]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[24]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[23]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[22]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[21]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[20]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[19]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[18]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[17]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[16]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[15]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[14]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[13]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[12]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[11]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[10]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[9]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[8]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[7]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[6]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[5]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[4]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[3]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[2]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[1]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port data[0]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port tstrb[3]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port tstrb[2]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port tstrb[1]
+WARNING: [Synth 8-3331] design master_axi_stream has unconnected port tstrb[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1842.320 ; gain = 190.406 ; free physical = 322 ; free virtual = 8429
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1860.129 ; gain = 208.215 ; free physical = 313 ; free virtual = 8421
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1860.129 ; gain = 208.215 ; free physical = 313 ; free virtual = 8421
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2026.879 ; gain = 0.000 ; free physical = 165 ; free virtual = 8261
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.29 . Memory (MB): peak = 2026.879 ; gain = 0.000 ; free physical = 163 ; free virtual = 8261
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 2026.879 ; gain = 374.965 ; free physical = 280 ; free virtual = 8382
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 2026.879 ; gain = 374.965 ; free physical = 280 ; free virtual = 8382
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 2026.879 ; gain = 374.965 ; free physical = 280 ; free virtual = 8383
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'mst_exec_state_reg' in module 'master_axi_stream'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                               00
+            INIT_COUNTER |                               01 |                               01
+             SEND_STREAM |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'mst_exec_state_reg' using encoding 'sequential' in module 'master_axi_stream'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 2026.879 ; gain = 374.965 ; free physical = 253 ; free virtual = 8366
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+	   3 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module master_axi_stream 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	   3 Input      1 Bit        Muxes := 2     
+Module slave_axi_stream 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3917] design design_1_microblaze_com_axi_0_0 has port m00_axis_tstrb[3] driven by constant 1
+INFO: [Synth 8-3917] design design_1_microblaze_com_axi_0_0 has port m00_axis_tstrb[2] driven by constant 1
+INFO: [Synth 8-3917] design design_1_microblaze_com_axi_0_0 has port m00_axis_tstrb[1] driven by constant 1
+INFO: [Synth 8-3917] design design_1_microblaze_com_axi_0_0 has port m00_axis_tstrb[0] driven by constant 1
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[31]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[30]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[29]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[28]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[27]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[26]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[25]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[24]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[23]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[22]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[21]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[20]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[19]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[18]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[17]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[16]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[15]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[14]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[13]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[12]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[11]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[10]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[9]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[8]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[7]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[6]
+WARNING: [Synth 8-3331] design design_1_microblaze_com_axi_0_0 has unconnected port s00_axis_tdata[5]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[6]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[7]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[8]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[9]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[10]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[10]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[11]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[12]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[12]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[13]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[14]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[15]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[16]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[16]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[17]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[17]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[18]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[18]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[19]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[19]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[20]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[20]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[21]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[21]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[22]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[22]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[23]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[23]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[24]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[24]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[25]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[25]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[26]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[26]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[27]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[27]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[28]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[28]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[29]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[29]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[30]'
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[30]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[31] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 2026.879 ; gain = 374.965 ; free physical = 217 ; free virtual = 8347
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 2026.879 ; gain = 374.965 ; free physical = 169 ; free virtual = 8132
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 2026.879 ; gain = 374.965 ; free physical = 169 ; free virtual = 8132
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[3]' (FDRE) to 'inst/master_axi_test_v1_0_M00_AXIS_inst/stream_data_out_reg[5]'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 2026.879 ; gain = 374.965 ; free physical = 170 ; free virtual = 8132
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 2026.879 ; gain = 374.965 ; free physical = 193 ; free virtual = 8151
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 2026.879 ; gain = 374.965 ; free physical = 193 ; free virtual = 8151
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 2026.879 ; gain = 374.965 ; free physical = 200 ; free virtual = 8158
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 2026.879 ; gain = 374.965 ; free physical = 203 ; free virtual = 8162
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 2026.879 ; gain = 374.965 ; free physical = 203 ; free virtual = 8162
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 2026.879 ; gain = 374.965 ; free physical = 203 ; free virtual = 8162
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     2|
+|2     |LUT2 |     2|
+|3     |LUT3 |     6|
+|4     |LUT4 |     8|
+|5     |LUT5 |     5|
+|6     |LUT6 |     1|
+|7     |FDRE |    22|
+|8     |FDSE |     1|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------------------------------------+-------------------+------+
+|      |Instance                               |Module             |Cells |
++------+---------------------------------------+-------------------+------+
+|1     |top                                    |                   |    47|
+|2     |  inst                                 |microblaze_com_axi |    47|
+|3     |    master_axi_test_v1_0_M00_AXIS_inst |master_axi_stream  |    36|
+|4     |    master_axi_test_v1_0_S00_AXIS_inst |slave_axi_stream   |    11|
++------+---------------------------------------+-------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 2026.879 ; gain = 374.965 ; free physical = 203 ; free virtual = 8162
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 36 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 2026.879 ; gain = 208.215 ; free physical = 292 ; free virtual = 8250
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 2026.879 ; gain = 374.965 ; free physical = 294 ; free virtual = 8253
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2029.848 ; gain = 0.000 ; free physical = 171 ; free virtual = 8126
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+58 Infos, 111 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 2029.848 ; gain = 544.387 ; free physical = 369 ; free virtual = 8325
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2029.848 ; gain = 0.000 ; free physical = 369 ; free virtual = 8325
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.runs/design_1_microblaze_com_axi_0_0_synth_1/design_1_microblaze_com_axi_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_microblaze_com_axi_0_0, cache-ID = 4d85c9630d9892a2
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2053.863 ; gain = 0.000 ; free physical = 356 ; free virtual = 8319
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.runs/design_1_microblaze_com_axi_0_0_synth_1/design_1_microblaze_com_axi_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_microblaze_com_axi_0_0_utilization_synth.rpt -pb design_1_microblaze_com_axi_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 19 18:33:04 2019...

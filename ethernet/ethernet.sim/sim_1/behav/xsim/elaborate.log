@@ -1,0 +1,7 @@
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /var/local/xilinx-local/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto a47b46d7be3b44acabe9bf36d8b9eb11 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot sim_test_axi_ip_behav xil_defaultlib.sim_test_axi_ip xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-2063] Module <master_axi_test_0> not found while processing module instance <inst> [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sim_1/new/sim_test_axi_ip.sv:41]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

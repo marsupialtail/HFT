@@ -1,0 +1,6 @@
+18:58:28 INFO  : Launching XSCT server: xsct -n -interactive /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.sdk/temp_xsdb_launch_script.tcl
+18:58:31 INFO  : XSCT server has started successfully.
+18:58:35 INFO  : Successfully done setting XSCT server connection channel  
+18:58:35 INFO  : Successfully done setting SDK workspace  
+18:58:38 INFO  : Registering command handlers for SDK TCF services
+18:58:38 INFO  : Processing command line option -hwspec /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.sdk/design_1_wrapper.hdf.
