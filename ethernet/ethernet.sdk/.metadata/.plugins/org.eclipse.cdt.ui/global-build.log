@@ -41,3 +41,112 @@ Finished building: axi_stream.elf.size
 20:56:58 **** Incremental Build of configuration Debug for project axi_stream ****
 make all 
 make: Nothing to be done for `all'.
+21:40:13 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/main.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112284	   1792	3962324	4076400	 3e3370	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+21:58:01 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:91:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+  u16_t len;
+        ^~~
+../src/echo.c:89:8: warning: unused variable 'var_axi' [-Wunused-variable]
+  u32_t var_axi;
+        ^~~~~~~
+../src/echo.c:76:9: warning: unused variable 'rec_data' [-Wunused-variable]
+  char * rec_data = p->payload;
+         ^~~~~~~~
+../src/echo.c: In function 'start_application':
+../src/echo.c:196:6: warning: unused variable 'errority' [-Wunused-variable]
+  int errority;
+      ^~~~~~~~
+../src/echo.c:195:6: warning: unused variable 'validity' [-Wunused-variable]
+  int validity;
+      ^~~~~~~~
+../src/echo.c:194:9: warning: unused variable 'len' [-Wunused-variable]
+     int len = 4; //4 BYTES
+         ^~~
+../src/echo.c:189:9: warning: unused variable 'payload' [-Wunused-variable]
+  void * payload = &buffer;
+         ^~~~~~~
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112372	   1792	3962324	4076488	 3e33c8	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+21:58:15 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+22:02:34 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:92:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+  u16_t len;
+        ^~~
+../src/echo.c:90:8: warning: unused variable 'var_axi' [-Wunused-variable]
+  u32_t var_axi;
+        ^~~~~~~
+../src/echo.c:76:9: warning: unused variable 'rec_data' [-Wunused-variable]
+  char * rec_data = p->payload;
+         ^~~~~~~~
+../src/echo.c: In function 'start_application':
+../src/echo.c:197:6: warning: unused variable 'errority' [-Wunused-variable]
+  int errority;
+      ^~~~~~~~
+../src/echo.c:196:6: warning: unused variable 'validity' [-Wunused-variable]
+  int validity;
+      ^~~~~~~~
+../src/echo.c:195:9: warning: unused variable 'len' [-Wunused-variable]
+     int len = 4; //4 BYTES
+         ^~~
+../src/echo.c:190:9: warning: unused variable 'payload' [-Wunused-variable]
+  void * payload = &buffer;
+         ^~~~~~~
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112372	   1792	3962324	4076488	 3e33c8	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+22:02:38 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+22:03:09 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.

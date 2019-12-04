@@ -46,6 +46,7 @@
 #else
 #if LWIP_DHCP==1
 #include "lwip/dhcp.h"
+#include "fsl.h"
 #endif
 #endif
 
