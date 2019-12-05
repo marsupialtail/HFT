@@ -1,0 +1,19 @@
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /var/local/xilinx-local/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto fc1e60db761d4433bca927ecca93ba81 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot parser_sim_behav xil_defaultlib.parser_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 32 for port 'data_in' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:106]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 32 for port 'data_in' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:108]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 32 for port 'data_in' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:110]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.mkAddMessage
+Compiling module xil_defaultlib.mkCancelMessage
+Compiling module xil_defaultlib.mkDummyMessage
+Compiling module xil_defaultlib.mk_parser_default
+Compiling module xil_defaultlib.parser_sim
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot parser_sim_behav
