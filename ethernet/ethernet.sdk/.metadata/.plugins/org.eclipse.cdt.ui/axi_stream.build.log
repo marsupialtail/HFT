@@ -1,6 +1,33 @@
-22:03:09 **** Incremental Build of configuration Debug for project axi_stream ****
+15:55:11 **** Build of configuration Debug for project axi_stream ****
 make all 
-make: Nothing to be done for `all'.
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:98:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+  u16_t len;
+        ^~~
+../src/echo.c:96:8: warning: unused variable 'var_axi' [-Wunused-variable]
+  u32_t var_axi;
+        ^~~~~~~
+../src/echo.c: In function 'start_application':
+../src/echo.c:208:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+       tcp_write(pcb, payload, 1, 1);
+                      ^~~~~~~
+In file included from ../src/echo.c:33:
+../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
+ err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
+                                                    ~~~~~~~~~~~~^~~~~~~
+../src/echo.c:210:6: error: 'error' undeclared (first use in this function); did you mean 'perror'?
+      error = mfmsr();
+      ^~~~~
+      perror
+../src/echo.c:210:6: note: each undeclared identifier is reported only once for each function it appears in
+../src/echo.c:212:6: warning: implicit declaration of function 'mtmstr'; did you mean 'mtmsr'? [-Wimplicit-function-declaration]
+      mtmstr(error);
+      ^~~~~~
+      mtmsr
+make: *** [src/echo.o] Error 1
 
-22:03:09 Build Finished (took 73ms)
+15:55:11 Build Finished (took 114ms)
 

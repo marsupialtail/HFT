@@ -2,8 +2,8 @@
 # Vivado v2019.1.2 (64-bit)
 # SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
 # IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
-# Start of session at: Wed Nov 20 18:48:52 2019
-# Process ID: 15847
+# Start of session at: Fri Dec  6 00:03:39 2019
+# Process ID: 18830
 # Current directory: /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.runs/synth_1
 # Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.runs/synth_1/design_1_wrapper.vds

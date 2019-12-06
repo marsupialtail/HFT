@@ -60,6 +60,7 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {HDL-1065} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -78,6 +79,7 @@ set rc [catch {
   /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ip_repo/master_axi_test_1.0
   /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ip_repo/parser_feed_1.0
   /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/microblaze_com_axi
+  /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs
 } [current_project]
   update_ip_catalog
   set_property ip_output_repo /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.cache/ip [current_project]

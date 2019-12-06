@@ -403,13 +403,15 @@ vlog -work xil_defaultlib -64 "+incdir+../../../../ethernet.srcs/sources_1/bd/de
 "../../../bd/design_1/ipshared/f24d/hdl/master_axi_test_v1_0_M00_AXIS.v" \
 "../../../bd/design_1/ipshared/f24d/hdl/master_axi_test_v1_0_S00_AXIS.v" \
 "../../../bd/design_1/ipshared/f24d/hdl/master_axi_test_v1_0.v" \
-"../../../bd/design_1/ip/design_1_master_axi_test_0_1/sim/design_1_master_axi_test_0_1.v" \
+"../../../bd/design_1/ip/design_1_master_axi_test_0_1_1/sim/design_1_master_axi_test_0_1.v" \
 
 vlog -work xil_defaultlib -64 -sv -L smartconnect_v1_0 "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/c923" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/1ddd/hdl/verilog" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/b2d0/hdl/verilog" "+incdir+/var/local/xilinx-local/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../bd/design_1/ipshared/2842/master_axi_stream.sv" \
 "../../../bd/design_1/ipshared/2842/slave_axi_stream.sv" \
 "../../../bd/design_1/ipshared/2842/axi_com_top.sv" \
-"../../../bd/design_1/ip/design_1_microblaze_com_axi_0_0/sim/design_1_microblaze_com_axi_0_0.sv" \
+"../../../bd/design_1/ip/design_1_microblaze_com_axi_0_0_1/sim/design_1_microblaze_com_axi_0_0.sv" \
+"../../../bd/design_1/ipshared/68ec/sources_1/new/parser_top.sv" \
+"../../../bd/design_1/ip/design_1_parser_top_0_0/sim/design_1_parser_top_0_0.sv" \
 
 vlog -work xil_defaultlib -64 "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/c923" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/1ddd/hdl/verilog" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/b2d0/hdl/verilog" "+incdir+/var/local/xilinx-local/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../bd/design_1/sim/design_1.v" \

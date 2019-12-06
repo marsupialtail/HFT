@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-//Date        : Wed Nov 20 18:47:21 2019
+//Date        : Thu Dec  5 23:40:40 2019
 //Host        : eecs-digital-37 running 64-bit Ubuntu 14.04.6 LTS
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=29,numReposBlks=22,numNonXlnxBlks=2,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=8,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=30,numReposBlks=23,numNonXlnxBlks=3,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=8,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (DDR2_0_addr,
     DDR2_0_ba,
@@ -135,6 +135,8 @@ module design_1
   wire microblaze_0_M1_AXIS_TLAST;
   wire microblaze_0_M1_AXIS_TREADY;
   wire microblaze_0_M1_AXIS_TVALID;
+  wire [31:0]microblaze_0_M2_AXIS_TDATA;
+  wire microblaze_0_M2_AXIS_TVALID;
   wire [31:0]microblaze_0_M_AXI_DC_ARADDR;
   wire [1:0]microblaze_0_M_AXI_DC_ARBURST;
   wire [3:0]microblaze_0_M_AXI_DC_ARCACHE;
@@ -183,6 +185,7 @@ module design_1
   wire microblaze_0_M_AXI_IC_RREADY;
   wire [1:0]microblaze_0_M_AXI_IC_RRESP;
   wire microblaze_0_M_AXI_IC_RVALID;
+  wire microblaze_0_S2_AXIS_TREADY;
   wire [31:0]microblaze_0_axi_dp_ARADDR;
   wire [2:0]microblaze_0_axi_dp_ARPROT;
   wire [0:0]microblaze_0_axi_dp_ARREADY;
@@ -328,6 +331,10 @@ module design_1
   wire mii_to_rmii_0_RMII_PHY_M_RX_ER;
   wire [1:0]mii_to_rmii_0_RMII_PHY_M_TXD;
   wire mii_to_rmii_0_RMII_PHY_M_TX_EN;
+  wire parser_top_0_last_master_out;
+  wire [15:0]parser_top_0_order_id_out_add;
+  wire parser_top_0_ready_out;
+  wire parser_top_0_ready_to_microblaze_out;
   wire reset_1;
   wire [0:0]rst_clk_wiz_1_100M_bus_struct_reset;
   wire rst_clk_wiz_1_100M_mb_reset;
@@ -599,6 +606,9 @@ module design_1
         .M1_AXIS_TLAST(microblaze_0_M1_AXIS_TLAST),
         .M1_AXIS_TREADY(microblaze_0_M1_AXIS_TREADY),
         .M1_AXIS_TVALID(microblaze_0_M1_AXIS_TVALID),
+        .M2_AXIS_TDATA(microblaze_0_M2_AXIS_TDATA),
+        .M2_AXIS_TREADY(parser_top_0_ready_to_microblaze_out),
+        .M2_AXIS_TVALID(microblaze_0_M2_AXIS_TVALID),
         .M_AXI_DC_ARADDR(microblaze_0_M_AXI_DC_ARADDR),
         .M_AXI_DC_ARBURST(microblaze_0_M_AXI_DC_ARBURST),
         .M_AXI_DC_ARCACHE(microblaze_0_M_AXI_DC_ARCACHE),
@@ -684,6 +694,10 @@ module design_1
         .S1_AXIS_TLAST(master_axi_test_0_M00_AXIS_TLAST),
         .S1_AXIS_TREADY(master_axi_test_0_M00_AXIS_TREADY),
         .S1_AXIS_TVALID(master_axi_test_0_M00_AXIS_TVALID),
+        .S2_AXIS_TDATA({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,parser_top_0_order_id_out_add}),
+        .S2_AXIS_TLAST(parser_top_0_last_master_out),
+        .S2_AXIS_TREADY(microblaze_0_S2_AXIS_TREADY),
+        .S2_AXIS_TVALID(parser_top_0_ready_out),
         .Write_Strobe(microblaze_0_dlmb_1_WRITESTROBE));
   design_1_microblaze_0_axi_intc_0 microblaze_0_axi_intc
        (.interrupt_address(microblaze_0_interrupt_ADDRESS),
@@ -925,6 +939,17 @@ module design_1
         .rmii2phy_tx_en(mii_to_rmii_0_RMII_PHY_M_TX_EN),
         .rmii2phy_txd(mii_to_rmii_0_RMII_PHY_M_TXD),
         .rst_n(reset_1));
+  design_1_parser_top_0_0 parser_top_0
+       (.clk_in(microblaze_0_Clk),
+        .data_in(microblaze_0_M2_AXIS_TDATA),
+        .enable_in(1'b0),
+        .last_master_out(parser_top_0_last_master_out),
+        .order_id_out_add(parser_top_0_order_id_out_add),
+        .ready_out(parser_top_0_ready_out),
+        .ready_to_microblaze_out(parser_top_0_ready_to_microblaze_out),
+        .reset_in(rst_clk_wiz_1_100M_mb_reset),
+        .valid_master_in(microblaze_0_S2_AXIS_TREADY),
+        .valid_microblaze_in(microblaze_0_M2_AXIS_TVALID));
   design_1_rst_clk_wiz_1_100M_0 rst_clk_wiz_1_100M
        (.aux_reset_in(1'b1),
         .bus_struct_reset(rst_clk_wiz_1_100M_bus_struct_reset),

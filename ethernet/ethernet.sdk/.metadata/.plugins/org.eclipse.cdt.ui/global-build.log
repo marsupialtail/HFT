@@ -150,3 +150,190 @@ make: Nothing to be done for `all'.
 22:03:09 **** Incremental Build of configuration Debug for project axi_stream ****
 make all 
 make: Nothing to be done for `all'.
+23:41:52 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:92:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+  u16_t len;
+        ^~~
+../src/echo.c:90:8: warning: unused variable 'var_axi' [-Wunused-variable]
+  u32_t var_axi;
+        ^~~~~~~
+../src/echo.c:76:9: warning: unused variable 'rec_data' [-Wunused-variable]
+  char * rec_data = p->payload;
+         ^~~~~~~~
+../src/echo.c: In function 'start_application':
+../src/echo.c:197:6: warning: unused variable 'errority' [-Wunused-variable]
+  int errority;
+      ^~~~~~~~
+../src/echo.c:196:6: warning: unused variable 'validity' [-Wunused-variable]
+  int validity;
+      ^~~~~~~~
+../src/echo.c:195:9: warning: unused variable 'len' [-Wunused-variable]
+     int len = 4; //4 BYTES
+         ^~~
+../src/echo.c:190:9: warning: unused variable 'payload' [-Wunused-variable]
+  void * payload = &buffer;
+         ^~~~~~~
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112392	   1792	3962312	4076496	 3e33d0	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+23:56:22 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:72:2: error: unknown type name 'getfslx'
+  getfslx
+  ^~~~~~~
+../src/echo.c:97:8: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'var_axi'
+  u32_t var_axi;
+        ^~~~~~~
+../src/echo.c:99:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+  u16_t len;
+        ^~~
+make: *** [src/echo.o] Error 1
+00:10:11 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:98:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+  u16_t len;
+        ^~~
+../src/echo.c:96:8: warning: unused variable 'var_axi' [-Wunused-variable]
+  u32_t var_axi;
+        ^~~~~~~
+../src/echo.c: In function 'start_application':
+../src/echo.c:207:38: error: expected expression before ')' token
+      if(validity == 1 && errority == ) {
+                                      ^
+../src/echo.c:208:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+       tcp_write(pcb, payload, 1, 1);
+                      ^~~~~~~
+In file included from ../src/echo.c:33:
+../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
+ err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
+                                                    ~~~~~~~~~~~~^~~~~~~
+make: *** [src/echo.o] Error 1
+00:15:04 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:98:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+  u16_t len;
+        ^~~
+../src/echo.c:96:8: warning: unused variable 'var_axi' [-Wunused-variable]
+  u32_t var_axi;
+        ^~~~~~~
+../src/echo.c: In function 'start_application':
+../src/echo.c:208:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+       tcp_write(pcb, payload, 1, 1);
+                      ^~~~~~~
+In file included from ../src/echo.c:33:
+../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
+ err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
+                                                    ~~~~~~~~~~~~^~~~~~~
+../src/echo.c:210:6: error: 'error' undeclared (first use in this function); did you mean 'perror'?
+      error = mfmsr();
+      ^~~~~
+      perror
+../src/echo.c:210:6: note: each undeclared identifier is reported only once for each function it appears in
+../src/echo.c:212:6: warning: implicit declaration of function 'mtmstr'; did you mean 'mtmsr'? [-Wimplicit-function-declaration]
+      mtmstr(error);
+      ^~~~~~
+      mtmsr
+make: *** [src/echo.o] Error 1
+15:55:06 **** Build of project axi_stream_bsp ****
+make -k all 
+Running Make include in microblaze_0/libsrc/bram_v4_3/src
+make -C microblaze_0/libsrc/bram_v4_3/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/cpu_v2_9/src
+make -C microblaze_0/libsrc/cpu_v2_9/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/emaclite_v4_4/src
+make -C microblaze_0/libsrc/emaclite_v4_4/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/intc_v3_9/src
+make -C microblaze_0/libsrc/intc_v3_9/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/lwip211_v1_0/src
+make -C microblaze_0/libsrc/lwip211_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/standalone_v7_0/src
+make -C microblaze_0/libsrc/standalone_v7_0/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/tmrctr_v4_5/src
+make -C microblaze_0/libsrc/tmrctr_v4_5/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/uartlite_v3_2/src
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make libs in microblaze_0/libsrc/bram_v4_3/src
+make -C microblaze_0/libsrc/bram_v4_3/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling bram
+Running Make libs in microblaze_0/libsrc/cpu_v2_9/src
+make -C microblaze_0/libsrc/cpu_v2_9/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling cpu
+Running Make libs in microblaze_0/libsrc/emaclite_v4_4/src
+make -C microblaze_0/libsrc/emaclite_v4_4/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling emaclite
+Running Make libs in microblaze_0/libsrc/intc_v3_9/src
+make -C microblaze_0/libsrc/intc_v3_9/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling intc
+Running Make libs in microblaze_0/libsrc/lwip211_v1_0/src
+make -C microblaze_0/libsrc/lwip211_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling lwip src and adapter files
+Running Make libs in microblaze_0/libsrc/standalone_v7_0/src
+make -C microblaze_0/libsrc/standalone_v7_0/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling standalone
+microblaze_sleep.c:77:9: note: #pragma message: For the sleep routines, assembly instructions are used
+ #pragma message ("For the sleep routines, assembly instructions are used")
+         ^~~~~~~
+Running Make libs in microblaze_0/libsrc/tmrctr_v4_5/src
+make -C microblaze_0/libsrc/tmrctr_v4_5/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling tmrctr
+Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling uartlite
+Finished building libraries
+15:55:11 **** Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:98:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+  u16_t len;
+        ^~~
+../src/echo.c:96:8: warning: unused variable 'var_axi' [-Wunused-variable]
+  u32_t var_axi;
+        ^~~~~~~
+../src/echo.c: In function 'start_application':
+../src/echo.c:208:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+       tcp_write(pcb, payload, 1, 1);
+                      ^~~~~~~
+In file included from ../src/echo.c:33:
+../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
+ err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
+                                                    ~~~~~~~~~~~~^~~~~~~
+../src/echo.c:210:6: error: 'error' undeclared (first use in this function); did you mean 'perror'?
+      error = mfmsr();
+      ^~~~~
+      perror
+../src/echo.c:210:6: note: each undeclared identifier is reported only once for each function it appears in
+../src/echo.c:212:6: warning: implicit declaration of function 'mtmstr'; did you mean 'mtmsr'? [-Wimplicit-function-declaration]
+      mtmstr(error);
+      ^~~~~~
+      mtmsr
+make: *** [src/echo.o] Error 1

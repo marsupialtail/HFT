@@ -36,6 +36,10 @@
 #include "xil_printf.h"
 #endif
 
+//char buffer [32];
+//volatile void * payload = buffer;
+
+
 int transfer_data() {
 	return 0;
 }
@@ -66,24 +70,26 @@ err_t recv_callback(void *arg, struct tcp_pcb *tpcb,
 
 
     /* axi stream put and get*/
-	char buffer [32];
-	void * payload = &buffer;
+	putfsl(p->payload, 3);
 
-	for(int i = 0; i < 32; i += 1) {
-		buffer[i] = i + 40;
-	}
-
-	char * rec_data = p->payload;
-	int validity;
-	int errority;
-	for(int i = 0; i < p->len; i += 1 ) {
-		putfslx(p->payload + i*4, 1, FSL_DEFAULT); //putfslx(p->payload + i*4, 1, FSL_NONBLOCKING);
-		fsl_isinvalid(validity);
-		fsl_iserror(errority);
-		//getfslx(buffer[i], 1, FSL_NONBLOCKING_EXCEPTION_CONTROL_ATOMIC);
-		getfslx(buffer[i], 1, FSL_NONBLOCKING);
-	}
-	tcp_write(tpcb, payload, p->len , 1);
+//	char buffer [32];
+//	void * payload = &buffer;
+//
+//	for(int i = 0; i < 32; i += 1) {
+//		buffer[i] = i + 40;
+//	}
+//
+//	char * rec_data = p->payload;
+//	int validity;
+//	int errority;
+//	for(int i = 0; i < p->len; i += 1 ) {
+//		putfslx(p->payload + i*4, 1, FSL_DEFAULT); //putfslx(p->payload + i*4, 1, FSL_NONBLOCKING);
+//		fsl_isinvalid(validity);
+//		fsl_iserror(errority);
+//		//getfslx(buffer[i], 1, FSL_NONBLOCKING_EXCEPTION_CONTROL_ATOMIC);
+//		getfslx(buffer[i], 1, FSL_NONBLOCKING);
+//	}
+//	tcp_write(tpcb, payload, p->len , 1);
 
 	/* axi stream get only */
 
@@ -187,14 +193,31 @@ int start_application()
 
 	// repeatedly attempt to send, this will force this function to not return
 	char buffer [32];
-	void * payload = &buffer;
+	volatile void * payload = buffer;
+		int validity;
+		int errority;
+	//	for(int i = 0; i < p->len; i += 1 ) {
+	//		putfslx(p->payload + i*4, 1, FSL_DEFAULT); //putfslx(p->payload + i*4, 1, FSL_NONBLOCKING);
 
-	for(int i = 0; i < 32; i += 1) {
-		buffer[i] = i + 40;
+	while(1) {
+		getfsl(buffer,3);
+				fsl_isinvalid(validity);
+				fsl_iserror(errority);
+
+	    if(errority == 0) {
+	    	tcp_write(pcb, payload, 1, 1);
+	    }
+	    error = mfmsr();
+	    error &= ~0x10;
+	    mtmstr(error);
+
 	}
-    int len = 4; //4 BYTES
-	int validity;
-	int errority;
+//	for(int i = 0; i < 32; i += 1) {
+//		buffer[i] = i + 40;
+//	}
+//    int len = 4; //4 BYTES
+//	int validity;
+//	int errority;
 
 //	while(1) {
 //		for(int i = 0; i < len; i += 1 ) {

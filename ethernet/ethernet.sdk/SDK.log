@@ -104,3 +104,56 @@ con
 
 22:03:32 INFO  : Launch script is exported to file '/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_stream.elf_on_local.tcl'
 00:09:12 INFO  : Disconnected from the channel tcfchan#2.
+15:54:16 INFO  : Registering command handlers for SDK TCF services
+15:54:17 INFO  : Launching XSCT server: xsct -n -interactive /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.sdk/temp_xsdb_launch_script.tcl
+15:54:20 INFO  : XSCT server has started successfully.
+15:54:20 INFO  : Successfully done setting XSCT server connection channel  
+15:54:21 INFO  : Processing command line option -hwspec /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/integrated/design_1_wrapper.hdf.
+15:54:21 INFO  : Successfully done setting SDK workspace  
+15:54:59 INFO  : Registering command handlers for SDK TCF services
+15:55:00 INFO  : Launching XSCT server: xsct -n -interactive /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.sdk/temp_xsdb_launch_script.tcl
+15:55:02 INFO  : XSCT server has started successfully.
+15:55:03 INFO  : Processing command line option -hwspec /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/integrated/design_1_wrapper.hdf.
+15:55:03 INFO  : Successfully done setting XSCT server connection channel  
+15:55:03 INFO  : Successfully done setting SDK workspace  
+16:03:19 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1575666197000,  Project:1575608850000
+16:03:19 INFO  : Project design_1_wrapper_hw_platform_2's source hardware specification located at /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/integrated/design_1_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+16:03:42 INFO  : Copied contents of /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/integrated/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_2/system.hdf.
+16:03:42 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+16:03:42 INFO  : Clearing existing target manager status.
+16:03:42 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+16:03:42 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+16:09:06 INFO  : Registering command handlers for SDK TCF services
+16:09:07 INFO  : Launching XSCT server: xsct -n -interactive /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.sdk/temp_xsdb_launch_script.tcl
+16:09:09 INFO  : XSCT server has started successfully.
+16:09:09 INFO  : Successfully done setting XSCT server connection channel  
+16:09:09 INFO  : Successfully done setting SDK workspace  
+16:09:09 INFO  : Processing command line option -hwspec /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.sdk/design_1_wrapper.hdf.
+16:09:09 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_1.
+16:09:14 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1575666427000,  Project:1575666197000
+16:09:14 INFO  : Project design_1_wrapper_hw_platform_2's source hardware specification located at /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/integrated/design_1_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+16:09:34 INFO  : Copied contents of /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/integrated/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_2/system.hdf.
+16:09:34 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+16:09:34 INFO  : Clearing existing target manager status.
+16:09:34 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+16:09:34 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+16:14:10 INFO  : Registering command handlers for SDK TCF services
+16:14:11 INFO  : Launching XSCT server: xsct -n -interactive /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.sdk/temp_xsdb_launch_script.tcl
+16:14:14 INFO  : XSCT server has started successfully.
+16:14:14 INFO  : Successfully done setting XSCT server connection channel  
+16:14:14 INFO  : Processing command line option -hwspec /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.sdk/design_1_wrapper.hdf.
+16:14:14 INFO  : Successfully done setting SDK workspace  
+16:14:14 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_1.
+16:14:19 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1575608850000,  Project:1575666427000
+16:14:19 INFO  : Project design_1_wrapper_hw_platform_2's source hardware specification located at /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/integrated/design_1_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+16:15:00 INFO  : Project design_1_wrapper_hw_platform_2's source hardware specification location will not be monitored anymore.
+16:17:37 INFO  : Registering command handlers for SDK TCF services
+16:17:39 INFO  : Launching XSCT server: xsct -n -interactive /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.sdk/temp_xsdb_launch_script.tcl
+16:17:41 INFO  : XSCT server has started successfully.
+16:17:41 INFO  : Successfully done setting XSCT server connection channel  
+16:17:41 INFO  : Processing command line option -hwspec /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.sdk/design_1_wrapper.hdf.
+16:17:41 INFO  : Successfully done setting SDK workspace  
+16:17:41 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_1.
