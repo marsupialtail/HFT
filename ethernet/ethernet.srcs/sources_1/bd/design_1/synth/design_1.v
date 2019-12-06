@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-//Date        : Thu Dec  5 23:40:40 2019
+//Date        : Fri Dec  6 17:48:57 2019
 //Host        : eecs-digital-37 running 64-bit Ubuntu 14.04.6 LTS
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=30,numReposBlks=23,numNonXlnxBlks=3,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=8,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=31,numReposBlks=24,numNonXlnxBlks=3,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=8,da_clkrst_cnt=1,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (DDR2_0_addr,
     DDR2_0_ba,
@@ -966,6 +966,11 @@ module design_1
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(rst_mig_7series_0_81M_peripheral_aresetn),
         .slowest_sync_clk(mig_7series_0_ui_clk));
+  design_1_system_ila_0_0 system_ila_0
+       (.clk(microblaze_0_Clk),
+        .probe0(microblaze_0_M2_AXIS_TDATA),
+        .probe1(microblaze_0_M2_AXIS_TVALID),
+        .probe2(parser_top_0_ready_to_microblaze_out));
   design_1_util_vector_logic_0_0 util_vector_logic_0
        (.Op1({rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset}),
         .Res(util_vector_logic_0_Res));

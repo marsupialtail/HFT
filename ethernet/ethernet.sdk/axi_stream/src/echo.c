@@ -70,18 +70,18 @@ err_t recv_callback(void *arg, struct tcp_pcb *tpcb,
 
 
     /* axi stream put and get*/
-	putfsl(p->payload, 3);
-
-//	char buffer [32];
-//	void * payload = &buffer;
+//	putfsl(p->payload, 3);
+//
+	char buffer [32];
+	void * payload = buffer; //void * payload = &buffer;
+		int validity = 1;
+		int errority = 1;
 //
 //	for(int i = 0; i < 32; i += 1) {
 //		buffer[i] = i + 40;
 //	}
 //
 //	char * rec_data = p->payload;
-//	int validity;
-//	int errority;
 //	for(int i = 0; i < p->len; i += 1 ) {
 //		putfslx(p->payload + i*4, 1, FSL_DEFAULT); //putfslx(p->payload + i*4, 1, FSL_NONBLOCKING);
 //		fsl_isinvalid(validity);
@@ -89,32 +89,56 @@ err_t recv_callback(void *arg, struct tcp_pcb *tpcb,
 //		//getfslx(buffer[i], 1, FSL_NONBLOCKING_EXCEPTION_CONTROL_ATOMIC);
 //		getfslx(buffer[i], 1, FSL_NONBLOCKING);
 //	}
+//
 //	tcp_write(tpcb, payload, p->len , 1);
 
-	/* axi stream get only */
+	/* axi stream get and send 0,1 axis ports */
 
-	u32_t var_axi;
+	//u32_t var_axi;
 	//  void *payload = &var_axi;
+	//	  getfslx(var_axi,0, FSL_DEFAULT);
 	u16_t len;
 	len = 8;
-//	u16_t loop_length = 4;
-//	int i = 0;
-//	for(; i < loop_length; i += 1) {
-//	  getfsl(buffer[i], 0);//EXCEPTION_CONTROL_ATOMIC);
-//	}
-////	  getfslx(var_axi,0, FSL_DEFAULT);
-//    buffer[loop_length] = '\n';
-//    i += 1;
-//
-//    tcp_write(tpcb, payload, len , 1);
-//    int len2 = (p -> len) >> 2;
-//    for(; i < loop_length + len2 + 1; i += 1 ) {
-//    	putfslx(p->payload , 1), FSL_NONBLOCKING);
-//    	getfslx(buffer[i], 1, FSL_NONBLOCKING);
-//    }
-//    //buffer[loop_length  + len2 + 1] = '\n';
-//	tcp_write(tpcb, payload, loop_length  + len2 + 1, 1);
+	u16_t loop_length = 4;
+	int i = 0;
+	for(; i < loop_length; i += 1) {
+	  getfsl(buffer[i], 0);//EXCEPTION_CONTROL_ATOMIC);
+  	fsl_isinvalid(validity);
+  	fsl_iserror(errority);
+	}
 
+    buffer[loop_length] = '\n';
+    i += 1;
+
+    //tcp_write(tpcb, payload, len , 1);
+    int len2 = (p -> len) >> 2;
+    for(; i < loop_length + len2 + 1; i += 1 ) {
+    	putfslx(p->payload , 1, FSL_NONBLOCKING);
+    	validity = 1;
+    	fsl_isinvalid(validity);
+   		fsl_iserror(errority);
+    	getfslx(buffer[i], 1, FSL_NONBLOCKING);
+    	validity = 1;
+    	fsl_isinvalid(validity);
+    	fsl_iserror(errority);
+    }
+    buffer[i] = '\n';
+	//tcp_write(tpcb, payload, loop_length  + len2 + 2, 1);
+
+
+	putfslx(p->payload, 2, FSL_NONBLOCKING);
+	validity = 0;
+	getfslx(buffer[i + 1], 2, FSL_NONBLOCKING);
+
+	fsl_isinvalid(validity);
+	fsl_iserror(errority);
+
+	buffer[i + 2] = '\n';
+//
+//	if(validity == 0) {
+		tcp_write(tpcb, payload , i + 3, 1);
+//	}
+	/* axi stream get only */
 //	for(int i = 0; i < 2; i += 1) {
 //	  getfsl(buffer[i], 0);//EXCEPTION_CONTROL_ATOMIC);
 //	}
@@ -199,19 +223,21 @@ int start_application()
 	//	for(int i = 0; i < p->len; i += 1 ) {
 	//		putfslx(p->payload + i*4, 1, FSL_DEFAULT); //putfslx(p->payload + i*4, 1, FSL_NONBLOCKING);
 
-	while(1) {
-		getfsl(buffer,3);
-				fsl_isinvalid(validity);
-				fsl_iserror(errority);
-
-	    if(errority == 0) {
-	    	tcp_write(pcb, payload, 1, 1);
-	    }
-	    error = mfmsr();
-	    error &= ~0x10;
-	    mtmstr(error);
-
-	}
+//	while(1) {
+//		getfsl(payload, 2);
+//
+//		fsl_isinvalid(validity);
+//		fsl_iserror(errority);
+//
+//	    if(validity == 0) {
+//	    	tcp_write(pcb, payload, 1, 1);
+//	    }
+//	    validity = 0;
+//}
+////	    error = mtmsr();
+////	    error &= ~0x10;
+////	    mtmstr(error);
+//	}
 //	for(int i = 0; i < 32; i += 1) {
 //		buffer[i] = i + 40;
 //	}
