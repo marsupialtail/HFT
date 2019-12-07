@@ -345,11 +345,94 @@
   "../../../bd/design_1/ipshared/2842/slave_axi_stream.sv" \
   "../../../bd/design_1/ipshared/2842/axi_com_top.sv" \
   "../../../bd/design_1/ip/design_1_microblaze_com_axi_0_0_1/sim/design_1_microblaze_com_axi_0_0.sv" \
-  "../../../bd/design_1/ipshared/68ec/sources_1/new/parser_top.sv" \
+  "../../../bd/design_1/ipshared/e0e5/sources_1/new/parser_top.sv" \
   "../../../bd/design_1/ip/design_1_parser_top_0_0/sim/design_1_parser_top_0_0.sv" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/sim/bd_f60c.v" \
+  "../../../bd/design_1/ip/design_1_system_ila_0_0/bd_0/ip/ip_0/sim/bd_f60c_ila_lib_0.v" \
+  "../../../bd/design_1/ip/design_1_system_ila_0_0/sim/design_1_system_ila_0_0.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib -sv \
+  "../../../bd/design_1/ip/design_1_parser_top_1_0/sim/design_1_parser_top_1_0.sv" \
+-endlib
+-makelib xcelium_lib/xbip_utils_v3_0_10 \
+  "../../../../ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/cordic_1/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/c_reg_fd_v12_0_6 \
+  "../../../../ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/cordic_1/hdl/c_reg_fd_v12_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_dsp48_wrapper_v3_0_4 \
+  "../../../../ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/cordic_1/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_pipe_v3_0_6 \
+  "../../../../ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/cordic_1/hdl/xbip_pipe_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_dsp48_addsub_v3_0_6 \
+  "../../../../ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/cordic_1/hdl/xbip_dsp48_addsub_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_addsub_v3_0_6 \
+  "../../../../ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/cordic_1/hdl/xbip_addsub_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/c_addsub_v12_0_13 \
+  "../../../../ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/cordic_1/hdl/c_addsub_v12_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_bram18k_v3_0_6 \
+  "../../../../ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/cordic_1/hdl/xbip_bram18k_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/mult_gen_v12_0_15 \
+  "../../../../ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/cordic_1/hdl/mult_gen_v12_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/axi_utils_v2_0_6 \
+  "../../../../ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/cordic_1/hdl/axi_utils_v2_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/cordic_v6_0_15 \
+  "../../../../ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/cordic_1/hdl/cordic_v6_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/cordic_1/sim/cordic_1.vhd" \
+  "../../../bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/cordic_0/sim/cordic_0.vhd" \
+-endlib
+-makelib xcelium_lib/floating_point_v7_0_16 \
+  "../../../../ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/div_gen_0/hdl/floating_point_v7_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_dsp48_mult_v3_0_6 \
+  "../../../../ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/div_gen_0/hdl/xbip_dsp48_mult_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_dsp48_multadd_v3_0_6 \
+  "../../../../ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/div_gen_0/hdl/xbip_dsp48_multadd_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/div_gen_v5_1_15 \
+  "../../../../ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/div_gen_0/hdl/div_gen_v5_1_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/div_gen_0/sim/div_gen_0.vhd" \
+-endlib
+-makelib xcelium_lib/xbip_dsp48_macro_v3_0_17 \
+  "../../../../ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/xbip_dsp48_macro_0/hdl/xbip_dsp48_macro_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/xbip_dsp48_macro_0/sim/xbip_dsp48_macro_0.vhd" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib -sv \
+  "../../../bd/design_1/ipshared/56d6/cordic.srcs/sources_1/new/top_level.sv" \
+  "../../../bd/design_1/ipshared/56d6/cordic.srcs/sources_1/new/display.sv" \
+  "../../../bd/design_1/ipshared/56d6/cordic.srcs/sources_1/new/cov_stack.sv" \
+  "../../../bd/design_1/ipshared/56d6/cordic.srcs/sources_1/new/book_trade_stack.sv" \
+  "../../../bd/design_1/ipshared/56d6/cordic.srcs/sources_1/imports/new/book_top_level.sv" \
+  "../../../bd/design_1/ipshared/56d6/cordic.srcs/sources_1/imports/new/order_book.sv" \
+  "../../../bd/design_1/ipshared/56d6/cordic.srcs/sources_1/new/constants.sv" \
+  "../../../bd/design_1/ip/design_1_ip_top_level_0_0/sim/design_1_ip_top_level_0_0.sv" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib \
   "../../../bd/design_1/sim/design_1.v" \
+-endlib
+-makelib xcelium_lib/xil_defaultlib -sv \
+  "../../../bd/design_1/ipshared/5d28/sources_1/new/top.sv" \
+  "../../../bd/design_1/ip/design_1_parser_book_interface_0_0/sim/design_1_parser_book_interface_0_0.sv" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v

@@ -2,8 +2,8 @@
 # Webtalk v2019.1.2 (64-bit)
 # SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
 # 
-# Start of session at: Fri Dec  6 17:55:25 2019
-# Process ID: 11054
+# Start of session at: Fri Dec  6 18:48:17 2019
+# Process ID: 25828
 # Current directory: /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.sdk/webtalk
 # Command line: wbtcv -mode batch -source sdk_webtalk.tcl
 # Log file: /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.sdk/webtalk/webtalk.log

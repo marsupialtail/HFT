@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-//Date        : Thu Dec  5 23:40:40 2019
+//Date        : Sat Dec  7 16:27:09 2019
 //Host        : eecs-digital-37 running 64-bit Ubuntu 14.04.6 LTS
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=30,numReposBlks=23,numNonXlnxBlks=3,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=8,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=34,numReposBlks=27,numNonXlnxBlks=6,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=8,da_clkrst_cnt=1,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (DDR2_0_addr,
     DDR2_0_ba,
@@ -25,6 +25,15 @@ module design_1
     DDR2_0_odt,
     DDR2_0_ras_n,
     DDR2_0_we_n,
+    an_0,
+    ca_0,
+    cb_0,
+    cc_0,
+    cd_0,
+    ce_0,
+    cf_0,
+    cg_0,
+    dp_0,
     eth_mdio_mdc_mdc,
     eth_mdio_mdc_mdio_i,
     eth_mdio_mdc_mdio_o,
@@ -35,7 +44,11 @@ module design_1
     eth_rmii_rxd,
     eth_rmii_tx_en,
     eth_rmii_txd,
+    led16_b_0,
+    led16_g_0,
+    led16_r_0,
     reset,
+    sw,
     sys_clock,
     usb_uart_rxd,
     usb_uart_txd);
@@ -53,6 +66,15 @@ module design_1
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR2_0 ODT" *) output [0:0]DDR2_0_odt;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR2_0 RAS_N" *) output DDR2_0_ras_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR2_0 WE_N" *) output DDR2_0_we_n;
+  output [7:0]an_0;
+  output ca_0;
+  output cb_0;
+  output cc_0;
+  output cd_0;
+  output ce_0;
+  output cf_0;
+  output cg_0;
+  output dp_0;
   (* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 eth_mdio_mdc MDC" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME eth_mdio_mdc, CAN_DEBUG false" *) output eth_mdio_mdc_mdc;
   (* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 eth_mdio_mdc MDIO_I" *) input eth_mdio_mdc_mdio_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 eth_mdio_mdc MDIO_O" *) output eth_mdio_mdc_mdio_o;
@@ -63,7 +85,11 @@ module design_1
   (* X_INTERFACE_INFO = "xilinx.com:interface:rmii:1.0 eth_rmii RXD" *) input [1:0]eth_rmii_rxd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:rmii:1.0 eth_rmii TX_EN" *) output eth_rmii_tx_en;
   (* X_INTERFACE_INFO = "xilinx.com:interface:rmii:1.0 eth_rmii TXD" *) output [1:0]eth_rmii_txd;
+  output led16_b_0;
+  output led16_g_0;
+  output led16_r_0;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input reset;
+  input [15:0]sw;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SYS_CLOCK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYS_CLOCK, CLK_DOMAIN design_1_sys_clock, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000" *) input sys_clock;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart RxD" *) input usb_uart_rxd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart TxD" *) output usb_uart_txd;
@@ -121,6 +147,19 @@ module design_1
   wire clk_wiz_1_clk_out2;
   wire clk_wiz_1_clk_out3;
   wire clk_wiz_1_locked;
+  wire [7:0]ip_top_level_0_an;
+  wire ip_top_level_0_book_busy;
+  wire ip_top_level_0_ca;
+  wire ip_top_level_0_cb;
+  wire ip_top_level_0_cc;
+  wire ip_top_level_0_cd;
+  wire ip_top_level_0_ce;
+  wire ip_top_level_0_cf;
+  wire ip_top_level_0_cg;
+  wire ip_top_level_0_dp;
+  wire ip_top_level_0_led16_b;
+  wire ip_top_level_0_led16_g;
+  wire ip_top_level_0_led16_r;
   wire [31:0]master_axi_test_0_M00_AXIS_TDATA;
   wire master_axi_test_0_M00_AXIS_TLAST;
   wire master_axi_test_0_M00_AXIS_TREADY;
@@ -331,15 +370,27 @@ module design_1
   wire mii_to_rmii_0_RMII_PHY_M_RX_ER;
   wire [1:0]mii_to_rmii_0_RMII_PHY_M_TXD;
   wire mii_to_rmii_0_RMII_PHY_M_TX_EN;
-  wire parser_top_0_last_master_out;
+  wire [31:0]parser_book_interface_0_order_to_add;
+  wire parser_top_0_delete_out;
+  wire [2:0]parser_top_0_operation_out;
   wire [15:0]parser_top_0_order_id_out_add;
+  wire [15:0]parser_top_0_order_id_out_cancel;
+  wire parser_top_0_order_type_out_add;
+  wire [15:0]parser_top_0_price_out_add;
+  wire [7:0]parser_top_0_quantity_out_add;
+  wire [7:0]parser_top_0_quantity_out_cancel;
   wire parser_top_0_ready_out;
   wire parser_top_0_ready_to_microblaze_out;
+  wire [7:0]parser_top_0_stock_symbol_out_add;
+  wire parser_top_1_last_master_out;
+  wire [15:0]parser_top_1_price_out_add;
+  wire parser_top_1_ready_out;
   wire reset_1;
   wire [0:0]rst_clk_wiz_1_100M_bus_struct_reset;
   wire rst_clk_wiz_1_100M_mb_reset;
   wire [0:0]rst_clk_wiz_1_100M_peripheral_aresetn;
   wire [0:0]rst_mig_7series_0_81M_peripheral_aresetn;
+  wire [15:0]sw_0_1;
   wire sys_clock_1;
   wire [7:0]util_vector_logic_0_Res;
 
@@ -354,18 +405,31 @@ module design_1
   assign DDR2_0_odt[0] = mig_7series_0_DDR2_ODT;
   assign DDR2_0_ras_n = mig_7series_0_DDR2_RAS_N;
   assign DDR2_0_we_n = mig_7series_0_DDR2_WE_N;
+  assign an_0[7:0] = ip_top_level_0_an;
   assign axi_ethernetlite_0_MDIO_MDIO_I = eth_mdio_mdc_mdio_i;
   assign axi_uartlite_0_UART_RxD = usb_uart_rxd;
+  assign ca_0 = ip_top_level_0_ca;
+  assign cb_0 = ip_top_level_0_cb;
+  assign cc_0 = ip_top_level_0_cc;
+  assign cd_0 = ip_top_level_0_cd;
+  assign ce_0 = ip_top_level_0_ce;
+  assign cf_0 = ip_top_level_0_cf;
+  assign cg_0 = ip_top_level_0_cg;
+  assign dp_0 = ip_top_level_0_dp;
   assign eth_mdio_mdc_mdc = axi_ethernetlite_0_MDIO_MDC;
   assign eth_mdio_mdc_mdio_o = axi_ethernetlite_0_MDIO_MDIO_O;
   assign eth_mdio_mdc_mdio_t = axi_ethernetlite_0_MDIO_MDIO_T;
   assign eth_ref_clk = clk_wiz_1_clk_out3;
   assign eth_rmii_tx_en = mii_to_rmii_0_RMII_PHY_M_TX_EN;
   assign eth_rmii_txd[1:0] = mii_to_rmii_0_RMII_PHY_M_TXD;
+  assign led16_b_0 = ip_top_level_0_led16_b;
+  assign led16_g_0 = ip_top_level_0_led16_g;
+  assign led16_r_0 = ip_top_level_0_led16_r;
   assign mii_to_rmii_0_RMII_PHY_M_CRS_DV = eth_rmii_crs_dv;
   assign mii_to_rmii_0_RMII_PHY_M_RXD = eth_rmii_rxd[1:0];
   assign mii_to_rmii_0_RMII_PHY_M_RX_ER = eth_rmii_rx_er;
   assign reset_1 = reset;
+  assign sw_0_1 = sw[15:0];
   assign sys_clock_1 = sys_clock;
   assign usb_uart_txd = axi_uartlite_0_UART_TxD;
   design_1_axi_ethernetlite_0_0 axi_ethernetlite_0
@@ -540,6 +604,29 @@ module design_1
         .clk_out3(clk_wiz_1_clk_out3),
         .locked(clk_wiz_1_locked),
         .resetn(reset_1));
+  design_1_ip_top_level_0_0 ip_top_level_0
+       (.an(ip_top_level_0_an),
+        .book_busy(ip_top_level_0_book_busy),
+        .ca(ip_top_level_0_ca),
+        .cb(ip_top_level_0_cb),
+        .cc(ip_top_level_0_cc),
+        .cd(ip_top_level_0_cd),
+        .ce(ip_top_level_0_ce),
+        .cf(ip_top_level_0_cf),
+        .cg(ip_top_level_0_cg),
+        .clk_100mhz(microblaze_0_Clk),
+        .delete(parser_top_0_delete_out),
+        .dp(ip_top_level_0_dp),
+        .entry(parser_book_interface_0_order_to_add),
+        .led16_b(ip_top_level_0_led16_b),
+        .led16_g(ip_top_level_0_led16_g),
+        .led16_r(ip_top_level_0_led16_r),
+        .order_id(parser_top_0_order_id_out_cancel[7:0]),
+        .quantity(parser_top_0_quantity_out_cancel),
+        .request(parser_top_0_operation_out),
+        .start(parser_top_0_ready_out),
+        .stock_to_add(parser_top_0_stock_symbol_out_add[1:0]),
+        .sw(sw_0_1));
   design_1_master_axi_test_0_1 master_axi_test_0
        (.m00_axis_aclk(microblaze_0_Clk),
         .m00_axis_aresetn(util_vector_logic_0_Res[0]),
@@ -694,10 +781,10 @@ module design_1
         .S1_AXIS_TLAST(master_axi_test_0_M00_AXIS_TLAST),
         .S1_AXIS_TREADY(master_axi_test_0_M00_AXIS_TREADY),
         .S1_AXIS_TVALID(master_axi_test_0_M00_AXIS_TVALID),
-        .S2_AXIS_TDATA({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,parser_top_0_order_id_out_add}),
-        .S2_AXIS_TLAST(parser_top_0_last_master_out),
+        .S2_AXIS_TDATA({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,parser_top_1_price_out_add}),
+        .S2_AXIS_TLAST(parser_top_1_last_master_out),
         .S2_AXIS_TREADY(microblaze_0_S2_AXIS_TREADY),
-        .S2_AXIS_TVALID(parser_top_0_ready_out),
+        .S2_AXIS_TVALID(parser_top_1_ready_out),
         .Write_Strobe(microblaze_0_dlmb_1_WRITESTROBE));
   design_1_microblaze_0_axi_intc_0 microblaze_0_axi_intc
        (.interrupt_address(microblaze_0_interrupt_ADDRESS),
@@ -939,17 +1026,42 @@ module design_1
         .rmii2phy_tx_en(mii_to_rmii_0_RMII_PHY_M_TX_EN),
         .rmii2phy_txd(mii_to_rmii_0_RMII_PHY_M_TXD),
         .rst_n(reset_1));
+  design_1_parser_book_interface_0_0 parser_book_interface_0
+       (.order_id_out_add(parser_top_0_order_id_out_add),
+        .order_to_add(parser_book_interface_0_order_to_add),
+        .order_type_out_add(parser_top_0_order_type_out_add),
+        .price_out_add(parser_top_0_price_out_add),
+        .quantity_out_add(parser_top_0_quantity_out_add));
   design_1_parser_top_0_0 parser_top_0
        (.clk_in(microblaze_0_Clk),
         .data_in(microblaze_0_M2_AXIS_TDATA),
+        .delete_out(parser_top_0_delete_out),
         .enable_in(1'b0),
-        .last_master_out(parser_top_0_last_master_out),
+        .operation_out(parser_top_0_operation_out),
         .order_id_out_add(parser_top_0_order_id_out_add),
+        .order_id_out_cancel(parser_top_0_order_id_out_cancel),
+        .order_type_out_add(parser_top_0_order_type_out_add),
+        .price_out_add(parser_top_0_price_out_add),
+        .quantity_out_add(parser_top_0_quantity_out_add),
+        .quantity_out_cancel(parser_top_0_quantity_out_cancel),
         .ready_out(parser_top_0_ready_out),
         .ready_to_microblaze_out(parser_top_0_ready_to_microblaze_out),
         .reset_in(rst_clk_wiz_1_100M_mb_reset),
-        .valid_master_in(microblaze_0_S2_AXIS_TREADY),
+        .stock_symbol_out_add(parser_top_0_stock_symbol_out_add),
+        .sw(sw_0_1),
+        .valid_master_in(ip_top_level_0_book_busy),
         .valid_microblaze_in(microblaze_0_M2_AXIS_TVALID));
+  design_1_parser_top_1_0 parser_top_1
+       (.clk_in(microblaze_0_Clk),
+        .data_in({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .enable_in(1'b0),
+        .last_master_out(parser_top_1_last_master_out),
+        .price_out_add(parser_top_1_price_out_add),
+        .ready_out(parser_top_1_ready_out),
+        .reset_in(rst_clk_wiz_1_100M_mb_reset),
+        .sw({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .valid_master_in(microblaze_0_S2_AXIS_TREADY),
+        .valid_microblaze_in(1'b0));
   design_1_rst_clk_wiz_1_100M_0 rst_clk_wiz_1_100M
        (.aux_reset_in(1'b1),
         .bus_struct_reset(rst_clk_wiz_1_100M_bus_struct_reset),
@@ -966,6 +1078,11 @@ module design_1
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(rst_mig_7series_0_81M_peripheral_aresetn),
         .slowest_sync_clk(mig_7series_0_ui_clk));
+  design_1_system_ila_0_0 system_ila_0
+       (.clk(microblaze_0_Clk),
+        .probe0(microblaze_0_M2_AXIS_TDATA),
+        .probe1(microblaze_0_M2_AXIS_TVALID),
+        .probe2(parser_top_0_ready_to_microblaze_out));
   design_1_util_vector_logic_0_0 util_vector_logic_0
        (.Op1({rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset,rst_clk_wiz_1_100M_mb_reset}),
         .Res(util_vector_logic_0_Res));

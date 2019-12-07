@@ -337,7 +337,7 @@ In file included from ../src/echo.c:33:
       ^~~~~~
       mtmsr
 make: *** [src/echo.o] Error 1
-16:21:34 **** Build of project axi_stream_bsp ****
+18:38:34 **** Auto Build of project axi_stream_bsp ****
 make -k all 
 Running Make include in microblaze_0/libsrc/bram_v4_3/src
 make -C microblaze_0/libsrc/bram_v4_3/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
@@ -383,7 +383,7 @@ Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src
 make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
 Compiling uartlite
 Finished building libraries
-16:21:37 **** Build of configuration Debug for project axi_stream ****
+18:38:39 **** Auto Build of configuration Debug for project axi_stream ****
 make all 
 Building file: ../src/echo.c
 Invoking: MicroBlaze gcc compiler
@@ -413,31 +413,541 @@ In file included from ../src/echo.c:33:
       ^~~~~~
       mtmsr
 make: *** [src/echo.o] Error 1
-16:24:08 **** Auto Build of configuration Debug for project axi_stream ****
+18:45:50 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:84:24: error: 'validity' undeclared (first use in this function); did you mean 'va_list'?
+          fsl_isinvalid(validity);
+                        ^~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:85: note: in definition of macro 'fsl_isinvalid'
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                                                                     ^~~~~~
+../src/echo.c:84:24: note: each undeclared identifier is reported only once for each function it appears in
+          fsl_isinvalid(validity);
+                        ^~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:85: note: in definition of macro 'fsl_isinvalid'
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                                                                     ^~~~~~
+../src/echo.c:85:22: error: 'errority' undeclared (first use in this function); did you mean 'err_t'?
+          fsl_iserror(errority);
+                      ^~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:131:90: note: in definition of macro 'fsl_iserror'
+                                                               "andi\t%0,%0,0x10" : "=d" (error))
+                                                                                          ^~~~~
+../src/echo.c:78:16: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+          u16_t len;
+                ^~~
+../src/echo.c: At top level:
+../src/echo.c:134:13: error: 'i' undeclared here (not in a function)
+      buffer[i] = '\n';
+             ^
+../src/echo.c:134:6: warning: data definition has no type or storage class
+      buffer[i] = '\n';
+      ^~~~~~
+../src/echo.c:134:6: warning: type defaults to 'int' in declaration of 'buffer' [-Wimplicit-int]
+In file included from ../src/echo.c:34:
+../../axi_stream_bsp/microblaze_0/include/fsl.h:58:42: error: expected '(' before 'volatile'
+ #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
+                                          ^~~~~~~~
+../src/echo.c:138:10: note: in expansion of macro 'putfslx'
+          putfslx(p->payload, 2, FSL_NONBLOCKING);
+          ^~~~~~~
+../src/echo.c:139:10: warning: data definition has no type or storage class
+          validity = 0;
+          ^~~~~~~~
+../src/echo.c:139:10: warning: type defaults to 'int' in declaration of 'validity' [-Wimplicit-int]
+In file included from ../src/echo.c:34:
+../../axi_stream_bsp/microblaze_0/include/fsl.h:50:42: error: expected '(' before 'volatile'
+ #define getfslx(val, id, flags)      asm volatile (stringify(flags) "get\t%0,rfsl" stringify(id) : "=d" (val))
+                                          ^~~~~~~~
+../src/echo.c:140:10: note: in expansion of macro 'getfslx'
+          getfslx(buffer[i + 1], 2, FSL_NONBLOCKING);
+          ^~~~~~~
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:49: error: expected '(' before 'volatile'
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                                 ^~~~~~~~
+../src/echo.c:142:10: note: in expansion of macro 'fsl_isinvalid'
+          fsl_isinvalid(validity);
+          ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:49: error: expected '(' before 'volatile'
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                                 ^~~~~~~~
+../src/echo.c:143:10: note: in expansion of macro 'fsl_iserror'
+          fsl_iserror(errority);
+          ^~~~~~~~~~~
+../src/echo.c:145:10: warning: data definition has no type or storage class
+          buffer[i + 2] = '\n';
+          ^~~~~~
+../src/echo.c:145:10: warning: type defaults to 'int' in declaration of 'buffer' [-Wimplicit-int]
+../src/echo.c:148:45: error: expected ')' before '+' token
+                  tcp_write(tpcb, payload , i + 3, 1);
+                                             ^~
+                                             )
+../src/echo.c:151:2: warning: data definition has no type or storage class
+  pbuf_free(p);
+  ^~~~~~~~~
+../src/echo.c:151:2: warning: type defaults to 'int' in declaration of 'pbuf_free' [-Wimplicit-int]
+../src/echo.c:151:2: warning: parameter names (without types) in function declaration
+../src/echo.c:151:2: error: conflicting types for 'pbuf_free'
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:47,
+                 from ../src/echo.c:33:
+../../axi_stream_bsp/microblaze_0/include/lwip/pbuf.h:290:6: note: previous declaration of 'pbuf_free' was here
+ u8_t pbuf_free(struct pbuf *p);
+      ^~~~~~~~~
+../src/echo.c:153:2: error: expected identifier or '(' before 'return'
+  return ERR_OK;
+  ^~~~~~
+../src/echo.c:155:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+../src/echo.c: In function 'start_application':
+../src/echo.c:214:7: warning: unused variable 'errority' [-Wunused-variable]
+   int errority;
+       ^~~~~~~~
+../src/echo.c:213:7: warning: unused variable 'validity' [-Wunused-variable]
+   int validity;
+       ^~~~~~~~
+../src/echo.c:212:18: warning: unused variable 'payload' [-Wunused-variable]
+  volatile void * payload = buffer;
+                  ^~~~~~~
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'recv_callback':
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:84:10: note: in expansion of macro 'fsl_isinvalid'
+          fsl_isinvalid(validity);
+          ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:85:10: note: in expansion of macro 'fsl_iserror'
+          fsl_iserror(errority);
+          ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:96:10: note: in expansion of macro 'fsl_isinvalid'
+          fsl_isinvalid(validity);
+          ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:97:18: note: in expansion of macro 'fsl_iserror'
+                  fsl_iserror(errority);
+                  ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:100:10: note: in expansion of macro 'fsl_isinvalid'
+          fsl_isinvalid(validity);
+          ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:101:10: note: in expansion of macro 'fsl_iserror'
+          fsl_iserror(errority);
+          ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:111:10: note: in expansion of macro 'fsl_isinvalid'
+          fsl_isinvalid(validity);
+          ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:112:10: note: in expansion of macro 'fsl_iserror'
+          fsl_iserror(errority);
+          ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:128:18: note: in expansion of macro 'fsl_iserror'
+                  fsl_iserror(errority);
+                  ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:131:10: note: in expansion of macro 'fsl_isinvalid'
+          fsl_isinvalid(validity);
+          ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:132:10: note: in expansion of macro 'fsl_iserror'
+          fsl_iserror(errority);
+          ^~~~~~~~~~~
+../src/echo.c:133:6: warning: control reaches end of non-void function [-Wreturn-type]
+      }
+      ^
+make: *** [src/echo.o] Error 1
+18:47:00 **** Auto Build of configuration Debug for project axi_stream ****
 make all 
 Building file: ../src/echo.c
 Invoking: MicroBlaze gcc compiler
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
 ../src/echo.c: In function 'recv_callback':
-../src/echo.c:98:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
-  u16_t len;
-        ^~~
-../src/echo.c:96:8: warning: unused variable 'var_axi' [-Wunused-variable]
-  u32_t var_axi;
-        ^~~~~~~
-../src/echo.c:82:9: warning: unused variable 'rec_data' [-Wunused-variable]
-  char * rec_data = p->payload;
-         ^~~~~~~~
+../src/echo.c:80:16: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+          u16_t len;
+                ^~~
 ../src/echo.c: In function 'start_application':
-../src/echo.c:198:7: warning: unused variable 'errority' [-Wunused-variable]
+../src/echo.c:185:7: warning: unused variable 'errority' [-Wunused-variable]
    int errority;
        ^~~~~~~~
-../src/echo.c:197:7: warning: unused variable 'validity' [-Wunused-variable]
+../src/echo.c:184:7: warning: unused variable 'validity' [-Wunused-variable]
    int validity;
        ^~~~~~~~
-../src/echo.c:196:18: warning: unused variable 'payload' [-Wunused-variable]
+../src/echo.c:183:18: warning: unused variable 'payload' [-Wunused-variable]
   volatile void * payload = buffer;
                   ^~~~~~~
+Finished building: ../src/echo.c
+ 
+Building file: ../src/i2c_access.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/i2c_access.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/i2c_access.d" -MT"src/i2c_access.o" -o "src/i2c_access.o" "../src/i2c_access.c"
+Finished building: ../src/i2c_access.c
+ 
+Building file: ../src/iic_phyreset.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/iic_phyreset.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/iic_phyreset.d" -MT"src/iic_phyreset.o" -o "src/iic_phyreset.o" "../src/iic_phyreset.c"
+Finished building: ../src/iic_phyreset.c
+ 
+Building file: ../src/main.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/platform.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building file: ../src/platform_mb.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform_mb.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform_mb.d" -MT"src/platform_mb.o" -o "src/platform_mb.o" "../src/platform_mb.c"
+Finished building: ../src/platform_mb.c
+ 
+Building file: ../src/platform_ppc.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform_ppc.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform_ppc.d" -MT"src/platform_ppc.o" -o "src/platform_ppc.o" "../src/platform_ppc.c"
+Finished building: ../src/platform_ppc.c
+ 
+Building file: ../src/platform_zynq.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform_zynq.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform_zynq.d" -MT"src/platform_zynq.o" -o "src/platform_zynq.o" "../src/platform_zynq.c"
+Finished building: ../src/platform_zynq.c
+ 
+Building file: ../src/platform_zynqmp.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform_zynqmp.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform_zynqmp.d" -MT"src/platform_zynqmp.o" -o "src/platform_zynqmp.o" "../src/platform_zynqmp.c"
+Finished building: ../src/platform_zynqmp.c
+ 
+Building file: ../src/sfp.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sfp.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/sfp.d" -MT"src/sfp.o" -o "src/sfp.o" "../src/sfp.c"
+Finished building: ../src/sfp.c
+ 
+Building file: ../src/si5324.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/si5324.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/si5324.d" -MT"src/si5324.o" -o "src/si5324.o" "../src/si5324.c"
+Finished building: ../src/si5324.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112508	   1792	3962324	4076624	 3e3450	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+18:47:18 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+18:49:07 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+18:53:56 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+18:55:20 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+18:58:46 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+18:59:24 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+14:19:59 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/main.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112508	   1792	3962324	4076624	 3e3450	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+14:20:02 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'transfer_data':
+../src/echo.c:49:19: error: 'validity' undeclared (first use in this function); did you mean 'va_list'?
+     fsl_isinvalid(validity);
+                   ^~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:85: note: in definition of macro 'fsl_isinvalid'
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                                                                     ^~~~~~
+../src/echo.c:49:19: note: each undeclared identifier is reported only once for each function it appears in
+     fsl_isinvalid(validity);
+                   ^~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:85: note: in definition of macro 'fsl_isinvalid'
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                                                                     ^~~~~~
+../src/echo.c:50:17: error: 'errority' undeclared (first use in this function); did you mean 'err_t'?
+     fsl_iserror(errority);
+                 ^~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:131:90: note: in definition of macro 'fsl_iserror'
+                                                               "andi\t%0,%0,0x10" : "=d" (error))
+                                                                                          ^~~~~
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:91:16: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+          u16_t len;
+                ^~~
+../src/echo.c: In function 'start_application':
+../src/echo.c:200:7: warning: unused variable 'errority' [-Wunused-variable]
+   int errority;
+       ^~~~~~~~
+../src/echo.c:199:7: warning: unused variable 'validity' [-Wunused-variable]
+   int validity;
+       ^~~~~~~~
+../src/echo.c:198:18: warning: unused variable 'payload' [-Wunused-variable]
+  volatile void * payload = buffer;
+                  ^~~~~~~
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'transfer_data':
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:49:5: note: in expansion of macro 'fsl_isinvalid'
+     fsl_isinvalid(validity);
+     ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:50:5: note: in expansion of macro 'fsl_iserror'
+     fsl_iserror(errority);
+     ^~~~~~~~~~~
+make: *** [src/echo.o] Error 1
+14:20:22 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'transfer_data':
+../src/echo.c:50:17: error: 'errority' undeclared (first use in this function); did you mean 'err_t'?
+     fsl_iserror(errority);
+                 ^~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:131:90: note: in definition of macro 'fsl_iserror'
+                                                               "andi\t%0,%0,0x10" : "=d" (error))
+                                                                                          ^~~~~
+../src/echo.c:50:17: note: each undeclared identifier is reported only once for each function it appears in
+     fsl_iserror(errority);
+                 ^~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:131:90: note: in definition of macro 'fsl_iserror'
+                                                               "andi\t%0,%0,0x10" : "=d" (error))
+                                                                                          ^~~~~
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:91:16: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+          u16_t len;
+                ^~~
+../src/echo.c: In function 'start_application':
+../src/echo.c:200:7: warning: unused variable 'errority' [-Wunused-variable]
+   int errority;
+       ^~~~~~~~
+../src/echo.c:199:7: warning: unused variable 'validity' [-Wunused-variable]
+   int validity;
+       ^~~~~~~~
+../src/echo.c:198:18: warning: unused variable 'payload' [-Wunused-variable]
+  volatile void * payload = buffer;
+                  ^~~~~~~
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'transfer_data':
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:50:5: note: in expansion of macro 'fsl_iserror'
+     fsl_iserror(errority);
+     ^~~~~~~~~~~
+make: *** [src/echo.o] Error 1
+14:20:25 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'transfer_data':
+../src/echo.c:50:5: error: expected expression before '/' token
+     /fsl_iserror(errority);
+     ^
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:91:16: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+          u16_t len;
+                ^~~
+../src/echo.c: In function 'start_application':
+../src/echo.c:200:7: warning: unused variable 'errority' [-Wunused-variable]
+   int errority;
+       ^~~~~~~~
+../src/echo.c:199:7: warning: unused variable 'validity' [-Wunused-variable]
+   int validity;
+       ^~~~~~~~
+../src/echo.c:198:18: warning: unused variable 'payload' [-Wunused-variable]
+  volatile void * payload = buffer;
+                  ^~~~~~~
+make: *** [src/echo.o] Error 1
+14:20:27 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:91:16: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+          u16_t len;
+                ^~~
+../src/echo.c: In function 'start_application':
+../src/echo.c:200:7: warning: unused variable 'errority' [-Wunused-variable]
+   int errority;
+       ^~~~~~~~
+../src/echo.c:199:7: warning: unused variable 'validity' [-Wunused-variable]
+   int validity;
+       ^~~~~~~~
+../src/echo.c:198:18: warning: unused variable 'payload' [-Wunused-variable]
+  volatile void * payload = buffer;
+                  ^~~~~~~
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112596	   1792	3962324	4076712	 3e34a8	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+14:20:39 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:91:16: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+          u16_t len;
+                ^~~
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112588	   1792	3962324	4076704	 3e34a0	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+14:32:38 **** Build of project axi_stream_bsp ****
+make -k all 
+Running Make include in microblaze_0/libsrc/bram_v4_3/src
+make -C microblaze_0/libsrc/bram_v4_3/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/cpu_v2_9/src
+make -C microblaze_0/libsrc/cpu_v2_9/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/emaclite_v4_4/src
+make -C microblaze_0/libsrc/emaclite_v4_4/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/intc_v3_9/src
+make -C microblaze_0/libsrc/intc_v3_9/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/lwip211_v1_0/src
+make -C microblaze_0/libsrc/lwip211_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/standalone_v7_0/src
+make -C microblaze_0/libsrc/standalone_v7_0/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/tmrctr_v4_5/src
+make -C microblaze_0/libsrc/tmrctr_v4_5/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/uartlite_v3_2/src
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make libs in microblaze_0/libsrc/bram_v4_3/src
+make -C microblaze_0/libsrc/bram_v4_3/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling bram
+Running Make libs in microblaze_0/libsrc/cpu_v2_9/src
+make -C microblaze_0/libsrc/cpu_v2_9/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling cpu
+Running Make libs in microblaze_0/libsrc/emaclite_v4_4/src
+make -C microblaze_0/libsrc/emaclite_v4_4/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling emaclite
+Running Make libs in microblaze_0/libsrc/intc_v3_9/src
+make -C microblaze_0/libsrc/intc_v3_9/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling intc
+Running Make libs in microblaze_0/libsrc/lwip211_v1_0/src
+make -C microblaze_0/libsrc/lwip211_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling lwip src and adapter files
+Running Make libs in microblaze_0/libsrc/standalone_v7_0/src
+make -C microblaze_0/libsrc/standalone_v7_0/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling standalone
+microblaze_sleep.c:77:9: note: #pragma message: For the sleep routines, assembly instructions are used
+ #pragma message ("For the sleep routines, assembly instructions are used")
+         ^~~~~~~
+Running Make libs in microblaze_0/libsrc/tmrctr_v4_5/src
+make -C microblaze_0/libsrc/tmrctr_v4_5/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling tmrctr
+Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling uartlite
+Finished building libraries
+14:32:43 **** Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:91:16: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+          u16_t len;
+                ^~~
 Finished building: ../src/echo.c
  
 Building file: ../src/main.c
@@ -463,43 +973,18 @@ Finished building target: axi_stream.elf
 Invoking: MicroBlaze Print Size
 mb-size axi_stream.elf  |tee "axi_stream.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 112304	   1792	3962320	4076416	 3e3380	axi_stream.elf
+ 112588	   1792	3962324	4076704	 3e34a0	axi_stream.elf
 Finished building: axi_stream.elf.size
  
-16:27:04 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-16:27:08 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-16:30:16 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-16:30:51 **** Auto Build of configuration Debug for project axi_stream ****
+14:33:31 **** Auto Build of configuration Debug for project axi_stream ****
 make all 
 Building file: ../src/echo.c
 Invoking: MicroBlaze gcc compiler
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
 ../src/echo.c: In function 'recv_callback':
-../src/echo.c:98:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
-  u16_t len;
-        ^~~
-../src/echo.c:96:8: warning: unused variable 'var_axi' [-Wunused-variable]
-  u32_t var_axi;
-        ^~~~~~~
-../src/echo.c:82:9: warning: unused variable 'rec_data' [-Wunused-variable]
-  char * rec_data = p->payload;
-         ^~~~~~~~
-../src/echo.c: In function 'start_application':
-../src/echo.c:198:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:197:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:196:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
+../src/echo.c:91:16: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+          u16_t len;
+                ^~~
 Finished building: ../src/echo.c
  
 Building target: axi_stream.elf
@@ -510,147 +995,213 @@ Finished building target: axi_stream.elf
 Invoking: MicroBlaze Print Size
 mb-size axi_stream.elf  |tee "axi_stream.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 112304	   1792	3962320	4076416	 3e3380	axi_stream.elf
+ 112532	   1792	3962324	4076648	 3e3468	axi_stream.elf
 Finished building: axi_stream.elf.size
  
-16:34:11 **** Auto Build of configuration Debug for project axi_stream ****
+15:08:48 **** Auto Build of project axi_stream_bsp ****
+make -k all 
+Running Make include in microblaze_0/libsrc/bram_v4_3/src
+make -C microblaze_0/libsrc/bram_v4_3/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/cpu_v2_9/src
+make -C microblaze_0/libsrc/cpu_v2_9/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/emaclite_v4_4/src
+make -C microblaze_0/libsrc/emaclite_v4_4/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/intc_v3_9/src
+make -C microblaze_0/libsrc/intc_v3_9/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/lwip211_v1_0/src
+make -C microblaze_0/libsrc/lwip211_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/standalone_v7_0/src
+make -C microblaze_0/libsrc/standalone_v7_0/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/tmrctr_v4_5/src
+make -C microblaze_0/libsrc/tmrctr_v4_5/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/uartlite_v3_2/src
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make libs in microblaze_0/libsrc/bram_v4_3/src
+make -C microblaze_0/libsrc/bram_v4_3/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling bram
+mb-ar: creating ../../../lib/libxil.a
+Running Make libs in microblaze_0/libsrc/cpu_v2_9/src
+make -C microblaze_0/libsrc/cpu_v2_9/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling cpu
+Running Make libs in microblaze_0/libsrc/emaclite_v4_4/src
+make -C microblaze_0/libsrc/emaclite_v4_4/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling emaclite
+Running Make libs in microblaze_0/libsrc/intc_v3_9/src
+make -C microblaze_0/libsrc/intc_v3_9/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling intc
+Running Make libs in microblaze_0/libsrc/lwip211_v1_0/src
+make -C microblaze_0/libsrc/lwip211_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling lwip src and adapter files
+contrib/ports/xilinx/netif/xadapter.c: In function 'eth_link_detect':
+contrib/ports/xilinx/netif/xadapter.c:364:8: warning: unused variable 'link_speed' [-Wunused-variable]
+  u32_t link_speed, phy_link_status;
+        ^~~~~~~~~~
+Running Make libs in microblaze_0/libsrc/standalone_v7_0/src
+make -C microblaze_0/libsrc/standalone_v7_0/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling standalone
+microblaze_sleep.c:77:9: note: #pragma message: For the sleep routines, assembly instructions are used
+ #pragma message ("For the sleep routines, assembly instructions are used")
+         ^~~~~~~
+Running Make libs in microblaze_0/libsrc/tmrctr_v4_5/src
+make -C microblaze_0/libsrc/tmrctr_v4_5/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling tmrctr
+Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling uartlite
+Finished building libraries
+15:08:54 **** Auto Build of configuration Debug for project axi_stream ****
 make all 
 Building file: ../src/echo.c
 Invoking: MicroBlaze gcc compiler
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
 ../src/echo.c: In function 'recv_callback':
-../src/echo.c:126:14: error: redefinition of 'payload'
-       void * payload = &buffer;
-              ^~~~~~~
-../src/echo.c:76:8: note: previous definition of 'payload' was here
-  void *payload = buffer; //void * payload = &buffer;
-        ^~~~~~~
-../src/echo.c:97:8: warning: unused variable 'var_axi' [-Wunused-variable]
-  u32_t var_axi;
-        ^~~~~~~
-../src/echo.c: In function 'start_application':
-../src/echo.c:201:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:200:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:199:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-make: *** [src/echo.o] Error 1
-16:34:53 **** Auto Build of configuration Debug for project axi_stream ****
+../src/echo.c:91:16: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+          u16_t len;
+                ^~~
+Finished building: ../src/echo.c
+ 
+Building file: ../src/i2c_access.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/i2c_access.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/i2c_access.d" -MT"src/i2c_access.o" -o "src/i2c_access.o" "../src/i2c_access.c"
+Finished building: ../src/i2c_access.c
+ 
+Building file: ../src/iic_phyreset.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/iic_phyreset.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/iic_phyreset.d" -MT"src/iic_phyreset.o" -o "src/iic_phyreset.o" "../src/iic_phyreset.c"
+Finished building: ../src/iic_phyreset.c
+ 
+Building file: ../src/main.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/platform.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building file: ../src/platform_mb.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform_mb.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform_mb.d" -MT"src/platform_mb.o" -o "src/platform_mb.o" "../src/platform_mb.c"
+Finished building: ../src/platform_mb.c
+ 
+Building file: ../src/sfp.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sfp.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/sfp.d" -MT"src/sfp.o" -o "src/sfp.o" "../src/sfp.c"
+Finished building: ../src/sfp.c
+ 
+Building file: ../src/si5324.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/si5324.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/si5324.d" -MT"src/si5324.o" -o "src/si5324.o" "../src/si5324.c"
+Finished building: ../src/si5324.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112532	   1792	3962324	4076648	 3e3468	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+15:10:08 **** Auto Build of project axi_stream_bsp ****
+make -k all 
+Running Make include in microblaze_0/libsrc/bram_v4_3/src
+make -C microblaze_0/libsrc/bram_v4_3/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/cpu_v2_9/src
+make -C microblaze_0/libsrc/cpu_v2_9/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/emaclite_v4_4/src
+make -C microblaze_0/libsrc/emaclite_v4_4/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/intc_v3_9/src
+make -C microblaze_0/libsrc/intc_v3_9/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/lwip211_v1_0/src
+make -C microblaze_0/libsrc/lwip211_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/standalone_v7_0/src
+make -C microblaze_0/libsrc/standalone_v7_0/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/tmrctr_v4_5/src
+make -C microblaze_0/libsrc/tmrctr_v4_5/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/uartlite_v3_2/src
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make libs in microblaze_0/libsrc/bram_v4_3/src
+make -C microblaze_0/libsrc/bram_v4_3/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling bram
+mb-ar: creating ../../../lib/libxil.a
+Running Make libs in microblaze_0/libsrc/cpu_v2_9/src
+make -C microblaze_0/libsrc/cpu_v2_9/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling cpu
+Running Make libs in microblaze_0/libsrc/emaclite_v4_4/src
+make -C microblaze_0/libsrc/emaclite_v4_4/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling emaclite
+Running Make libs in microblaze_0/libsrc/intc_v3_9/src
+make -C microblaze_0/libsrc/intc_v3_9/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling intc
+Running Make libs in microblaze_0/libsrc/lwip211_v1_0/src
+make -C microblaze_0/libsrc/lwip211_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling lwip src and adapter files
+contrib/ports/xilinx/netif/xadapter.c: In function 'eth_link_detect':
+contrib/ports/xilinx/netif/xadapter.c:364:8: warning: unused variable 'link_speed' [-Wunused-variable]
+  u32_t link_speed, phy_link_status;
+        ^~~~~~~~~~
+Running Make libs in microblaze_0/libsrc/standalone_v7_0/src
+make -C microblaze_0/libsrc/standalone_v7_0/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling standalone
+microblaze_sleep.c:77:9: note: #pragma message: For the sleep routines, assembly instructions are used
+ #pragma message ("For the sleep routines, assembly instructions are used")
+         ^~~~~~~
+Running Make libs in microblaze_0/libsrc/tmrctr_v4_5/src
+make -C microblaze_0/libsrc/tmrctr_v4_5/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling tmrctr
+Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-frequency -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling uartlite
+Finished building libraries
+15:10:14 **** Auto Build of configuration Debug for project axi_stream ****
 make all 
 Building file: ../src/echo.c
 Invoking: MicroBlaze gcc compiler
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
 ../src/echo.c: In function 'recv_callback':
-../src/echo.c:97:8: warning: unused variable 'var_axi' [-Wunused-variable]
-  u32_t var_axi;
-        ^~~~~~~
-../src/echo.c: In function 'start_application':
-../src/echo.c:201:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:200:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:199:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
+../src/echo.c:91:16: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+          u16_t len;
+                ^~~
 Finished building: ../src/echo.c
  
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112360	   1792	3962320	4076472	 3e33b8	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-16:35:57 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
+Building file: ../src/i2c_access.c
 Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'recv_callback':
-../src/echo.c:97:8: warning: unused variable 'var_axi' [-Wunused-variable]
-  u32_t var_axi;
-        ^~~~~~~
-../src/echo.c: In function 'start_application':
-../src/echo.c:203:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:202:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:201:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/i2c_access.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/i2c_access.d" -MT"src/i2c_access.o" -o "src/i2c_access.o" "../src/i2c_access.c"
+Finished building: ../src/i2c_access.c
  
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112380	   1792	3962324	4076496	 3e33d0	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-16:37:03 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
+Building file: ../src/iic_phyreset.c
 Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'recv_callback':
-../src/echo.c:97:8: warning: unused variable 'var_axi' [-Wunused-variable]
-  u32_t var_axi;
-        ^~~~~~~
-../src/echo.c: In function 'start_application':
-../src/echo.c:203:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:202:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:201:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/iic_phyreset.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/iic_phyreset.d" -MT"src/iic_phyreset.o" -o "src/iic_phyreset.o" "../src/iic_phyreset.c"
+Finished building: ../src/iic_phyreset.c
  
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112412	   1792	3962324	4076528	 3e33f0	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-16:37:24 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
+Building file: ../src/main.c
 Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:204:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:203:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:202:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/platform.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building file: ../src/platform_mb.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform_mb.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform_mb.d" -MT"src/platform_mb.o" -o "src/platform_mb.o" "../src/platform_mb.c"
+Finished building: ../src/platform_mb.c
+ 
+Building file: ../src/sfp.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sfp.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/sfp.d" -MT"src/sfp.o" -o "src/sfp.o" "../src/sfp.c"
+Finished building: ../src/sfp.c
+ 
+Building file: ../src/si5324.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/si5324.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/si5324.d" -MT"src/si5324.o" -o "src/si5324.o" "../src/si5324.c"
+Finished building: ../src/si5324.c
  
 Building target: axi_stream.elf
 Invoking: MicroBlaze gcc linker
@@ -660,1260 +1211,9 @@ Finished building target: axi_stream.elf
 Invoking: MicroBlaze Print Size
 mb-size axi_stream.elf  |tee "axi_stream.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 112412	   1792	3962324	4076528	 3e33f0	axi_stream.elf
+ 112244	   1792	3962324	4076360	 3e3348	axi_stream.elf
 Finished building: axi_stream.elf.size
  
-16:37:52 **** Incremental Build of configuration Debug for project axi_stream ****
+15:19:41 **** Incremental Build of configuration Debug for project axi_stream ****
 make all 
 make: Nothing to be done for `all'.
-16:39:35 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-16:39:42 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-16:42:40 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:206:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:205:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:204:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112432	   1792	3962320	4076544	 3e3400	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-16:42:44 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-16:46:51 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-16:48:16 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:216:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-       tcp_write(pcb, payload, 1, 1);
-                      ^~~~~~~
-In file included from ../src/echo.c:33:
-../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
- err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
-                                                    ~~~~~~~~~~~~^~~~~~~
-In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
-                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
-                 from ../src/echo.c:32:
-../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: impossible constraint in 'asm'
- #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
-                                 ^~~
-../src/echo.c:211:3: note: in expansion of macro 'getfsl'
-   getfsl(buffer,3);
-   ^~~~~~
-make: *** [src/echo.o] Error 1
-16:50:06 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'recv_callback':
-../src/echo.c:125:22: error: macro "putfslx" requires 3 arguments, but only 2 given
-  putfslx(p->payload,3);
-                      ^
-../src/echo.c:125:2: error: 'putfslx' undeclared (first use in this function); did you mean 'puts'?
-  putfslx(p->payload,3);
-  ^~~~~~~
-  puts
-../src/echo.c:125:2: note: each undeclared identifier is reported only once for each function it appears in
-../src/echo.c: In function 'start_application':
-../src/echo.c:217:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-       tcp_write(pcb, payload, 1, 1);
-                      ^~~~~~~
-In file included from ../src/echo.c:33:
-../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
- err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
-                                                    ~~~~~~~~~~~~^~~~~~~
-make: *** [src/echo.o] Error 1
-16:50:25 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:217:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-       tcp_write(pcb, payload, 1, 1);
-                      ^~~~~~~
-In file included from ../src/echo.c:33:
-../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
- err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
-                                                    ~~~~~~~~~~~~^~~~~~~
-In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
-                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
-                 from ../src/echo.c:32:
-../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: impossible constraint in 'asm'
- #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
-                                 ^~~
-../src/echo.c:212:3: note: in expansion of macro 'getfsl'
-   getfsl(buffer,3);
-   ^~~~~~
-make: *** [src/echo.o] Error 1
-16:50:44 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:217:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-       tcp_write(pcb, payload, 1, 1);
-                      ^~~~~~~
-In file included from ../src/echo.c:33:
-../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
- err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
-                                                    ~~~~~~~~~~~~^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112508	   1792	3962324	4076624	 3e3450	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-16:51:04 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:217:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-       tcp_write(pcb, payload, 1, 1);
-                      ^~~~~~~
-In file included from ../src/echo.c:33:
-../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
- err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
-                                                    ~~~~~~~~~~~~^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112512	   1792	3962320	4076624	 3e3450	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-16:51:53 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:221:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-       tcp_write(pcb, payload, 1, 1);
-                      ^~~~~~~
-In file included from ../src/echo.c:33:
-../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
- err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
-                                                    ~~~~~~~~~~~~^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112552	   1792	3962320	4076664	 3e3478	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-16:53:38 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:221:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-       tcp_write(pcb, payload, 1, 1);
-                      ^~~~~~~
-In file included from ../src/echo.c:33:
-../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
- err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
-                                                    ~~~~~~~~~~~~^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112552	   1792	3962320	4076664	 3e3478	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-16:56:24 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-16:57:39 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:222:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-       tcp_write(pcb, payload, 1, 1);
-                      ^~~~~~~
-In file included from ../src/echo.c:33:
-../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
- err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
-                                                    ~~~~~~~~~~~~^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112552	   1792	3962320	4076664	 3e3478	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-16:57:46 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-16:58:29 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-16:59:34 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:211:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:210:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:209:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112484	   1792	3962324	4076600	 3e3438	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-16:59:41 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:00:29 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:01:23 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:211:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:210:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:209:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112484	   1792	3962324	4076600	 3e3438	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:01:34 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:04:27 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:222:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-       tcp_write(pcb, payload, 1, 1);
-                      ^~~~~~~
-In file included from ../src/echo.c:33:
-../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
- err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
-                                                    ~~~~~~~~~~~~^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112552	   1792	3962320	4076664	 3e3478	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:04:32 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:06:11 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:211:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:210:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:209:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112484	   1792	3962324	4076600	 3e3438	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:07:24 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:211:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:210:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:209:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112484	   1792	3962324	4076600	 3e3438	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:07:27 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:222:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-       tcp_write(pcb, payload, 1, 1);
-                      ^~~~~~~
-In file included from ../src/echo.c:33:
-../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
- err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
-                                                    ~~~~~~~~~~~~^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112552	   1792	3962320	4076664	 3e3478	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:07:30 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:08:09 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:211:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:210:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:209:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112484	   1792	3962324	4076600	 3e3438	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:10:19 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'recv_callback':
-../src/echo.c:138:13: error: 'pcb' undeclared (first use in this function); did you mean 'tpcb'?
-   tcp_write(pcb, payload, 1, 1);
-             ^~~
-             tpcb
-../src/echo.c:138:13: note: each undeclared identifier is reported only once for each function it appears in
-../src/echo.c: In function 'start_application':
-../src/echo.c:221:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:220:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:219:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-make: *** [src/echo.o] Error 1
-17:10:37 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:221:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:220:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:219:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112472	   1792	3962320	4076584	 3e3428	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:11:32 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:232:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-       tcp_write(pcb, payload, 1, 1);
-                      ^~~~~~~
-In file included from ../src/echo.c:33:
-../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
- err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
-                                                    ~~~~~~~~~~~~^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112552	   1792	3962320	4076664	 3e3478	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:13:50 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:221:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:220:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:219:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112484	   1792	3962324	4076600	 3e3438	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:13:55 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:14:34 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:15:38 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:221:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:220:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:219:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112484	   1792	3962324	4076600	 3e3438	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:15:40 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:15:54 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:232:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-       tcp_write(pcb, payload, 1, 1);
-                      ^~~~~~~
-In file included from ../src/echo.c:33:
-../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
- err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
-                                                    ~~~~~~~~~~~~^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112552	   1792	3962320	4076664	 3e3478	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:17:03 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:18:16 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:221:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:220:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:219:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112484	   1792	3962324	4076600	 3e3438	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:18:17 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:19:28 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:232:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-       tcp_write(pcb, payload, 1, 1);
-                      ^~~~~~~
-In file included from ../src/echo.c:33:
-../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
- err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
-                                                    ~~~~~~~~~~~~^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112552	   1792	3962320	4076664	 3e3478	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:21:50 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:234:22: warning: passing argument 2 of 'tcp_write' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
-       tcp_write(pcb, payload, 1, 1);
-                      ^~~~~~~
-In file included from ../src/echo.c:33:
-../../axi_stream_bsp/microblaze_0/include/lwip/tcp.h:473:64: note: expected 'const void *' but argument is of type 'volatile void *'
- err_t            tcp_write   (struct tcp_pcb *pcb, const void *dataptr, u16_t len,
-                                                    ~~~~~~~~~~~~^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112584	   1792	3962320	4076696	 3e3498	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:23:18 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:223:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:222:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:221:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112516	   1792	3962324	4076632	 3e3458	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:23:24 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:24:01 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:27:17 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:27:39 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:223:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:222:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:221:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112600	   1792	3962320	4076712	 3e34a8	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:27:52 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:222:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:221:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:220:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112600	   1792	3962320	4076712	 3e34a8	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:28:48 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:29:19 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:222:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:221:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:220:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112600	   1792	3962320	4076712	 3e34a8	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:29:28 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:30:27 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:222:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:221:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:220:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112504	   1792	3962320	4076616	 3e3448	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:30:30 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:31:47 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:220:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:219:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:218:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112484	   1792	3962324	4076600	 3e3438	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:31:49 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:32:17 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:220:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:219:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:218:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112572	   1792	3962324	4076688	 3e3490	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:32:38 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:35:45 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'start_application':
-../src/echo.c:220:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:219:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:218:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112612	   1792	3962324	4076728	 3e34b8	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:35:50 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:36:38 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:37:46 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'recv_callback':
-../src/echo.c:100:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
-  u16_t len;
-        ^~~
-../src/echo.c: In function 'start_application':
-../src/echo.c:220:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:219:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:218:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112512	   1792	3962320	4076624	 3e3450	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-17:37:50 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-17:57:17 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-18:02:53 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-18:04:41 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'recv_callback':
-../src/echo.c:100:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
-  u16_t len;
-        ^~~
-../src/echo.c: In function 'start_application':
-../src/echo.c:220:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:219:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:218:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112520	   1792	3962320	4076632	 3e3458	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-18:04:45 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-18:05:47 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-18:06:58 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-18:07:39 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'recv_callback':
-../src/echo.c:100:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
-  u16_t len;
-        ^~~
-../src/echo.c: In function 'start_application':
-../src/echo.c:220:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:219:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:218:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112512	   1792	3962320	4076624	 3e3450	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-18:07:43 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-18:08:46 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-18:13:16 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'recv_callback':
-../src/echo.c:100:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
-  u16_t len;
-        ^~~
-../src/echo.c: In function 'start_application':
-../src/echo.c:220:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:219:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:218:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112520	   1792	3962320	4076632	 3e3458	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-18:14:40 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-18:15:27 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'recv_callback':
-../src/echo.c:100:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
-  u16_t len;
-        ^~~
-../src/echo.c: In function 'start_application':
-../src/echo.c:220:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:219:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:218:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112512	   1792	3962320	4076624	 3e3450	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-18:15:36 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-18:15:56 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'recv_callback':
-../src/echo.c:100:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
-  u16_t len;
-        ^~~
-../src/echo.c: In function 'start_application':
-../src/echo.c:222:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:221:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:220:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112544	   1792	3962320	4076656	 3e3470	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-18:17:55 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'recv_callback':
-../src/echo.c:100:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
-  u16_t len;
-        ^~~
-../src/echo.c: In function 'start_application':
-../src/echo.c:222:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:221:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:220:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112512	   1792	3962320	4076624	 3e3450	axi_stream.elf
-Finished building: axi_stream.elf.size
- 
-18:19:30 **** Incremental Build of configuration Debug for project axi_stream ****
-make all 
-make: Nothing to be done for `all'.
-18:26:41 **** Auto Build of configuration Debug for project axi_stream ****
-make all 
-Building file: ../src/echo.c
-Invoking: MicroBlaze gcc compiler
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
-../src/echo.c: In function 'recv_callback':
-../src/echo.c:100:8: warning: variable 'len' set but not used [-Wunused-but-set-variable]
-  u16_t len;
-        ^~~
-../src/echo.c: In function 'start_application':
-../src/echo.c:222:7: warning: unused variable 'errority' [-Wunused-variable]
-   int errority;
-       ^~~~~~~~
-../src/echo.c:221:7: warning: unused variable 'validity' [-Wunused-variable]
-   int validity;
-       ^~~~~~~~
-../src/echo.c:220:18: warning: unused variable 'payload' [-Wunused-variable]
-  volatile void * payload = buffer;
-                  ^~~~~~~
-Finished building: ../src/echo.c
- 
-Building target: axi_stream.elf
-Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
-Finished building target: axi_stream.elf
- 
-Invoking: MicroBlaze Print Size
-mb-size axi_stream.elf  |tee "axi_stream.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 112508	   1792	3962324	4076624	 3e3450	axi_stream.elf
-Finished building: axi_stream.elf.size
- 

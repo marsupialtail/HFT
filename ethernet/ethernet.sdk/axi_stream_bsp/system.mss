@@ -81,6 +81,7 @@ BEGIN LIBRARY
  PARAMETER dhcp_does_arp_check = true
  PARAMETER lwip_dhcp = true
  PARAMETER pbuf_pool_size = 2048
+ PARAMETER phy_link_speed = CONFIG_LINKSPEED100
 END
 
 

@@ -79,6 +79,8 @@ set rc [catch {
   /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ip_repo/parser_feed_1.0
   /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/microblaze_com_axi
   /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs
+  /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/cordic
+  /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser_book_interface
 } [current_project]
   update_ip_catalog
   set_property ip_output_repo /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.cache/ip [current_project]

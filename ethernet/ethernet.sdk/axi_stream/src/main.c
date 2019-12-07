@@ -232,11 +232,13 @@ int main()
 		if (TcpFastTmrFlag) {
 			tcp_fasttmr();
 			TcpFastTmrFlag = 0;
+
 		}
 		if (TcpSlowTmrFlag) {
 			tcp_slowtmr();
 			TcpSlowTmrFlag = 0;
 		}
+
 		xemacif_input(echo_netif);
 		transfer_data();
 	}

@@ -38,9 +38,20 @@
 
 //char buffer [32];
 //volatile void * payload = buffer;
-
+struct tcp_pcb *global_pcb;
 
 int transfer_data() {
+	uint val;
+	void * payload = &val;
+    int validity;
+    getfsl(payload, 2);
+
+    fsl_isinvalid(validity);
+    //fsl_iserror(errority);
+
+      if(validity == 0) {
+            tcp_write(global_pcb, payload , 1, 1); //not sure how to get a tcp_pcb
+      }
 	return 0;
 }
 
@@ -64,98 +75,61 @@ err_t recv_callback(void *arg, struct tcp_pcb *tpcb,
 		tcp_recv(tpcb, NULL);
 		return ERR_OK;
 	}
-
 	/* indicate that the packet has been received */
 	tcp_recved(tpcb, p->len);
 
-
-    /* axi stream put and get*/
-//	putfsl(p->payload, 3);
-//
 	char buffer [32];
-	void * payload = buffer; //void * payload = &buffer;
-		int validity = 1;
-		int errority = 1;
-//
-//	for(int i = 0; i < 32; i += 1) {
-//		buffer[i] = i + 40;
-//	}
-//
-//	char * rec_data = p->payload;
-//	for(int i = 0; i < p->len; i += 1 ) {
-//		putfslx(p->payload + i*4, 1, FSL_DEFAULT); //putfslx(p->payload + i*4, 1, FSL_NONBLOCKING);
-//		fsl_isinvalid(validity);
-//		fsl_iserror(errority);
-//		//getfslx(buffer[i], 1, FSL_NONBLOCKING_EXCEPTION_CONTROL_ATOMIC);
-//		getfslx(buffer[i], 1, FSL_NONBLOCKING);
-//	}
-//
-//	tcp_write(tpcb, payload, p->len , 1);
+	void * payload = buffer;
+	int validity = 1;
+	int errority = 1;
 
 	/* axi stream get and send 0,1 axis ports */
 
-	//u32_t var_axi;
-	//  void *payload = &var_axi;
-	//	  getfslx(var_axi,0, FSL_DEFAULT);
-	u16_t len;
-	len = 8;
-	u16_t loop_length = 4;
-	int i = 0;
-	for(; i < loop_length; i += 1) {
-	  getfsl(buffer[i], 0);//EXCEPTION_CONTROL_ATOMIC);
-  	fsl_isinvalid(validity);
-  	fsl_iserror(errority);
-	}
+	        //u32_t var_axi;
+	        //  void *payload = &var_axi;
+	        //        getfslx(var_axi,0, FSL_DEFAULT);
+	        u16_t len;
+	        len = 8;
+	        u16_t loop_length = 4;
+	        int i = 0;
+	        for(; i < loop_length; i += 1) {
+	          getfsl(buffer[i], 0);//EXCEPTION_CONTROL_ATOMIC);
+	        fsl_isinvalid(validity);
+	        fsl_iserror(errority);
+	        }
 
-    buffer[loop_length] = '\n';
-    i += 1;
+	    buffer[loop_length] = '\n';
+	    i += 1;
 
-    //tcp_write(tpcb, payload, len , 1);
-    int len2 = (p -> len) >> 2;
-    for(; i < loop_length + len2 + 1; i += 1 ) {
-    	putfslx(p->payload , 1, FSL_NONBLOCKING);
-    	validity = 1;
-    	fsl_isinvalid(validity);
-   		fsl_iserror(errority);
-    	getfslx(buffer[i], 1, FSL_NONBLOCKING);
-    	validity = 1;
-    	fsl_isinvalid(validity);
-    	fsl_iserror(errority);
-    }
-    buffer[i] = '\n';
-	//tcp_write(tpcb, payload, loop_length  + len2 + 2, 1);
+	    //tcp_write(tpcb, payload, len , 1);
+	    int len2 = (p -> len) >> 2;
+	    for(; i < loop_length + len2 + 1; i += 1 ) {
+	        putfslx(p->payload , 1, FSL_NONBLOCKING);
+	        validity = 1;
+	        fsl_isinvalid(validity);
+	                fsl_iserror(errority);
+	        getfslx(buffer[i], 1, FSL_NONBLOCKING);
+	        validity = 1;
+	        fsl_isinvalid(validity);
+	        fsl_iserror(errority);
+	    }
+	    buffer[i] = '\n';
+	    tcp_write(tpcb, payload, loop_length  + len2 + 2, 1);
 
-
-	putfslx(p->payload, 2, FSL_NONBLOCKING);
-	validity = 0;
-	getfslx(buffer[i + 1], 2, FSL_NONBLOCKING);
-
-	fsl_isinvalid(validity);
-	fsl_iserror(errority);
-
-	buffer[i + 2] = '\n';
+        putfsl(p->payload, 2);
+//	        putfslx(p->payload, 2, FSL_NONBLOCKING);
+//	        validity = 0;
+//	        getfslx(buffer[i + 1], 2, FSL_NONBLOCKING);
 //
-//	if(validity == 0) {
-		tcp_write(tpcb, payload , i + 3, 1);
-//	}
-	/* axi stream get only */
-//	for(int i = 0; i < 2; i += 1) {
-//	  getfsl(buffer[i], 0);//EXCEPTION_CONTROL_ATOMIC);
-//	}
-////	  getfslx(var_axi,0, FSL_DEFAULT);
-////	  void *payload = &var_axi;
-//      void * payload = &buffer;
+//	        fsl_isinvalid(validity);
+//	        fsl_iserror(errority);
 //
-//    tcp_write(tpcb, payload, len , 1);
+//	        buffer[i + 2] = '\n';
+//	//
+//	//      if(validity == 0) {
+//	                tcp_write(tpcb, payload , i + 3, 1);
+//	//      }
 
-	/* echo back the payload */
-	/* in this case, we assume that the payload is < TCP_SND_BUF */
-//	if (tcp_sndbuf(tpcb) > p->len) {
-//		err = tcp_write(tpcb, p->payload, p->len, 1);
-//	} else
-//		xil_printf("no space in tcp_sndbuf\n\r");
-
-	/* free the received pbuf */
 	pbuf_free(p);
 
 	return ERR_OK;
@@ -186,6 +160,7 @@ int start_application()
 	err_t err;
 	unsigned port = 7;
 
+
 	/* create new TCP PCB structure */
 	pcb = tcp_new_ip_type(IPADDR_TYPE_ANY);
 	if (!pcb) {
@@ -215,28 +190,23 @@ int start_application()
 
 	xil_printf("TCP echo server started @ port %d\n\r", port);
 
+
+	// set global pcb
+	global_pcb = pcb;
 	// repeatedly attempt to send, this will force this function to not return
-	char buffer [32];
-	volatile void * payload = buffer;
-		int validity;
-		int errority;
+//	char buffer [32];
+//	volatile void * payload = buffer;
+//		int validity;
+//		int errority;
 	//	for(int i = 0; i < p->len; i += 1 ) {
 	//		putfslx(p->payload + i*4, 1, FSL_DEFAULT); //putfslx(p->payload + i*4, 1, FSL_NONBLOCKING);
 
 //	while(1) {
-//		getfsl(payload, 2);
+
+//	    error = mfmsr();
+//	    error &= ~0x10;
+//	    mtmstr(error);
 //
-//		fsl_isinvalid(validity);
-//		fsl_iserror(errority);
-//
-//	    if(validity == 0) {
-//	    	tcp_write(pcb, payload, 1, 1);
-//	    }
-//	    validity = 0;
-//}
-////	    error = mtmsr();
-////	    error &= ~0x10;
-////	    mtmstr(error);
 //	}
 //	for(int i = 0; i < 32; i += 1) {
 //		buffer[i] = i + 40;

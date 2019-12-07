@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 2
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -37,6 +36,8 @@ set_property ip_repo_paths {
   /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ip_repo/parser_feed_1.0
   /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/microblaze_com_axi
   /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs
+  /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/cordic
+  /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser_book_interface
 } [current_project]
 update_ip_catalog
 set_property ip_output_repo /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.cache/ip [current_project]
@@ -110,12 +111,16 @@ set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/us
 set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ip/design_1_rst_mig_7series_0_81M_0/design_1_rst_mig_7series_0_81M_0.xdc]
 set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ip/design_1_rst_mig_7series_0_81M_0/design_1_rst_mig_7series_0_81M_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ip/design_1_parser_top_0_0/constrs_1/imports/new/default.xdc]
+set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_0/design_1_system_ila_0_0_ooc.xdc]
 set_property used_in_synthesis false [get_files -all /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
 set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_0/bd_0/ip/ip_0/bd_f60c_ila_lib_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_0/bd_0/bd_f60c_ooc.xdc]
-set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_0/design_1_system_ila_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ip/design_1_parser_top_1_0/constrs_1/imports/new/default.xdc]
+set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/constrs_1/imports/new/nexs4ddr_audio.xdc]
+set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ip/design_1_ip_top_level_0_0/cordic.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ip/design_1_parser_book_interface_0_0/constrs_1/imports/fpga_6115/nexys4_ddr.xdc]
 set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/ethernet/ethernet.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf]
 
