@@ -345,7 +345,7 @@
   "../../../bd/design_1/ipshared/2842/slave_axi_stream.sv" \
   "../../../bd/design_1/ipshared/2842/axi_com_top.sv" \
   "../../../bd/design_1/ip/design_1_microblaze_com_axi_0_0_1/sim/design_1_microblaze_com_axi_0_0.sv" \
-  "../../../bd/design_1/ipshared/e0e5/sources_1/new/parser_top.sv" \
+  "../../../bd/design_1/ipshared/ce26/sources_1/new/parser_top.sv" \
   "../../../bd/design_1/ip/design_1_parser_top_0_0/sim/design_1_parser_top_0_0.sv" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
@@ -426,13 +426,11 @@
   "../../../bd/design_1/ipshared/56d6/cordic.srcs/sources_1/imports/new/order_book.sv" \
   "../../../bd/design_1/ipshared/56d6/cordic.srcs/sources_1/new/constants.sv" \
   "../../../bd/design_1/ip/design_1_ip_top_level_0_0/sim/design_1_ip_top_level_0_0.sv" \
+  "../../../bd/design_1/ipshared/5d28/sources_1/new/top.sv" \
+  "../../../bd/design_1/ip/design_1_parser_book_interface_0_0/sim/design_1_parser_book_interface_0_0.sv" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/design_1/sim/design_1.v" \
--endlib
--makelib xcelium_lib/xil_defaultlib -sv \
-  "../../../bd/design_1/ipshared/5d28/sources_1/new/top.sv" \
-  "../../../bd/design_1/ip/design_1_parser_book_interface_0_0/sim/design_1_parser_book_interface_0_0.sv" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v

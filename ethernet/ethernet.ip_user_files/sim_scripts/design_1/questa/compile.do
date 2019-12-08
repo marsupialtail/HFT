@@ -442,7 +442,7 @@ vlog -work xil_defaultlib -64 -sv -L smartconnect_v1_0 "+incdir+../../../../ethe
 "../../../bd/design_1/ipshared/2842/slave_axi_stream.sv" \
 "../../../bd/design_1/ipshared/2842/axi_com_top.sv" \
 "../../../bd/design_1/ip/design_1_microblaze_com_axi_0_0_1/sim/design_1_microblaze_com_axi_0_0.sv" \
-"../../../bd/design_1/ipshared/e0e5/sources_1/new/parser_top.sv" \
+"../../../bd/design_1/ipshared/ce26/sources_1/new/parser_top.sv" \
 "../../../bd/design_1/ip/design_1_parser_top_0_0/sim/design_1_parser_top_0_0.sv" \
 
 vlog -work xil_defaultlib -64 "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/c923" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/1ddd/hdl/verilog" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/b2d0/hdl/verilog" "+incdir+../../../bd/design_1/ipshared/56d6/cordic.srcs/sources_1/imports/new" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/6887/hdl/verilog" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/9623/hdl/verilog" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/56d6/cordic.srcs/sources_1/imports/new" "+incdir+/var/local/xilinx-local/Vivado/2019.1/data/xilinx_vip/include" \
@@ -523,13 +523,11 @@ vlog -work xil_defaultlib -64 -sv -L smartconnect_v1_0 "+incdir+../../../../ethe
 "../../../bd/design_1/ipshared/56d6/cordic.srcs/sources_1/imports/new/order_book.sv" \
 "../../../bd/design_1/ipshared/56d6/cordic.srcs/sources_1/new/constants.sv" \
 "../../../bd/design_1/ip/design_1_ip_top_level_0_0/sim/design_1_ip_top_level_0_0.sv" \
+"../../../bd/design_1/ipshared/5d28/sources_1/new/top.sv" \
+"../../../bd/design_1/ip/design_1_parser_book_interface_0_0/sim/design_1_parser_book_interface_0_0.sv" \
 
 vlog -work xil_defaultlib -64 "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/c923" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/1ddd/hdl/verilog" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/b2d0/hdl/verilog" "+incdir+../../../bd/design_1/ipshared/56d6/cordic.srcs/sources_1/imports/new" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/6887/hdl/verilog" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/9623/hdl/verilog" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/56d6/cordic.srcs/sources_1/imports/new" "+incdir+/var/local/xilinx-local/Vivado/2019.1/data/xilinx_vip/include" \
 "../../../bd/design_1/sim/design_1.v" \
-
-vlog -work xil_defaultlib -64 -sv -L smartconnect_v1_0 "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/c923" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/1ddd/hdl/verilog" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/b2d0/hdl/verilog" "+incdir+../../../bd/design_1/ipshared/56d6/cordic.srcs/sources_1/imports/new" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/6887/hdl/verilog" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/9623/hdl/verilog" "+incdir+../../../../ethernet.srcs/sources_1/bd/design_1/ipshared/56d6/cordic.srcs/sources_1/imports/new" "+incdir+/var/local/xilinx-local/Vivado/2019.1/data/xilinx_vip/include" \
-"../../../bd/design_1/ipshared/5d28/sources_1/new/top.sv" \
-"../../../bd/design_1/ip/design_1_parser_book_interface_0_0/sim/design_1_parser_book_interface_0_0.sv" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

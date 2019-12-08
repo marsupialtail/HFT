@@ -1,6 +1,6 @@
-15:19:41 **** Incremental Build of configuration Debug for project axi_stream ****
+16:48:01 **** Incremental Build of configuration Debug for project axi_stream ****
 make all 
 make: Nothing to be done for `all'.
 
-15:19:41 Build Finished (took 82ms)
+16:48:01 Build Finished (took 66ms)
 

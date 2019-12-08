@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-//Date        : Sat Dec  7 16:27:09 2019
+//Date        : Sat Dec  7 17:32:25 2019
 //Host        : eecs-digital-37 running 64-bit Ubuntu 14.04.6 LTS
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -25,15 +25,15 @@ module design_1
     DDR2_0_odt,
     DDR2_0_ras_n,
     DDR2_0_we_n,
-    an_0,
-    ca_0,
-    cb_0,
-    cc_0,
-    cd_0,
-    ce_0,
-    cf_0,
-    cg_0,
-    dp_0,
+    an,
+    ca,
+    cb,
+    cc,
+    cd,
+    ce,
+    cf,
+    cg,
+    dp,
     eth_mdio_mdc_mdc,
     eth_mdio_mdc_mdio_i,
     eth_mdio_mdc_mdio_o,
@@ -44,9 +44,9 @@ module design_1
     eth_rmii_rxd,
     eth_rmii_tx_en,
     eth_rmii_txd,
-    led16_b_0,
-    led16_g_0,
-    led16_r_0,
+    led16_b,
+    led16_g,
+    led16_r,
     reset,
     sw,
     sys_clock,
@@ -66,15 +66,15 @@ module design_1
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR2_0 ODT" *) output [0:0]DDR2_0_odt;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR2_0 RAS_N" *) output DDR2_0_ras_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR2_0 WE_N" *) output DDR2_0_we_n;
-  output [7:0]an_0;
-  output ca_0;
-  output cb_0;
-  output cc_0;
-  output cd_0;
-  output ce_0;
-  output cf_0;
-  output cg_0;
-  output dp_0;
+  output [7:0]an;
+  output ca;
+  output cb;
+  output cc;
+  output cd;
+  output ce;
+  output cf;
+  output cg;
+  output dp;
   (* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 eth_mdio_mdc MDC" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME eth_mdio_mdc, CAN_DEBUG false" *) output eth_mdio_mdc_mdc;
   (* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 eth_mdio_mdc MDIO_I" *) input eth_mdio_mdc_mdio_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:mdio:1.0 eth_mdio_mdc MDIO_O" *) output eth_mdio_mdc_mdio_o;
@@ -85,9 +85,9 @@ module design_1
   (* X_INTERFACE_INFO = "xilinx.com:interface:rmii:1.0 eth_rmii RXD" *) input [1:0]eth_rmii_rxd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:rmii:1.0 eth_rmii TX_EN" *) output eth_rmii_tx_en;
   (* X_INTERFACE_INFO = "xilinx.com:interface:rmii:1.0 eth_rmii TXD" *) output [1:0]eth_rmii_txd;
-  output led16_b_0;
-  output led16_g_0;
-  output led16_r_0;
+  output led16_b;
+  output led16_g;
+  output led16_r;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input reset;
   input [15:0]sw;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SYS_CLOCK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYS_CLOCK, CLK_DOMAIN design_1_sys_clock, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000" *) input sys_clock;
@@ -371,11 +371,9 @@ module design_1
   wire [1:0]mii_to_rmii_0_RMII_PHY_M_TXD;
   wire mii_to_rmii_0_RMII_PHY_M_TX_EN;
   wire [31:0]parser_book_interface_0_order_to_add;
-  wire parser_top_0_delete_out;
   wire [2:0]parser_top_0_operation_out;
   wire [15:0]parser_top_0_order_id_out_add;
   wire [15:0]parser_top_0_order_id_out_cancel;
-  wire parser_top_0_order_type_out_add;
   wire [15:0]parser_top_0_price_out_add;
   wire [7:0]parser_top_0_quantity_out_add;
   wire [7:0]parser_top_0_quantity_out_cancel;
@@ -405,26 +403,26 @@ module design_1
   assign DDR2_0_odt[0] = mig_7series_0_DDR2_ODT;
   assign DDR2_0_ras_n = mig_7series_0_DDR2_RAS_N;
   assign DDR2_0_we_n = mig_7series_0_DDR2_WE_N;
-  assign an_0[7:0] = ip_top_level_0_an;
+  assign an[7:0] = ip_top_level_0_an;
   assign axi_ethernetlite_0_MDIO_MDIO_I = eth_mdio_mdc_mdio_i;
   assign axi_uartlite_0_UART_RxD = usb_uart_rxd;
-  assign ca_0 = ip_top_level_0_ca;
-  assign cb_0 = ip_top_level_0_cb;
-  assign cc_0 = ip_top_level_0_cc;
-  assign cd_0 = ip_top_level_0_cd;
-  assign ce_0 = ip_top_level_0_ce;
-  assign cf_0 = ip_top_level_0_cf;
-  assign cg_0 = ip_top_level_0_cg;
-  assign dp_0 = ip_top_level_0_dp;
+  assign ca = ip_top_level_0_ca;
+  assign cb = ip_top_level_0_cb;
+  assign cc = ip_top_level_0_cc;
+  assign cd = ip_top_level_0_cd;
+  assign ce = ip_top_level_0_ce;
+  assign cf = ip_top_level_0_cf;
+  assign cg = ip_top_level_0_cg;
+  assign dp = ip_top_level_0_dp;
   assign eth_mdio_mdc_mdc = axi_ethernetlite_0_MDIO_MDC;
   assign eth_mdio_mdc_mdio_o = axi_ethernetlite_0_MDIO_MDIO_O;
   assign eth_mdio_mdc_mdio_t = axi_ethernetlite_0_MDIO_MDIO_T;
   assign eth_ref_clk = clk_wiz_1_clk_out3;
   assign eth_rmii_tx_en = mii_to_rmii_0_RMII_PHY_M_TX_EN;
   assign eth_rmii_txd[1:0] = mii_to_rmii_0_RMII_PHY_M_TXD;
-  assign led16_b_0 = ip_top_level_0_led16_b;
-  assign led16_g_0 = ip_top_level_0_led16_g;
-  assign led16_r_0 = ip_top_level_0_led16_r;
+  assign led16_b = ip_top_level_0_led16_b;
+  assign led16_g = ip_top_level_0_led16_g;
+  assign led16_r = ip_top_level_0_led16_r;
   assign mii_to_rmii_0_RMII_PHY_M_CRS_DV = eth_rmii_crs_dv;
   assign mii_to_rmii_0_RMII_PHY_M_RXD = eth_rmii_rxd[1:0];
   assign mii_to_rmii_0_RMII_PHY_M_RX_ER = eth_rmii_rx_er;
@@ -615,7 +613,6 @@ module design_1
         .cf(ip_top_level_0_cf),
         .cg(ip_top_level_0_cg),
         .clk_100mhz(microblaze_0_Clk),
-        .delete(parser_top_0_delete_out),
         .dp(ip_top_level_0_dp),
         .entry(parser_book_interface_0_order_to_add),
         .led16_b(ip_top_level_0_led16_b),
@@ -1029,18 +1026,15 @@ module design_1
   design_1_parser_book_interface_0_0 parser_book_interface_0
        (.order_id_out_add(parser_top_0_order_id_out_add),
         .order_to_add(parser_book_interface_0_order_to_add),
-        .order_type_out_add(parser_top_0_order_type_out_add),
         .price_out_add(parser_top_0_price_out_add),
         .quantity_out_add(parser_top_0_quantity_out_add));
   design_1_parser_top_0_0 parser_top_0
        (.clk_in(microblaze_0_Clk),
         .data_in(microblaze_0_M2_AXIS_TDATA),
-        .delete_out(parser_top_0_delete_out),
         .enable_in(1'b0),
         .operation_out(parser_top_0_operation_out),
         .order_id_out_add(parser_top_0_order_id_out_add),
         .order_id_out_cancel(parser_top_0_order_id_out_cancel),
-        .order_type_out_add(parser_top_0_order_type_out_add),
         .price_out_add(parser_top_0_price_out_add),
         .quantity_out_add(parser_top_0_quantity_out_add),
         .quantity_out_cancel(parser_top_0_quantity_out_cancel),

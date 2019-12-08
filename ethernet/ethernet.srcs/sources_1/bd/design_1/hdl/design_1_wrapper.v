@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-//Date        : Sat Dec  7 16:27:09 2019
+//Date        : Sat Dec  7 17:32:25 2019
 //Host        : eecs-digital-37 running 64-bit Ubuntu 14.04.6 LTS
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -24,15 +24,15 @@ module design_1_wrapper
     DDR2_0_odt,
     DDR2_0_ras_n,
     DDR2_0_we_n,
-    an_0,
-    ca_0,
-    cb_0,
-    cc_0,
-    cd_0,
-    ce_0,
-    cf_0,
-    cg_0,
-    dp_0,
+    an,
+    ca,
+    cb,
+    cc,
+    cd,
+    ce,
+    cf,
+    cg,
+    dp,
     eth_mdio_mdc_mdc,
     eth_mdio_mdc_mdio_io,
     eth_ref_clk,
@@ -41,9 +41,9 @@ module design_1_wrapper
     eth_rmii_rxd,
     eth_rmii_tx_en,
     eth_rmii_txd,
-    led16_b_0,
-    led16_g_0,
-    led16_r_0,
+    led16_b,
+    led16_g,
+    led16_r,
     reset,
     sw,
     sys_clock,
@@ -63,15 +63,15 @@ module design_1_wrapper
   output [0:0]DDR2_0_odt;
   output DDR2_0_ras_n;
   output DDR2_0_we_n;
-  output [7:0]an_0;
-  output ca_0;
-  output cb_0;
-  output cc_0;
-  output cd_0;
-  output ce_0;
-  output cf_0;
-  output cg_0;
-  output dp_0;
+  output [7:0]an;
+  output ca;
+  output cb;
+  output cc;
+  output cd;
+  output ce;
+  output cf;
+  output cg;
+  output dp;
   output eth_mdio_mdc_mdc;
   inout eth_mdio_mdc_mdio_io;
   output eth_ref_clk;
@@ -80,9 +80,9 @@ module design_1_wrapper
   input [1:0]eth_rmii_rxd;
   output eth_rmii_tx_en;
   output [1:0]eth_rmii_txd;
-  output led16_b_0;
-  output led16_g_0;
-  output led16_r_0;
+  output led16_b;
+  output led16_g;
+  output led16_r;
   input reset;
   input [15:0]sw;
   input sys_clock;
@@ -103,15 +103,15 @@ module design_1_wrapper
   wire [0:0]DDR2_0_odt;
   wire DDR2_0_ras_n;
   wire DDR2_0_we_n;
-  wire [7:0]an_0;
-  wire ca_0;
-  wire cb_0;
-  wire cc_0;
-  wire cd_0;
-  wire ce_0;
-  wire cf_0;
-  wire cg_0;
-  wire dp_0;
+  wire [7:0]an;
+  wire ca;
+  wire cb;
+  wire cc;
+  wire cd;
+  wire ce;
+  wire cf;
+  wire cg;
+  wire dp;
   wire eth_mdio_mdc_mdc;
   wire eth_mdio_mdc_mdio_i;
   wire eth_mdio_mdc_mdio_io;
@@ -123,9 +123,9 @@ module design_1_wrapper
   wire [1:0]eth_rmii_rxd;
   wire eth_rmii_tx_en;
   wire [1:0]eth_rmii_txd;
-  wire led16_b_0;
-  wire led16_g_0;
-  wire led16_r_0;
+  wire led16_b;
+  wire led16_g;
+  wire led16_r;
   wire reset;
   wire [15:0]sw;
   wire sys_clock;
@@ -147,15 +147,15 @@ module design_1_wrapper
         .DDR2_0_odt(DDR2_0_odt),
         .DDR2_0_ras_n(DDR2_0_ras_n),
         .DDR2_0_we_n(DDR2_0_we_n),
-        .an_0(an_0),
-        .ca_0(ca_0),
-        .cb_0(cb_0),
-        .cc_0(cc_0),
-        .cd_0(cd_0),
-        .ce_0(ce_0),
-        .cf_0(cf_0),
-        .cg_0(cg_0),
-        .dp_0(dp_0),
+        .an(an),
+        .ca(ca),
+        .cb(cb),
+        .cc(cc),
+        .cd(cd),
+        .ce(ce),
+        .cf(cf),
+        .cg(cg),
+        .dp(dp),
         .eth_mdio_mdc_mdc(eth_mdio_mdc_mdc),
         .eth_mdio_mdc_mdio_i(eth_mdio_mdc_mdio_i),
         .eth_mdio_mdc_mdio_o(eth_mdio_mdc_mdio_o),
@@ -166,9 +166,9 @@ module design_1_wrapper
         .eth_rmii_rxd(eth_rmii_rxd),
         .eth_rmii_tx_en(eth_rmii_tx_en),
         .eth_rmii_txd(eth_rmii_txd),
-        .led16_b_0(led16_b_0),
-        .led16_g_0(led16_g_0),
-        .led16_r_0(led16_r_0),
+        .led16_b(led16_b),
+        .led16_g(led16_g),
+        .led16_r(led16_r),
         .reset(reset),
         .sw(sw),
         .sys_clock(sys_clock),

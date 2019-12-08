@@ -41,17 +41,17 @@
 struct tcp_pcb *global_pcb;
 
 int transfer_data() {
-	uint val;
-	void * payload = &val;
-    int validity;
-    getfsl(payload, 2);
-
-    fsl_isinvalid(validity);
-    //fsl_iserror(errority);
-
-      if(validity == 0) {
-            tcp_write(global_pcb, payload , 1, 1); //not sure how to get a tcp_pcb
-      }
+//	uint val;
+//	void * payload = &val;
+//    int validity;
+//    getfsl(payload, 2);
+//
+//    fsl_isinvalid(validity);
+//    //fsl_iserror(errority);
+//
+//      if(validity == 0) {
+//            tcp_write(global_pcb, payload , 1, 1); //not sure how to get a tcp_pcb
+//      }
 	return 0;
 }
 

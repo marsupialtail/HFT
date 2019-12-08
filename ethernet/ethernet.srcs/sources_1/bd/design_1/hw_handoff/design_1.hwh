@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Dec  7 16:27:17 2019" VIVADOVERSION="2019.1.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Dec  7 17:32:32 2019" VIVADOVERSION="2019.1.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys4_ddr:part0:1.1" DEVICE="7a100t" NAME="design_1" PACKAGE="csg324" SPEEDGRADE="-1"/>
 
@@ -22,62 +22,62 @@
         <CONNECTION INSTANCE="clk_wiz_1" PORT="clk_out3"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="ca_0" SIGIS="undef" SIGNAME="ip_top_level_0_ca">
+    <PORT DIR="O" NAME="ca" SIGIS="undef" SIGNAME="ip_top_level_0_ca">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ip_top_level_0" PORT="ca"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="cb_0" SIGIS="undef" SIGNAME="ip_top_level_0_cb">
+    <PORT DIR="O" NAME="cb" SIGIS="undef" SIGNAME="ip_top_level_0_cb">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ip_top_level_0" PORT="cb"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="cc_0" SIGIS="undef" SIGNAME="ip_top_level_0_cc">
+    <PORT DIR="O" NAME="cc" SIGIS="undef" SIGNAME="ip_top_level_0_cc">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ip_top_level_0" PORT="cc"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="ce_0" SIGIS="undef" SIGNAME="ip_top_level_0_ce">
+    <PORT DIR="O" NAME="ce" SIGIS="undef" SIGNAME="ip_top_level_0_ce">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ip_top_level_0" PORT="ce"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="cd_0" SIGIS="undef" SIGNAME="ip_top_level_0_cd">
+    <PORT DIR="O" NAME="cd" SIGIS="undef" SIGNAME="ip_top_level_0_cd">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ip_top_level_0" PORT="cd"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="cf_0" SIGIS="undef" SIGNAME="ip_top_level_0_cf">
+    <PORT DIR="O" NAME="cf" SIGIS="undef" SIGNAME="ip_top_level_0_cf">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ip_top_level_0" PORT="cf"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="cg_0" SIGIS="undef" SIGNAME="ip_top_level_0_cg">
+    <PORT DIR="O" NAME="cg" SIGIS="undef" SIGNAME="ip_top_level_0_cg">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ip_top_level_0" PORT="cg"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="dp_0" SIGIS="undef" SIGNAME="ip_top_level_0_dp">
+    <PORT DIR="O" NAME="dp" SIGIS="undef" SIGNAME="ip_top_level_0_dp">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ip_top_level_0" PORT="dp"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="7" NAME="an_0" RIGHT="0" SIGIS="undef" SIGNAME="ip_top_level_0_an">
+    <PORT DIR="O" LEFT="7" NAME="an" RIGHT="0" SIGIS="undef" SIGNAME="ip_top_level_0_an">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ip_top_level_0" PORT="an"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="led16_b_0" SIGIS="undef" SIGNAME="ip_top_level_0_led16_b">
+    <PORT DIR="O" NAME="led16_b" SIGIS="undef" SIGNAME="ip_top_level_0_led16_b">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ip_top_level_0" PORT="led16_b"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="led16_g_0" SIGIS="undef" SIGNAME="ip_top_level_0_led16_g">
+    <PORT DIR="O" NAME="led16_g" SIGIS="undef" SIGNAME="ip_top_level_0_led16_g">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ip_top_level_0" PORT="led16_g"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="led16_r_0" SIGIS="undef" SIGNAME="ip_top_level_0_led16_r">
+    <PORT DIR="O" NAME="led16_r" SIGIS="undef" SIGNAME="ip_top_level_0_led16_r">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ip_top_level_0" PORT="led16_r"/>
       </CONNECTIONS>
@@ -3064,11 +3064,7 @@
             <CONNECTION INSTANCE="parser_top_0" PORT="order_id_out_cancel"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="delete" SIGIS="undef" SIGNAME="parser_top_0_delete_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="parser_top_0" PORT="delete_out"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="I" NAME="delete" SIGIS="undef"/>
         <PORT DIR="I" LEFT="7" NAME="quantity" RIGHT="0" SIGIS="undef" SIGNAME="parser_top_0_quantity_out_cancel">
           <CONNECTIONS>
             <CONNECTION INSTANCE="parser_top_0" PORT="quantity_out_cancel"/>
@@ -3081,62 +3077,62 @@
         </PORT>
         <PORT DIR="O" NAME="ca" SIGIS="undef" SIGNAME="ip_top_level_0_ca">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="ca_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="ca"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="cb" SIGIS="undef" SIGNAME="ip_top_level_0_cb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="cb_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="cb"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="cc" SIGIS="undef" SIGNAME="ip_top_level_0_cc">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="cc_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="cc"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="cd" SIGIS="undef" SIGNAME="ip_top_level_0_cd">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="cd_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="cd"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="ce" SIGIS="undef" SIGNAME="ip_top_level_0_ce">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="ce_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="ce"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="cf" SIGIS="undef" SIGNAME="ip_top_level_0_cf">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="cf_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="cf"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="cg" SIGIS="undef" SIGNAME="ip_top_level_0_cg">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="cg_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="cg"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="dp" SIGIS="undef" SIGNAME="ip_top_level_0_dp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="dp_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="dp"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="7" NAME="an" RIGHT="0" SIGIS="undef" SIGNAME="ip_top_level_0_an">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="an_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="an"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="led16_b" SIGIS="undef" SIGNAME="ip_top_level_0_led16_b">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="led16_b_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="led16_b"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="led16_g" SIGIS="undef" SIGNAME="ip_top_level_0_led16_g">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="led16_g_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="led16_g"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="led16_r" SIGIS="undef" SIGNAME="ip_top_level_0_led16_r">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="led16_r_0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="led16_r"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -10156,11 +10152,7 @@
             <CONNECTION INSTANCE="parser_top_0" PORT="quantity_out_add"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="order_type_out_add" SIGIS="undef" SIGNAME="parser_top_0_order_type_out_add">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="parser_top_0" PORT="order_type_out_add"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="I" NAME="order_type_out_add" SIGIS="undef"/>
         <PORT DIR="O" LEFT="31" NAME="order_to_add" RIGHT="0" SIGIS="undef" SIGNAME="parser_book_interface_0_order_to_add">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ip_top_level_0" PORT="entry"/>
@@ -10169,7 +10161,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/parser_top_0" HWVERSION="1.0" INSTANCE="parser_top_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="parser_top" VLNV="user.org:user:parser_top:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/parser_top_0" HWVERSION="1.0" INSTANCE="parser_top_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="parser_top" VLNV="user.org:user:parser_top:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="PRICE_WIDTH" VALUE="15"/>
@@ -10247,11 +10239,6 @@
             <CONNECTION INSTANCE="parser_book_interface_0" PORT="quantity_out_add"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="order_type_out_add" SIGIS="undef" SIGNAME="parser_top_0_order_type_out_add">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="parser_book_interface_0" PORT="order_type_out_add"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="7" NAME="stock_symbol_out_cancel" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="15" NAME="order_id_out_cancel" RIGHT="0" SIGIS="undef" SIGNAME="parser_top_0_order_id_out_cancel">
           <CONNECTIONS>
@@ -10262,11 +10249,6 @@
         <PORT DIR="O" LEFT="7" NAME="quantity_out_cancel" RIGHT="0" SIGIS="undef" SIGNAME="parser_top_0_quantity_out_cancel">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ip_top_level_0" PORT="quantity"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="delete_out" SIGIS="undef" SIGNAME="parser_top_0_delete_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="ip_top_level_0" PORT="delete"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="valid_master_in" SIGIS="undef" SIGNAME="ip_top_level_0_book_busy">
@@ -10283,7 +10265,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/parser_top_1" HWVERSION="1.0" INSTANCE="parser_top_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="parser_top" VLNV="user.org:user:parser_top:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/parser_top_1" HWVERSION="1.0" INSTANCE="parser_top_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="parser_top" VLNV="user.org:user:parser_top:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="PRICE_WIDTH" VALUE="15"/>
@@ -10328,12 +10310,10 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="7" NAME="quantity_out_add" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" NAME="order_type_out_add" SIGIS="undef"/>
         <PORT DIR="O" LEFT="7" NAME="stock_symbol_out_cancel" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="15" NAME="order_id_out_cancel" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="15" NAME="price_out_cancel" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="7" NAME="quantity_out_cancel" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" NAME="delete_out" SIGIS="undef"/>
         <PORT DIR="I" NAME="valid_master_in" SIGIS="undef" SIGNAME="microblaze_0_S2_AXIS_TREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="microblaze_0" PORT="S2_AXIS_TREADY"/>
