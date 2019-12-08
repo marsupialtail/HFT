@@ -25,38 +25,38 @@ module parser_top # (parameter PRICE_WIDTH=15,
                  parameter STOCK_WIDTH=7,
                  parameter DATA_WIDTH=31)
       (
-    input                   clk_in,
-    input                   reset_in, 
-    input [DATA_WIDTH:0]    data_in,
+    input                  clk_in,
+    input                  reset_in, 
+    input [DATA_WIDTH:0]   data_in,
     
-   input[15:0] sw,
-   output ca, cb, cc, cd, ce, cf, cg, dp,  // segments a-g, dp
-   output[7:0] an, 
+    input [15:0]           sw,
+    output                 ca, cb, cc, cd, ce, cf, cg, dp, // segments a-g, dp
+    output [7:0]           an, 
         
-    input valid_microblaze_in,
-    output                  ready_to_microblaze_out, 
-    input                   enable_in,
+    input                  valid_microblaze_in,
+    output                 ready_to_microblaze_out, 
+    input                  enable_in,
 
-    output  [2:0]            operation_out,
+    output [2:0]           operation_out, //add = 1, cancel = 2, delete = 0
     // output [STOCK_WIDTH: 0] stock_symbol_out,
     // output [ID_WIDTH: 0]    order_id_out, 
     // output [PRICE_WIDTH: 0] price_out,
     // output [QUANT_WIDTH: 0] quantity_out,
 
-    output [STOCK_WIDTH:0]  stock_symbol_out_add,
-    output [ID_WIDTH:0]     order_id_out_add, 
-    output [PRICE_WIDTH:0]  price_out_add,
-    output [QUANT_WIDTH:0]  quantity_out_add,
+    output [STOCK_WIDTH:0] stock_symbol_out_add,
+    output [ID_WIDTH:0]    order_id_out_add, 
+    output [PRICE_WIDTH:0] price_out_add,
+    output [QUANT_WIDTH:0] quantity_out_add,
     
-    output [STOCK_WIDTH:0]  stock_symbol_out_cancel,
-    output [ID_WIDTH:0]     order_id_out_cancel, 
-    output [PRICE_WIDTH:0]  price_out_cancel,
-    output [QUANT_WIDTH:0]  quantity_out_cancel, 
+    output [STOCK_WIDTH:0] stock_symbol_out_cancel,
+    output [ID_WIDTH:0]    order_id_out_cancel, 
+    output [PRICE_WIDTH:0] price_out_cancel,
+    output [QUANT_WIDTH:0] quantity_out_cancel, 
+    output                 delete_out,
 
-
-    input valid_master_in,
-    output last_master_out,
-    output                  ready_out
+    input                  valid_master_in,
+    output                 last_master_out,
+    output                 ready_out
     );
 
    logic                    enable_parser;
@@ -67,6 +67,11 @@ module parser_top # (parameter PRICE_WIDTH=15,
    assign ready_to_microblaze_out = ~ready_out;
    assign last_master_out = ready_out;
    assign enable_parser = 1; //have to think about this
+      assign delete_out = (operation_out == 3'b000) && ready_out;
+      16'b0_0_1_0_0_0_0 : data_to_display <= data_in;
+       default : data_to_display <= operation_out;
+       endcase
+
    // always@(posedge clk_in) begin
    //    if(reset_in) begin
           
@@ -334,7 +339,7 @@ module mk_parser # (parameter PRICE_WIDTH=15,
         { 1'b0, 1'b1, 8'h??,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= data_in; enable_dummy <= 1;  mess_type <= 4; end //dummy
 
         //reset when ready signals are high 
-        {14'b0_????_????_1_1_???}: begin data_reg <= 0; enable_add <= 0; enable_cancel <= 0; enable_dummy <= 0; mess_type <= 0; get_length <= 1; end
+        {16'b0_????_????_1_1_0_???}: begin data_reg <= 0; mess_type <= 0; enable_add <= 0; enable_cancel <= 0; get_length <= 1; enable_dummy <= 0; end
         
         default: begin  data_reg <= data_reg; get_length <= get_length; enable_add <= enable_add; enable_cancel <= enable_cancel; enable_dummy <= enable_dummy; mess_type <= mess_type; end
       endcase // casez ({reset_in, message, ready_out, enable_add, enable_cancel, enable_dummy})
@@ -395,7 +400,7 @@ module mkAddMessage #(parameter PRICE_WIDTH=15,
     output logic [QUANT_WIDTH: 0] quantity_out,
     output logic                  ready_out
     );
-   parameter MESSAGE_TYPE = 1;
+   parameter MESSAGE_TYPE = 0; //because we look at messages a cycle after it comes in. it comes in the same cycle (~enable_in_reg && enable_in) == 1.
    parameter STOCK_LOCATE = 2;
    parameter TRACKING_NUMBER = 2;
    parameter TIMESTAMP = 6;
@@ -407,10 +412,12 @@ module mkAddMessage #(parameter PRICE_WIDTH=15,
    parameter ATTRIBUTION = 4;
 
    logic [ (MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM + BUY_SELL_IND + SHARES + STOCK + PRICE + ATTRIBUTION) * 8 - 1 :0  ] parsed_data;
-   logic [10:0]             count;
-   logic enable_in_reg;
+   logic [10:0]                                                                                                                                           count;
+   logic                                                                                                                                                  enable_in_reg;
    logic ready_out_reg;
-   assign operation_out = 3'b0;
+   logic mess_type_reg;
+   
+   assign operation_out = 3'b1;
    always_comb begin
       if(~enable_in_reg && enable_in) begin
            ready_out = 0;
@@ -420,24 +427,24 @@ module mkAddMessage #(parameter PRICE_WIDTH=15,
    end
    always@(posedge clk_in) begin
       if(reset_in) begin
-         count <= 0; enable_in_reg <=0; ready_out_reg <= 0;
+         count <= 0; enable_in_reg <=0; ready_out_reg <= 0; mess_type_reg <= 0;
       end else begin
          enable_in_reg <= enable_in;
          if(~enable_in_reg && enable_in) begin
-            count <= 0; ready_out_reg <= 0;price_out <= 0; quantity_out <= 0; order_id_out <= 0; stock_symbol_out <= 0;
+            count <= 0; ready_out_reg <= 0;price_out <= 0; quantity_out <= 0; order_id_out <= 0; stock_symbol_out <= 0; mess_type_reg <= mess_type_in;
          end else begin
-             casez(mess_type_in)
+             casez(mess_type_reg)
                0 : begin
                   if(valid_in) begin
                      count <= count + 1;
-                     parsed_data[count +: DATA_WIDTH] <= data_in;
+                     parsed_data[count * 8 +: DATA_WIDTH] <= data_in;
                   end
-                  if(count >= MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM + BUY_SELL_IND + SHARES + STOCK + PRICE + ATTRIBUTION ) begin
+                  if(count >= MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM + BUY_SELL_IND + SHARES + STOCK + PRICE) begin
                      ready_out_reg <= 1;
                      order_id_out <= parsed_data[(MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP) * 8 +: ORDER_REF_NUM * 8]; 
                      order_type_out <=  parsed_data[(MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM) * 8 +: BUY_SELL_IND * 8] == 8'h41 ? 1'b0 : 1'b1 ;
                      quantity_out <=  parsed_data[(MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM + BUY_SELL_IND ) * 8 +: SHARES * 8];
-                     stock_symbol_out <=  parsed_data[(MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM + BUY_SELL_IND + SHARES) * 8 +: STOCK * 8];
+                     stock_symbol_out <=  parsed_data[(MESSAGE_TYPE) * 8 +: STOCK_LOCATE * 8];
                      price_out <= parsed_data[(MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM + BUY_SELL_IND + SHARES + STOCK) * 8 +: PRICE * 8];
 
                   end
@@ -483,7 +490,7 @@ module mkCancelMessage #(parameter PRICE_WIDTH=15,
     output logic                  ready_out
     );
 
-   parameter MESSAGE_TYPE = 1;
+   parameter MESSAGE_TYPE = 0; //because we look at messages a cycle after it comes in. it comes in the same cycle (~enable_in_reg && enable_in) == 1.
    parameter STOCK_LOCATE = 2;
    parameter TRACKING_NUMBER = 2;
    parameter TIMESTAMP = 6;
@@ -495,7 +502,7 @@ module mkCancelMessage #(parameter PRICE_WIDTH=15,
 
    logic [10:0]             count;
       logic [ (MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP + ORDER_REF_NUM  + SHARES + MATCH_NUMBER + PRINTABLE + PRICE) * 8 - 1 :0  ] parsed_data;
-   assign operation_out = {1'b0, mess_type_in[0], mess_type_in[1]}; //currently only order cancel and order delete (2,3) //{1'b0, mess_type_in[1] , ~mess_type_in[1]}; //cancel order (01, 10)
+   assign operation_out = {1'b0, ~mess_type_in[0], 0};// currently 3'b010;//mess_type_in[1]}; assign operation_out = {1'b0, mess_type_in[0], mess_type_in[1]}; //currently only order cancel and order delete (2,3) //{1'b0, mess_type_in[1] , ~mess_type_in[1]}; //cancel order (01, 10)
 
    
    logic enable_in_reg;
@@ -521,11 +528,12 @@ module mkCancelMessage #(parameter PRICE_WIDTH=15,
                3 : begin
                   if(valid_in) begin
                      count <= count + 1;
-                     parsed_data[count +: DATA_WIDTH] <= data_in;
+                     parsed_data[count * 8 +: DATA_WIDTH] <= data_in;
                   end
                   if(count >= MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP + ORDER_REF_NUM  + SHARES  ) begin
                      ready_out_reg <= 1;
                      order_id_out <= parsed_data[(MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP) * 8 +: ORDER_REF_NUM * 8]; 
+                     stock_symbol_out <=  parsed_data[(MESSAGE_TYPE) * 8 +: STOCK_LOCATE * 8];
                      quantity_out <=  parsed_data[(MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM  ) * 8 +: SHARES * 8];
                  end
                  end    
@@ -537,8 +545,9 @@ module mkCancelMessage #(parameter PRICE_WIDTH=15,
                   if(count >= MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP + ORDER_REF_NUM ) begin
                      ready_out_reg <= 1;
                      order_id_out <= parsed_data[(MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP) * 8 +: ORDER_REF_NUM * 8]; 
+                     stock_symbol_out <=  parsed_data[(MESSAGE_TYPE) * 8 +: STOCK_LOCATE * 8];
                   end
-end 
+               end 
                default : begin
                   if(count > MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM + SHARES + MATCH_NUMBER + PRINTABLE +  PRICE  ) begin
                      ready_out_reg <= 1;
