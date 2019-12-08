@@ -67,11 +67,7 @@ module parser_top # (parameter PRICE_WIDTH=15,
    assign ready_to_microblaze_out = ~ready_out;
    assign last_master_out = ready_out;
    assign enable_parser = 1; //have to think about this
-      assign delete_out = (operation_out == 3'b000) && ready_out;
-      16'b0_0_1_0_0_0_0 : data_to_display <= data_in;
-       default : data_to_display <= operation_out;
-       endcase
-
+   assign delete_out = (operation_out == 3'b000) && ready_out;
    // always@(posedge clk_in) begin
    //    if(reset_in) begin
           
