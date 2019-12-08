@@ -301,34 +301,42 @@ module mk_parser # (parameter PRICE_WIDTH=15,
    logic [DATA_WIDTH:0]                     data_last2;
    logic [DATA_WIDTH:0]                     data_message_size;
    
+   logic                                    get_length; 
    assign message = data_in[7:0];
    
-   always@(posedge clk_in) begin
-      data_last <= data_in;
-      data_last2 <= data_last;
-      data_message_size <= data_last2;
+   // always@(posedge clk_in) begin
+   //    data_last <= data_in;
+   //    data_last2 <= data_last;
+   //    data_message_size <= data_last2;
      
-   end 
+   // end 
    //logic ready_ou
    always@(posedge clk_in) begin
-      casez({reset_in, message, ready_out || ready_dummy_out, valid_master_in || ready_dummy_out, enable_add, enable_cancel, enable_dummy}) //probably want to make this message a bit stream parameterized (actually although that may yeild energy savings, latency savings are not there). 
+      casez({reset_in, valid_in, message, ready_out || ready_dummy_out, valid_master_in || ready_dummy_out, get_length, enable_add, enable_cancel, enable_dummy}) //probably want to make this message a bit stream parameterized (actually although that may yeild energy savings, latency savings are not there). 
         //actualy there can be latency saving for a class of trading strategies or book bulding methods (when system can't match but that is unlikley as that would be the excahgne machine is sso good that it can send informtation so fast) that are only looking at the msb s and doing computation on them.
-        { 13'b1_????_????_?_???}: begin  data_reg <= 0; enable_add <= 0; enable_cancel <= 0; enable_dummy <= 0; mess_type <= 0; end
-        
-        { 1'b0, 8'h41,  1'b0, 1'b?, 3'b0_0_0  }:  begin data_reg <= data_in; enable_add <= 1; mess_type <= 0; end
-        { 1'b0, 8'h46,  1'b0, 1'b?,  3'b0_0_0  }:  begin data_reg <= data_in; enable_add <= 1; mess_type <= 1; end
+        { 16'b1_?_????_????_?_?_?_???}: begin  data_reg <= 0; enable_add <= 0; enable_cancel <= 0; enable_dummy <= 0; mess_type <= 0; get_length <= 1; end
+        // skip 00 messages, they are not really useful
+        { 1'b0, 1'b1, 8'h00,  1'b0, 1'b?, 1'b?, 3'b0_0_0  }:  begin data_reg <= data_reg; enable_add <= enable_add; enable_cancel <= enable_cancel; enable_dummy <= enable_dummy; mess_type <= mess_type; end
+       
+        // get the length of the message
+        { 1'b0, 1'b1, 8'h??,  1'b0, 1'b?, 1'b1, 3'b0_0_0  }:  begin data_message_size <= data_reg; get_length <= 0; end
 
-        { 1'b0, 8'h00,  1'b0, 1'b?,  3'b0_0_0  }:  begin data_reg <= data_reg; enable_add <= enable_add; enable_cancel <= enable_cancel; enable_dummy <= enable_dummy; mess_type <= mess_type; end
-  
-        { 1'b0, 8'h45,  1'b0, 1'b?,  3'b0_0_0  }:  begin data_reg <= data_in; enable_cancel <= 1; mess_type <= 0; end //exec
-        { 1'b0, 8'h43,  1'b0, 1'b?,  3'b0_0_0  }:  begin data_reg <= data_in; enable_cancel <= 1;  mess_type <= 1; end //exec_price
-        { 1'b0, 8'h58,  1'b0, 1'b?,  3'b0_0_0  }:  begin data_reg <= data_in; enable_cancel <= 1;  mess_type <= 2; end //cancel
-        { 1'b0, 8'h44,  1'b0, 1'b?,  3'b0_0_0  }:  begin data_reg <= data_in; enable_cancel <= 1;  mess_type <= 3; end //delete
-        { 1'b0, 8'h55,  1'b0, 1'b?,  3'b0_0_0  }:  begin data_reg <= data_in; enable_cancel <= 1;  mess_type <= 4; end //replace
-        { 1'b0, 8'h??,  1'b0, 1'b?,  3'b0_0_0  }:  begin data_reg <= data_in; enable_dummy <= 1;  mess_type <= 4; end //dummy
-        {14'b0_????_????_1_1_???}: begin data_reg <= 0; enable_add <= 0; enable_cancel <= 0; enable_dummy <= 0; mess_type <= 0; end
+        // send the message to the appropriate parser
+        { 1'b0, 1'b1, 8'h41,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= data_in; enable_add <= 1; mess_type <= 0; end //add
+        { 1'b0, 1'b1, 8'h46,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= data_in; enable_add <= 1; mess_type <= 1; end // add with id
         
-        default: begin  data_reg <= data_reg; enable_add <= enable_add; enable_cancel <= enable_cancel; enable_dummy <= enable_dummy; mess_type <= mess_type; end
+        { 1'b0, 1'b1, 8'h45,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= data_in; enable_cancel <= 1; mess_type <= 0; end //exec
+        { 1'b0, 1'b1, 8'h43,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= data_in; enable_cancel <= 1;  mess_type <= 1; end //exec_price
+        { 1'b0, 1'b1, 8'h58,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= data_in; enable_cancel <= 1;  mess_type <= 2; end //cancel
+        { 1'b0, 1'b1, 8'h44,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= data_in; enable_cancel <= 1;  mess_type <= 3; end //delete
+        { 1'b0, 1'b1, 8'h55,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= data_in; enable_cancel <= 1;  mess_type <= 4; end //replace
+
+        { 1'b0, 1'b1, 8'h??,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= data_in; enable_dummy <= 1;  mess_type <= 4; end //dummy
+
+        //reset when ready signals are high 
+        {14'b0_????_????_1_1_???}: begin data_reg <= 0; enable_add <= 0; enable_cancel <= 0; enable_dummy <= 0; mess_type <= 0; get_length <= 1; end
+        
+        default: begin  data_reg <= data_reg; get_length <= get_length; enable_add <= enable_add; enable_cancel <= enable_cancel; enable_dummy <= enable_dummy; mess_type <= mess_type; end
       endcase // casez ({reset_in, message, ready_out, enable_add, enable_cancel, enable_dummy})
    end
 
@@ -433,7 +441,7 @@ module mkAddMessage #(parameter PRICE_WIDTH=15,
                      price_out <= parsed_data[(MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM + BUY_SELL_IND + SHARES + STOCK) * 8 +: PRICE * 8];
 
                   end
-                  end
+               end
                default : begin
                   if(count > MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM + BUY_SELL_IND + SHARES + STOCK + PRICE + ATTRIBUTION  ) begin
                      ready_out_reg <= 1;
@@ -492,7 +500,8 @@ module mkCancelMessage #(parameter PRICE_WIDTH=15,
    
    logic enable_in_reg;
    logic ready_out_reg;
-
+   logic mess_type_reg;
+   
    always_comb begin
       if(~enable_in_reg && enable_in) begin
            ready_out = 0;
@@ -502,13 +511,13 @@ module mkCancelMessage #(parameter PRICE_WIDTH=15,
    end
    always@(posedge clk_in) begin
       if(reset_in) begin
-         count <= 0; enable_in_reg <=0; ready_out_reg <= 0;
+         count <= 0; enable_in_reg <=0; ready_out_reg <= 0; mess_type_reg <= 0;
       end else begin
          enable_in_reg <= enable_in;
          if(~enable_in_reg && enable_in) begin
-            count <= 0; ready_out_reg <= 0;price_out <= 0; quantity_out <= 0; order_id_out <= 0; stock_symbol_out <= 0;
+            count <= 0; ready_out_reg <= 0;price_out <= 0; quantity_out <= 0; order_id_out <= 0; stock_symbol_out <= 0; mess_type_reg <= mess_type_in;
          end else begin
-             casez(mess_type_in)
+             casez(mess_type_reg)
                3 : begin
                   if(valid_in) begin
                      count <= count + 1;
