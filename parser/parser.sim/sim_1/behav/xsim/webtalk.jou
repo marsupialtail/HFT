@@ -2,8 +2,8 @@
 # Webtalk v2019.1.2 (64-bit)
 # SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
 # IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
-# Start of session at: Thu Dec  5 23:28:56 2019
-# Process ID: 12820
+# Start of session at: Sun Dec  8 12:03:50 2019
+# Process ID: 27087
 # Current directory: /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.sim/sim_1/behav/xsim
 # Command line: wbtcv -mode batch -source /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.sim/sim_1/behav/xsim/xsim.dir/parser_sim_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.sim/sim_1/behav/xsim/webtalk.log

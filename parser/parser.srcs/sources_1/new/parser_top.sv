@@ -25,56 +25,106 @@ module parser_top # (parameter PRICE_WIDTH=15,
                  parameter STOCK_WIDTH=7,
                  parameter DATA_WIDTH=31)
       (
-    input                  clk_in,
-    input                  reset_in, 
-    input [DATA_WIDTH:0]   data_in,
+    input                        clk_in,
+    input                        reset_in, 
+    input [DATA_WIDTH:0]         data_in,
     
-    input [15:0]           sw,
-    output                 ca, cb, cc, cd, ce, cf, cg, dp, // segments a-g, dp
-    output [7:0]           an, 
+    input [15:0]                 sw,
+    output                       ca, cb, cc, cd, ce, cf, cg, dp, // segments a-g, dp
+    output [7:0]                 an, 
         
-    input                  valid_microblaze_in,
-    output                 ready_to_microblaze_out, 
-    input                  enable_in,
+    input                        valid_microblaze_in,
+    output                       ready_to_microblaze_out, 
+    input                        enable_in,
 
-    output [2:0]           operation_out, //add = 1, cancel = 2, delete = 0
+    output [STOCK_WIDTH:0]       stock_symbol_out,
+    output [2:0]                 operation_out, //add = 1, cancel = 2, delete = 0
     // output [STOCK_WIDTH: 0] stock_symbol_out,
     // output [ID_WIDTH: 0]    order_id_out, 
-    // output [PRICE_WIDTH: 0] price_out,
+       // output [PRICE_WIDTH: 0] price_out,
     // output [QUANT_WIDTH: 0] quantity_out,
 
-    output [STOCK_WIDTH:0] stock_symbol_out_add,
-    output [ID_WIDTH:0]    order_id_out_add, 
-    output [PRICE_WIDTH:0] price_out_add,
-    output [QUANT_WIDTH:0] quantity_out_add,
-    
-    output [STOCK_WIDTH:0] stock_symbol_out_cancel,
-    output [ID_WIDTH:0]    order_id_out_cancel, 
-    output [PRICE_WIDTH:0] price_out_cancel,
-    output [QUANT_WIDTH:0] quantity_out_cancel, 
-    output                 delete_out,
+    output logic [STOCK_WIDTH:0] stock_symbol_out_add,
+    output logic [ID_WIDTH:0]    order_id_out_add, 
+    output logic [PRICE_WIDTH:0] price_out_add,
+    output logic [QUANT_WIDTH:0] quantity_out_add,
+    output                       order_type_out_add,
+        
+    output logic [STOCK_WIDTH:0] stock_symbol_out_cancel,
+    output logic [ID_WIDTH:0]    order_id_out_cancel, 
+    output logic [PRICE_WIDTH:0] price_out_cancel,
+    output logic [QUANT_WIDTH:0] quantity_out_cancel, 
+    output                       delete_out,
 
-    input                  valid_master_in,
-    output                 last_master_out,
-    output                 ready_out
+    input                        valid_master_in,
+    output                       last_master_out,
+    output                       ready_out
     );
 
-   logic                    enable_parser;
+   logic                   enable_parser;
+   //logic[STOCK_WIDTH: 0] stock_symbol_raw_out;
+   //logic[ID_WIDTH: 0]    order_id_raw_out; 
+   //logic[PRICE_WIDTH: 0] price_raw_out;
+   //logic[QUANT_WIDTH: 0] quantity_raw_out;
+   
+   logic [STOCK_WIDTH:0]   stock_symbol_raw_out_add;
+   logic [ID_WIDTH:0]      order_id_raw_out_add; 
+   logic [PRICE_WIDTH:0]   price_raw_out_add;
+   logic [QUANT_WIDTH:0]   quantity_raw_out_add;
+   
+   logic [STOCK_WIDTH:0]   stock_symbol_raw_out_cancel;
+   logic [ID_WIDTH:0]      order_id_raw_out_cancel; 
+   logic [PRICE_WIDTH:0]   price_raw_out_cancel;
+   logic [QUANT_WIDTH:0]   quantity_raw_out_cancel; 
 
- mk_parser parser(.clk_in(clk_in), .reset_in(reset_in), .data_in(data_in[7:0]), .enable_in(enable_parser), .valid_in(valid_microblaze_in), .valid_master_in(valid_master_in), .operation_out(operation_out), .stock_symbol_out_add(stock_symbol_out_add), .order_id_out_add(order_id_out_add), .price_out_add(price_out_add), .quantity_out_add(quantity_out_add),  .stock_symbol_out_cancel(stock_symbol_out_cancel), .order_id_out_cancel(order_id_out_cancel), .price_out_cancel(price_out_cancel), .quantity_out_cancel(quantity_out_cancel),  .ready_out(ready_out));
-  
+ // mk_parser parser(.clk_in(clk_in), .reset_in(reset_in), .data_in(data_in[7:0]), 
+ // .enable_in(enable_parser), .valid_in(valid_microblaze_in), .valid_master_in(valid_master_in), 
+ // .operation_out(operation_out), 
+ // .stock_symbol_out_add(stock_symbol_out_add), .order_id_out_add(order_id_out_add), .price_out_add(price_out_add),
+ //  .quantity_out_add(quantity_out_add), .order_type_out_add(order_type_out_add), 
+ //   .stock_symbol_out_cancel(stock_symbol_out_cancel), .order_id_out_cancel(order_id_out_cancel), 
+ //   .price_out_cancel(price_out_cancel), .quantity_out_cancel(quantity_out_cancel),  .ready_out(ready_out));
+      
+mk_parser parser(.clk_in(clk_in), .reset_in(reset_in), .data_in(data_in[7:0]), 
+.enable_in(enable_parser), .valid_in(valid_microblaze_in), .valid_master_in(valid_master_in), 
+.operation_out(operation_out), 
+.stock_symbol_out_add(stock_symbol_raw_out_add), .order_id_out_add(order_id_raw_out_add), .price_out_add(price_raw_out_add),
+ .quantity_out_add(quantity_raw_out_add), .order_type_out_add(order_type_raw_out_add), 
+  .stock_symbol_out_cancel(stock_symbol_raw_out_cancel), .order_id_out_cancel(order_id_raw_out_cancel), 
+  .price_out_cancel(price_raw_out_cancel), .quantity_out_cancel(quantity_raw_out_cancel),  .ready_out(ready_out));
+   
+  always_comb begin
+    for(integer i =0; i <= STOCK_WIDTH; i = i + 1) begin
+       stock_symbol_out_add[i] = stock_symbol_raw_out_add[STOCK_WIDTH - i];
+       stock_symbol_out_cancel[i] = stock_symbol_raw_out_cancel[STOCK_WIDTH - i];
+    end
+    for(integer i =0; i <= ID_WIDTH; i = i + 1) begin
+      order_id_out_add[i] = order_id_raw_out_add[ID_WIDTH - i];
+      order_id_out_cancel[i] = order_id_raw_out_cancel[ID_WIDTH - i];
+    end
+    for(integer i =0; i <= PRICE_WIDTH; i = i + 1) begin
+       price_out_add[i] = price_raw_out_add[PRICE_WIDTH - i];
+       price_out_cancel[i] = price_raw_out_cancel[PRICE_WIDTH - i];
+        
+    end
+    for(integer i =0; i <= QUANT_WIDTH; i = i + 1) begin
+       quantity_out_add[i] = quantity_raw_out_add[QUANT_WIDTH - i];
+       quantity_out_cancel[i] = quantity_raw_out_cancel[QUANT_WIDTH - i];
+    end
+  end
 
    assign ready_to_microblaze_out = ~ready_out;
    assign last_master_out = ready_out;
    assign enable_parser = 1; //have to think about this
    assign delete_out = (operation_out == 3'b000) && ready_out;
+   assign stock_symbol_out = (operation_out == 3'b000) ? stock_symbol_out_cancel : stock_symbol_out_add;
    // always@(posedge clk_in) begin
    //    if(reset_in) begin
           
    //    end else begin
    //       if(ready_out)ready_to_microblaze_out <= 1;
    // end
-   
+  
    
   logic [31:0] data_to_display ;   
   seg_display dis(.clk_in(clk_in), .rst_in(reset_in), .val_in(data_to_display), .cat_out({cg, cf, ce, cd, cc, cb, ca}), .an_out(an));
@@ -248,7 +298,8 @@ module mk_parser # (parameter PRICE_WIDTH=15,
     // output [QUANT_WIDTH: 0] quantity_out,
     
     output [STOCK_WIDTH:0] stock_symbol_out_add,
-    output [ID_WIDTH:0]    order_id_out_add, 
+    output [ID_WIDTH:0]    order_id_out_add,
+    output order_type_out_add, 
     output [PRICE_WIDTH:0] price_out_add,
     output [QUANT_WIDTH:0] quantity_out_add,
     
@@ -288,23 +339,29 @@ module mk_parser # (parameter PRICE_WIDTH=15,
    logic                                    ready_dummy_out;
    
    logic [DATA_WIDTH:0] data_reg;
-   //using data_in not data_reg here to automatically skip it but currently used to pipeline ffor correctness
-   mkAddMessage #(.PRICE_WIDTH(PRICE_WIDTH), .ID_WIDTH(ID_WIDTH), .QUANT_WIDTH(QUANT_WIDTH), .STOCK_WIDTH(STOCK_WIDTH)) addMessage(.clk_in(clk_in), .reset_in(reset_in), .data_in(data_reg), .mess_type_in(mess_type), .enable_in(enable_add), .valid_in(valid_in), .operation_out(operation_out_add), .stock_symbol_out(stock_symbol_out_add), .order_id_out(order_id_out_add), .price_out(price_out_add), .quantity_out(quantity_out_add), .ready_out(ready_add_out));
-   
-    mkCancelMessage #(.PRICE_WIDTH(PRICE_WIDTH), .ID_WIDTH(ID_WIDTH), .QUANT_WIDTH(QUANT_WIDTH), .STOCK_WIDTH(STOCK_WIDTH)) cancelMessage(.clk_in(clk_in), .reset_in(reset_in), .data_in(data_reg),.mess_type_in(mess_type), .enable_in(enable_cancel), .valid_in(valid_in), .operation_out(operation_out_cancel), .stock_symbol_out(stock_symbol_out_cancel), .order_id_out(order_id_out_cancel), .price_out(price_out_cancel), .quantity_out(quantity_out_cancel), .ready_out(ready_cancel_out));
-   
-   mkDummyMessage #(.PRICE_WIDTH(PRICE_WIDTH), .ID_WIDTH(ID_WIDTH), .QUANT_WIDTH(QUANT_WIDTH), .STOCK_WIDTH(STOCK_WIDTH)) dummyMessage(.clk_in(clk_in), .reset_in(reset_in), .data_in(data_message_size), .enable_in(enable_dummy), .valid_in(valid_in), .operation_out(operation_out_dummy), .stock_symbol_out(stock_symbol_out_dummy), .order_id_out(order_id_out_dummy), .price_out(price_out_dummy), .quantity_out(quantity_out_dummy), .ready_out(ready_dummy_out));
-
-   parameter MESSAGE_TYPE = DATA_WIDTH - 7;
-
-   logic [7:0]                              message;
+      logic [7:0]                              message;
    logic [DATA_WIDTH:0]                     data_last;
    logic [DATA_WIDTH:0]                     data_last2;
    logic [DATA_WIDTH:0]                     data_message_size;
    
    logic                                    get_length; 
-   assign message = data_in[7:0];
    
+      parameter MESSAGE_TYPE = DATA_WIDTH - 7;
+      
+   //using data_in not data_reg here to automatically skip it but currently used to pipeline ffor correctness
+   mkAddMessage #(.PRICE_WIDTH(PRICE_WIDTH), .ID_WIDTH(ID_WIDTH), .QUANT_WIDTH(QUANT_WIDTH), .STOCK_WIDTH(STOCK_WIDTH), .DATA_WIDTH(DATA_WIDTH)) addMessage(.clk_in(clk_in), .reset_in(reset_in), .data_in(data_reg), .mess_type_in(mess_type), .enable_in(enable_add), .valid_in(valid_in), .operation_out(operation_out_add), .stock_symbol_out(stock_symbol_out_add), .order_id_out(order_id_out_add), .price_out(price_out_add), .quantity_out(quantity_out_add), .order_type_out(order_type_out_add), .ready_out(ready_add_out));
+   
+   mkCancelMessage #(.PRICE_WIDTH(PRICE_WIDTH), .ID_WIDTH(ID_WIDTH), .QUANT_WIDTH(QUANT_WIDTH), .STOCK_WIDTH(STOCK_WIDTH), .DATA_WIDTH(DATA_WIDTH)) cancelMessage(.clk_in(clk_in), .reset_in(reset_in), .data_in(data_reg),.mess_type_in(mess_type), .enable_in(enable_cancel), .valid_in(valid_in), .operation_out(operation_out_cancel), .stock_symbol_out(stock_symbol_out_cancel), .order_id_out(order_id_out_cancel), .price_out(price_out_cancel), .quantity_out(quantity_out_cancel), .ready_out(ready_cancel_out));
+   
+   mkDummyMessage #(.PRICE_WIDTH(PRICE_WIDTH), .ID_WIDTH(ID_WIDTH), .QUANT_WIDTH(QUANT_WIDTH), .STOCK_WIDTH(STOCK_WIDTH), .DATA_WIDTH(DATA_WIDTH)) dummyMessage(.clk_in(clk_in), .reset_in(reset_in), .data_in(data_message_size), .enable_in(enable_dummy), .valid_in(valid_in), .operation_out(operation_out_dummy), .stock_symbol_out(stock_symbol_out_dummy), .order_id_out(order_id_out_dummy), .price_out(price_out_dummy), .quantity_out(quantity_out_dummy), .ready_out(ready_dummy_out));
+
+
+
+   always_comb begin
+      for(integer i =0; i <= DATA_WIDTH; i = i + 1) begin
+         message[i] =  data_in[DATA_WIDTH - i]; 
+      end
+   end
    // always@(posedge clk_in) begin
    //    data_last <= data_in;
    //    data_last2 <= data_last;
@@ -320,22 +377,26 @@ module mk_parser # (parameter PRICE_WIDTH=15,
         { 1'b0, 1'b1, 8'h00,  1'b0, 1'b?, 1'b?, 3'b0_0_0  }:  begin data_reg <= data_reg; enable_add <= enable_add; enable_cancel <= enable_cancel; enable_dummy <= enable_dummy; mess_type <= mess_type; end
        
         // get the length of the message
-        { 1'b0, 1'b1, 8'h??,  1'b0, 1'b?, 1'b1, 3'b0_0_0  }:  begin data_message_size <= data_reg; get_length <= 0; end
+        { 1'b0, 1'b1, 8'h??,  1'b0, 1'b?, 1'b1, 3'b0_0_0  }:  begin data_message_size <= data_in; get_length <= 0; end
 
         // send the message to the appropriate parser
-        { 1'b0, 1'b1, 8'h41,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= data_in; enable_add <= 1; mess_type <= 0; end //add
-        { 1'b0, 1'b1, 8'h46,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= data_in; enable_add <= 1; mess_type <= 1; end // add with id
+        { 1'b0, 1'b1, 8'h82,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= message; enable_add <= 1; mess_type <= 0; end //add //A 41
+        { 1'b0, 1'b1, 8'h86,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= message; enable_add <= 1; mess_type <= 1; end // add with id //F 61
+                                                                                
+        { 1'b0, 1'b1, 8'h2A,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= message; enable_cancel <= 1; mess_type <= 0; end //exec //E 54
+        { 1'b0, 1'b1, 8'hC2,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= message; enable_cancel <= 1;  mess_type <= 1; end //exec_price //C 43
+        { 1'b0, 1'b1, 8'hA1,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= message; enable_cancel <= 1;  mess_type <= 2; end //cancel //X 85
+        { 1'b0, 1'b1, 8'h22,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= message; enable_cancel <= 1;  mess_type <= 3; end //delete //D 44
+        { 1'b0, 1'b1, 8'hAA,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= message; enable_cancel <= 1;  mess_type <= 4; end //replace //U 55
+                                                                                
+        { 1'b0, 1'b1, 8'h??,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= message; enable_dummy <= 1;  mess_type <= 4; end //dummy
+
+        { 1'b0, 1'b1, 8'h??,  1'b0, 1'b?, 1'b0, 3'b1_0_0  }:  begin data_reg <= message;  end //sustain input
+        { 1'b0, 1'b1, 8'h??,  1'b0, 1'b?, 1'b0, 3'b0_1_0  }:  begin data_reg <= message;  end //sustain input
+        { 1'b0, 1'b1, 8'h??,  1'b0, 1'b?, 1'b0, 3'b0_0_1  }:  begin data_reg <= message;  end //sustain input
         
-        { 1'b0, 1'b1, 8'h45,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= data_in; enable_cancel <= 1; mess_type <= 0; end //exec
-        { 1'b0, 1'b1, 8'h43,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= data_in; enable_cancel <= 1;  mess_type <= 1; end //exec_price
-        { 1'b0, 1'b1, 8'h58,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= data_in; enable_cancel <= 1;  mess_type <= 2; end //cancel
-        { 1'b0, 1'b1, 8'h44,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= data_in; enable_cancel <= 1;  mess_type <= 3; end //delete
-        { 1'b0, 1'b1, 8'h55,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= data_in; enable_cancel <= 1;  mess_type <= 4; end //replace
-
-        { 1'b0, 1'b1, 8'h??,  1'b0, 1'b?, 1'b0, 3'b0_0_0  }:  begin data_reg <= data_in; enable_dummy <= 1;  mess_type <= 4; end //dummy
-
         //reset when ready signals are high 
-        {16'b0_????_????_1_1_0_???}: begin data_reg <= 0; mess_type <= 0; enable_add <= 0; enable_cancel <= 0; get_length <= 1; enable_dummy <= 0; end
+        {16'b0_????_????_1_1_0_???}: begin data_reg <= 0; mess_type <= 0; enable_add <= 0; enable_cancel <= 0; get_length <= 1; enable_dummy <= 0; end //there is a zero bit entry here so all good, no important messages dropped.
         
         default: begin  data_reg <= data_reg; get_length <= get_length; enable_add <= enable_add; enable_cancel <= enable_cancel; enable_dummy <= enable_dummy; mess_type <= mess_type; end
       endcase // casez ({reset_in, message, ready_out, enable_add, enable_cancel, enable_dummy})
@@ -406,12 +467,13 @@ module mkAddMessage #(parameter PRICE_WIDTH=15,
    parameter STOCK = 8;
    parameter PRICE = 4;
    parameter ATTRIBUTION = 4;
+   parameter TOTAL = MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM + BUY_SELL_IND + SHARES + STOCK + PRICE;
 
-   logic [ (MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM + BUY_SELL_IND + SHARES + STOCK + PRICE + ATTRIBUTION) * 8 - 1 :0  ] parsed_data;
-   logic [10:0]                                                                                                                                           count;
-   logic                                                                                                                                                  enable_in_reg;
-   logic ready_out_reg;
-   logic mess_type_reg;
+   logic [ (TOTAL) * 8 - 1 :0  ] parsed_data = {0};
+   logic [10:0]                  count;
+   logic                         enable_in_reg;
+   logic                         ready_out_reg;
+   logic                         mess_type_reg;
    
    assign operation_out = 3'b1;
    always_comb begin
@@ -431,13 +493,13 @@ module mkAddMessage #(parameter PRICE_WIDTH=15,
          end else begin
              casez(mess_type_reg)
                0 : begin
-                  if(valid_in) begin
+                  if(valid_in && ~ready_out_reg) begin //don't update parsed_data until ready_out_reg is pulled low
                      count <= count + 1;
-                     parsed_data[count * 8 +: DATA_WIDTH] <= data_in;
+                     parsed_data <= {data_in , parsed_data[TOTAL * 8 - 1 : DATA_WIDTH]}; //parsed_data[count * 8 +: DATA_WIDTH] <= data_in;
                   end
-                  if(count >= MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM + BUY_SELL_IND + SHARES + STOCK + PRICE) begin
+                  if(count == MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM + BUY_SELL_IND + SHARES + STOCK + PRICE - 1  && ~ready_out_reg) begin
                      ready_out_reg <= 1;
-                     order_id_out <= parsed_data[(MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP) * 8 +: ORDER_REF_NUM * 8]; 
+                     order_id_out <= parsed_data[(MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP) * 8  +: ORDER_REF_NUM * 8]; 
                      order_type_out <=  parsed_data[(MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM) * 8 +: BUY_SELL_IND * 8] == 8'h41 ? 1'b0 : 1'b1 ;
                      quantity_out <=  parsed_data[(MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM + BUY_SELL_IND ) * 8 +: SHARES * 8];
                      stock_symbol_out <=  parsed_data[(MESSAGE_TYPE) * 8 +: STOCK_LOCATE * 8];
@@ -495,9 +557,10 @@ module mkCancelMessage #(parameter PRICE_WIDTH=15,
    parameter MATCH_NUMBER = 8;
    parameter PRINTABLE = 8;
    parameter PRICE = 4;
+   parameter TOTAL = MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP + ORDER_REF_NUM  + SHARES;
 
    logic [10:0]             count;
-      logic [ (MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP + ORDER_REF_NUM  + SHARES + MATCH_NUMBER + PRINTABLE + PRICE) * 8 - 1 :0  ] parsed_data;
+      logic [ (TOTAL) * 8 - 1 :0  ] parsed_data = {0};
    assign operation_out = {1'b0, ~mess_type_in[0], 0};// currently 3'b010;//mess_type_in[1]}; assign operation_out = {1'b0, mess_type_in[0], mess_type_in[1]}; //currently only order cancel and order delete (2,3) //{1'b0, mess_type_in[1] , ~mess_type_in[1]}; //cancel order (01, 10)
 
    
@@ -521,24 +584,24 @@ module mkCancelMessage #(parameter PRICE_WIDTH=15,
             count <= 0; ready_out_reg <= 0;price_out <= 0; quantity_out <= 0; order_id_out <= 0; stock_symbol_out <= 0; mess_type_reg <= mess_type_in;
          end else begin
              casez(mess_type_reg)
-               3 : begin
-                  if(valid_in) begin
+               2 : begin
+                  if(valid_in && ~ready_out_reg) begin //don't update parsed_data until ready_out_reg is pulled low
                      count <= count + 1;
-                     parsed_data[count * 8 +: DATA_WIDTH] <= data_in;
+                     parsed_data <= {data_in, parsed_data[TOTAL * 8  - 1:DATA_WIDTH]}; //parsed_data[count * 8 +: DATA_WIDTH] <= data_in;
                   end
-                  if(count >= MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP + ORDER_REF_NUM  + SHARES  ) begin
+                  if(count == MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP + ORDER_REF_NUM  + SHARES - 1 && ~ready_out_reg ) begin
                      ready_out_reg <= 1;
                      order_id_out <= parsed_data[(MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP) * 8 +: ORDER_REF_NUM * 8]; 
                      stock_symbol_out <=  parsed_data[(MESSAGE_TYPE) * 8 +: STOCK_LOCATE * 8];
                      quantity_out <=  parsed_data[(MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP +ORDER_REF_NUM  ) * 8 +: SHARES * 8];
                  end
                  end    
-               2 : begin
-                  if(valid_in) begin
+               0 : begin
+                  if(valid_in && ~ready_out_reg) begin //don't update parsed_data until ready_out_reg is pulled low
                      count <= count + 1;
-                     parsed_data[count +: DATA_WIDTH] <= data_in;
+                     parsed_data <= {data_in, parsed_data[TOTAL * 8  - 1:DATA_WIDTH]}; //parsed_data[count * 8 +: DATA_WIDTH] <= data_in;
                   end
-                  if(count >= MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP + ORDER_REF_NUM ) begin
+                  if(count == MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP + ORDER_REF_NUM  - 1 && ~ready_out_reg ) begin
                      ready_out_reg <= 1;
                      order_id_out <= parsed_data[(MESSAGE_TYPE + STOCK_LOCATE + TRACKING_NUMBER + TIMESTAMP) * 8 +: ORDER_REF_NUM * 8]; 
                      stock_symbol_out <=  parsed_data[(MESSAGE_TYPE) * 8 +: STOCK_LOCATE * 8];
@@ -585,29 +648,26 @@ module mkDummyMessage #(parameter PRICE_WIDTH=15,
     );
 
    logic                    start;
-   logic [10:0]             count;
+   logic [7:0]             count;
              
   always@(posedge clk_in) begin
      if(reset_in) begin
         start <= 0; count <= 0; ready_out <= 0;
-     end
-     if (~start && enable_in) begin
-        start <= 1;
-        count <= data_in;
-end
+     end else begin
+        if (~start && enable_in) begin
+            start <= 1;
+            count <= data_in;
+        end else begin
+            if(start && valid_in) begin
+                count <= count - 1;
+                if(count <= 3) begin
+                    start <= 0;
+                    ready_out <= 1;
+                end
+            end else begin
+                ready_out <= 0;
+            end
+        end
+     end   
   end 
-
-   always@(posedge clk_in) begin
-      if(~reset_in) begin
-          if(start && valid_in) begin
-             count <= count - 1;
-          end
-          if(count <= 1) begin
-             start <= 0;
-             ready_out <= 1; 
-          end else begin
-             ready_out <= 0;
-          end
-      end
-   end
 endmodule

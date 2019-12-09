@@ -2,43 +2,50 @@
 # Vivado v2019.1.2 (64-bit)
 # SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
 # IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
-# Start of session at: Thu Dec  5 23:03:18 2019
-# Process ID: 6755
+# Start of session at: Mon Dec  9 02:00:44 2019
+# Process ID: 3331
 # Current directory: /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.runs/synth_1
 # Command line: vivado -log parser_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source parser_top.tcl
 # Log file: /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.runs/synth_1/parser_top.vds
 # Journal file: /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source parser_top.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository '/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is '/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.runs/synth_1'.)
+WARNING: [IP_Flow 19-3685] Ignored loading user repository '/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs'. The path is contained within another repository.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/var/local/xilinx-local/Vivado/2019.1/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'user.org:user:parser_top:1.0'. The one found in IP location '/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser' will take precedence over the same IP in location /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs
 Command: synth_design -top parser_top -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 6964 
-WARNING: [Synth 8-2507] parameter declaration becomes local in mk_parser with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:139]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:220]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:221]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:222]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:223]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:224]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:225]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:226]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:227]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:228]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:229]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:308]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:309]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:310]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:311]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:312]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:313]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:314]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:315]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:316]
+INFO: Helper process launched with PID 3363 
+WARNING: [Synth 8-2507] parameter declaration becomes local in mk_parser with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:349]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:456]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:457]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:458]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:459]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:460]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:461]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:462]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:463]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:464]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkAddMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:465]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:546]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:547]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:548]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:549]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:550]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:551]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:552]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:553]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mkCancelMessage with formal parameter declaration list [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:554]
+WARNING: [Synth 8-1849] concatenation with unsized literal; will interpret as 32 bits [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:558]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1801.883 ; gain = 158.496 ; free physical = 2036 ; free virtual = 13349
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1809.336 ; gain = 156.496 ; free physical = 1001 ; free virtual = 11678
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'parser_top' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:22]
 	Parameter PRICE_WIDTH bound to: 15 - type: integer 
@@ -46,20 +53,20 @@ INFO: [Synth 8-6157] synthesizing module 'parser_top' [/afs/athena.mit.edu/user/
 	Parameter QUANT_WIDTH bound to: 7 - type: integer 
 	Parameter STOCK_WIDTH bound to: 7 - type: integer 
 	Parameter DATA_WIDTH bound to: 31 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'mk_parser' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:71]
+INFO: [Synth 8-6157] synthesizing module 'mk_parser' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:279]
 	Parameter PRICE_WIDTH bound to: 15 - type: integer 
 	Parameter ID_WIDTH bound to: 15 - type: integer 
 	Parameter QUANT_WIDTH bound to: 7 - type: integer 
 	Parameter STOCK_WIDTH bound to: 7 - type: integer 
 	Parameter DATA_WIDTH bound to: 7 - type: integer 
 	Parameter MESSAGE_TYPE bound to: 0 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'mkAddMessage' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:197]
+INFO: [Synth 8-6157] synthesizing module 'mkAddMessage' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:433]
 	Parameter PRICE_WIDTH bound to: 15 - type: integer 
 	Parameter ID_WIDTH bound to: 15 - type: integer 
 	Parameter QUANT_WIDTH bound to: 7 - type: integer 
 	Parameter STOCK_WIDTH bound to: 7 - type: integer 
 	Parameter DATA_WIDTH bound to: 31 - type: integer 
-	Parameter MESSAGE_TYPE bound to: 1 - type: integer 
+	Parameter MESSAGE_TYPE bound to: 0 - type: integer 
 	Parameter STOCK_LOCATE bound to: 2 - type: integer 
 	Parameter TRACKING_NUMBER bound to: 2 - type: integer 
 	Parameter TIMESTAMP bound to: 6 - type: integer 
@@ -69,15 +76,14 @@ INFO: [Synth 8-6157] synthesizing module 'mkAddMessage' [/afs/athena.mit.edu/use
 	Parameter STOCK bound to: 8 - type: integer 
 	Parameter PRICE bound to: 4 - type: integer 
 	Parameter ATTRIBUTION bound to: 4 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'mkAddMessage' (1#1) [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:197]
-WARNING: [Synth 8-7023] instance 'addMessage' of module 'mkAddMessage' has 13 connections declared, but only 12 given [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:133]
-INFO: [Synth 8-6157] synthesizing module 'mkCancelMessage' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:285]
+INFO: [Synth 8-6155] done synthesizing module 'mkAddMessage' (1#1) [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:433]
+INFO: [Synth 8-6157] synthesizing module 'mkCancelMessage' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:523]
 	Parameter PRICE_WIDTH bound to: 15 - type: integer 
 	Parameter ID_WIDTH bound to: 15 - type: integer 
 	Parameter QUANT_WIDTH bound to: 7 - type: integer 
 	Parameter STOCK_WIDTH bound to: 7 - type: integer 
 	Parameter DATA_WIDTH bound to: 31 - type: integer 
-	Parameter MESSAGE_TYPE bound to: 1 - type: integer 
+	Parameter MESSAGE_TYPE bound to: 0 - type: integer 
 	Parameter STOCK_LOCATE bound to: 2 - type: integer 
 	Parameter TRACKING_NUMBER bound to: 2 - type: integer 
 	Parameter TIMESTAMP bound to: 6 - type: integer 
@@ -86,22 +92,33 @@ INFO: [Synth 8-6157] synthesizing module 'mkCancelMessage' [/afs/athena.mit.edu/
 	Parameter MATCH_NUMBER bound to: 8 - type: integer 
 	Parameter PRINTABLE bound to: 8 - type: integer 
 	Parameter PRICE bound to: 4 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'mkCancelMessage' (2#1) [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:285]
-INFO: [Synth 8-6157] synthesizing module 'mkDummyMessage' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:381]
+WARNING: [Synth 8-151] case item 32'b00000000000000000000000000000010 is unreachable [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:581]
+INFO: [Synth 8-6155] done synthesizing module 'mkCancelMessage' (2#1) [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:523]
+INFO: [Synth 8-6157] synthesizing module 'mkDummyMessage' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:622]
 	Parameter PRICE_WIDTH bound to: 15 - type: integer 
 	Parameter ID_WIDTH bound to: 15 - type: integer 
 	Parameter QUANT_WIDTH bound to: 7 - type: integer 
 	Parameter STOCK_WIDTH bound to: 7 - type: integer 
 	Parameter DATA_WIDTH bound to: 31 - type: integer 
-WARNING: [Synth 8-3848] Net operation_out in module/entity mkDummyMessage does not have driver. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:395]
-WARNING: [Synth 8-3848] Net stock_symbol_out in module/entity mkDummyMessage does not have driver. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:396]
-WARNING: [Synth 8-3848] Net order_id_out in module/entity mkDummyMessage does not have driver. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:397]
-WARNING: [Synth 8-3848] Net price_out in module/entity mkDummyMessage does not have driver. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:398]
-WARNING: [Synth 8-3848] Net quantity_out in module/entity mkDummyMessage does not have driver. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:399]
-INFO: [Synth 8-6155] done synthesizing module 'mkDummyMessage' (3#1) [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:381]
-WARNING: [Synth 8-87] always_comb on 'operation_out_reg' did not result in combinational logic [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:168]
-INFO: [Synth 8-6155] done synthesizing module 'mk_parser' (4#1) [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:71]
-INFO: [Synth 8-6155] done synthesizing module 'parser_top' (5#1) [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:22]
+WARNING: [Synth 8-3848] Net operation_out in module/entity mkDummyMessage does not have driver. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:636]
+WARNING: [Synth 8-3848] Net stock_symbol_out in module/entity mkDummyMessage does not have driver. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:637]
+WARNING: [Synth 8-3848] Net order_id_out in module/entity mkDummyMessage does not have driver. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:638]
+WARNING: [Synth 8-3848] Net price_out in module/entity mkDummyMessage does not have driver. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:639]
+WARNING: [Synth 8-3848] Net quantity_out in module/entity mkDummyMessage does not have driver. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:640]
+INFO: [Synth 8-6155] done synthesizing module 'mkDummyMessage' (3#1) [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:622]
+WARNING: [Synth 8-87] always_comb on 'operation_out_reg' did not result in combinational logic [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:404]
+INFO: [Synth 8-6155] done synthesizing module 'mk_parser' (4#1) [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:279]
+INFO: [Synth 8-6157] synthesizing module 'seg_display' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:212]
+INFO: [Synth 8-6157] synthesizing module 'binary_to_seven_seg' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:261]
+INFO: [Synth 8-6155] done synthesizing module 'binary_to_seven_seg' (5#1) [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:261]
+INFO: [Synth 8-6155] done synthesizing module 'seg_display' (6#1) [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:212]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:188]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (7#1) [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:188]
+WARNING: [Synth 8-689] width (16) of port connection 'noisy_in' does not match port width (1) of module 'debounce' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:133]
+WARNING: [Synth 8-689] width (16) of port connection 'clean_out' does not match port width (1) of module 'debounce' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:133]
+WARNING: [Synth 8-3848] Net order_type_out_add in module/entity parser_top does not have driver. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:51]
+INFO: [Synth 8-6155] done synthesizing module 'parser_top' (8#1) [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:22]
+WARNING: [Synth 8-3917] design parser_top has port dp driven by constant 1
 WARNING: [Synth 8-3331] design mkDummyMessage has unconnected port operation_out[2]
 WARNING: [Synth 8-3331] design mkDummyMessage has unconnected port operation_out[1]
 WARNING: [Synth 8-3331] design mkDummyMessage has unconnected port operation_out[0]
@@ -177,34 +194,17 @@ WARNING: [Synth 8-3331] design mkDummyMessage has unconnected port data_in[11]
 WARNING: [Synth 8-3331] design mkDummyMessage has unconnected port data_in[10]
 WARNING: [Synth 8-3331] design mkDummyMessage has unconnected port data_in[9]
 WARNING: [Synth 8-3331] design mkDummyMessage has unconnected port data_in[8]
-WARNING: [Synth 8-3331] design mkDummyMessage has unconnected port data_in[7]
-WARNING: [Synth 8-3331] design mkDummyMessage has unconnected port data_in[6]
-WARNING: [Synth 8-3331] design mkDummyMessage has unconnected port data_in[5]
-WARNING: [Synth 8-3331] design mkDummyMessage has unconnected port data_in[4]
-WARNING: [Synth 8-3331] design mkDummyMessage has unconnected port data_in[3]
-WARNING: [Synth 8-3331] design mkDummyMessage has unconnected port data_in[2]
-WARNING: [Synth 8-3331] design mkDummyMessage has unconnected port data_in[1]
-WARNING: [Synth 8-3331] design mkDummyMessage has unconnected port data_in[0]
 WARNING: [Synth 8-3331] design mkCancelMessage has unconnected port data_in[31]
+WARNING: [Synth 8-3331] design mkCancelMessage has unconnected port mess_type_in[2]
+WARNING: [Synth 8-3331] design mkCancelMessage has unconnected port mess_type_in[1]
 WARNING: [Synth 8-3331] design mkAddMessage has unconnected port data_in[31]
+WARNING: [Synth 8-3331] design mkAddMessage has unconnected port mess_type_in[2]
+WARNING: [Synth 8-3331] design mkAddMessage has unconnected port mess_type_in[1]
 WARNING: [Synth 8-3331] design mk_parser has unconnected port enable_in
-WARNING: [Synth 8-3331] design parser_top has unconnected port data_in[31]
-WARNING: [Synth 8-3331] design parser_top has unconnected port data_in[30]
-WARNING: [Synth 8-3331] design parser_top has unconnected port data_in[29]
-WARNING: [Synth 8-3331] design parser_top has unconnected port data_in[28]
-WARNING: [Synth 8-3331] design parser_top has unconnected port data_in[27]
-WARNING: [Synth 8-3331] design parser_top has unconnected port data_in[26]
-WARNING: [Synth 8-3331] design parser_top has unconnected port data_in[25]
-WARNING: [Synth 8-3331] design parser_top has unconnected port data_in[24]
-WARNING: [Synth 8-3331] design parser_top has unconnected port data_in[23]
-WARNING: [Synth 8-3331] design parser_top has unconnected port data_in[22]
-WARNING: [Synth 8-3331] design parser_top has unconnected port data_in[21]
-WARNING: [Synth 8-3331] design parser_top has unconnected port data_in[20]
-WARNING: [Synth 8-3331] design parser_top has unconnected port data_in[19]
-WARNING: [Synth 8-3331] design parser_top has unconnected port data_in[18]
-INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3331] design parser_top has unconnected port order_type_out_add
+WARNING: [Synth 8-3331] design parser_top has unconnected port enable_in
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1834.793 ; gain = 191.406 ; free physical = 2062 ; free virtual = 13376
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1844.246 ; gain = 191.406 ; free physical = 1026 ; free virtual = 11706
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -217,10 +217,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1852.602 ; gain = 209.215 ; free physical = 2111 ; free virtual = 13425
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1862.055 ; gain = 209.215 ; free physical = 1025 ; free virtual = 11705
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1852.602 ; gain = 209.215 ; free physical = 2111 ; free virtual = 13425
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1862.055 ; gain = 209.215 ; free physical = 1025 ; free virtual = 11705
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -233,54 +233,6 @@ Resolution: If [get_<value>] was used to populate the object, check to make sure
 WARNING: [Vivado 12-584] No ports matched 'clk_100mhz'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:15]
 CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports clk_100mhz]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:15]
 Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
-WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:20]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:20]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:21]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:21]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:22]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:22]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:23]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:23]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:24]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:24]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:25]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:25]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:26]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:26]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:27]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:27]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:28]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:28]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[9]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:29]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:29]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[10]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:30]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:30]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[11]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:31]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:31]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[12]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:32]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:32]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[13]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:33]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:33]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[14]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:34]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:34]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[15]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:35]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:35]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 WARNING: [Vivado 12-584] No ports matched 'led[0]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:40]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:40]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
@@ -346,54 +298,6 @@ CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/a
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 WARNING: [Vivado 12-584] No ports matched 'led17_r'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:62]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:62]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ca'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:67]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:67]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'cb'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:68]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:68]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'cc'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:69]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:69]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'cd'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:70]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:70]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ce'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:71]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:71]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'cf'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:72]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:72]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'cg'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:73]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:73]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'dp'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:75]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:75]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[0]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:77]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:77]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[1]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:78]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:78]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[2]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:79]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:79]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[3]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:80]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:80]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[4]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:81]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:81]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[5]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:82]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:82]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[6]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:83]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:83]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[7]'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:84]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:84]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 WARNING: [Vivado 12-584] No ports matched 'cpu_resetn'. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:89]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:89]
@@ -477,34 +381,34 @@ WARNING: [Vivado 12-584] No ports matched 'eth_ref_clk'. [/afs/athena.mit.edu/us
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc:248]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/constrs_1/imports/new/default.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/parser_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/parser_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2026.258 ; gain = 0.000 ; free physical = 2016 ; free virtual = 13329
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2007.695 ; gain = 0.000 ; free physical = 910 ; free virtual = 11602
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-WARNING: [Constraints 18-5210] No constraints selected for write.
-Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2030.227 ; gain = 3.969 ; free physical = 2015 ; free virtual = 13329
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2007.695 ; gain = 0.000 ; free physical = 910 ; free virtual = 11602
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2030.227 ; gain = 386.840 ; free physical = 2087 ; free virtual = 13401
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 2007.695 ; gain = 354.855 ; free physical = 986 ; free virtual = 11679
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2030.227 ; gain = 386.840 ; free physical = 2087 ; free virtual = 13401
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 2007.695 ; gain = 354.855 ; free physical = 986 ; free virtual = 11679
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2030.227 ; gain = 386.840 ; free physical = 2087 ; free virtual = 13401
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 2007.695 ; gain = 354.855 ; free physical = 986 ; free virtual = 11679
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'operation_out_reg' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:168]
+WARNING: [Synth 8-327] inferring latch for variable 'operation_out_reg' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:404]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 2030.227 ; gain = 386.840 ; free physical = 2077 ; free virtual = 13393
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2007.699 ; gain = 354.859 ; free physical = 975 ; free virtual = 11669
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -517,30 +421,40 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input     32 Bit       Adders := 1     
 	   2 Input     11 Bit       Adders := 3     
+	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
-	              344 Bit    Registers := 1     
-	              320 Bit    Registers := 1     
+	              336 Bit    Registers := 1     
+	              312 Bit    Registers := 1     
+	               32 Bit    Registers := 2     
 	               16 Bit    Registers := 4     
-	               11 Bit    Registers := 2     
-	                8 Bit    Registers := 5     
+	               11 Bit    Registers := 3     
+	                8 Bit    Registers := 8     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 8     
+	                1 Bit    Registers := 15    
 +---Muxes : 
-	   2 Input    344 Bit        Muxes := 4     
-	   2 Input    320 Bit        Muxes := 4     
-	   5 Input     16 Bit        Muxes := 2     
-	   2 Input     16 Bit        Muxes := 2     
-	   3 Input     11 Bit        Muxes := 1     
+	   2 Input    336 Bit        Muxes := 4     
+	   2 Input    312 Bit        Muxes := 4     
+	   2 Input     32 Bit        Muxes := 6     
+	   7 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 1     
+	   5 Input     16 Bit        Muxes := 4     
+	   4 Input     12 Bit        Muxes := 1     
 	   5 Input      8 Bit        Muxes := 2     
-	   2 Input      8 Bit        Muxes := 2     
-	  11 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 6     
+	  13 Input      8 Bit        Muxes := 1     
+	   3 Input      7 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   3 Input      6 Bit        Muxes := 1     
 	   4 Input      5 Bit        Muxes := 3     
 	   4 Input      4 Bit        Muxes := 1     
 	   4 Input      3 Bit        Muxes := 1     
-	  11 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 20    
-	  11 Input      1 Bit        Muxes := 7     
+	  13 Input      3 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 16    
+	  13 Input      1 Bit        Muxes := 10    
 	   4 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -549,56 +463,90 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
+Module parser_top 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   7 Input     32 Bit        Muxes := 4     
+	   2 Input     32 Bit        Muxes := 5     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 4     
 Module mkAddMessage 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     11 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
 +---Registers : 
-	              320 Bit    Registers := 1     
+	              312 Bit    Registers := 1     
 	               16 Bit    Registers := 2     
-	               11 Bit    Registers := 1     
+	               11 Bit    Registers := 2     
 	                8 Bit    Registers := 2     
-	                1 Bit    Registers := 3     
+	                1 Bit    Registers := 4     
 +---Muxes : 
-	   2 Input    320 Bit        Muxes := 4     
+	   2 Input    312 Bit        Muxes := 4     
 	   5 Input     16 Bit        Muxes := 2     
 	   5 Input      8 Bit        Muxes := 2     
 	   4 Input      5 Bit        Muxes := 3     
 	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 5     
 Module mkCancelMessage 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     11 Bit       Adders := 1     
 +---Registers : 
-	              344 Bit    Registers := 1     
+	              336 Bit    Registers := 1     
 	               16 Bit    Registers := 2     
 	               11 Bit    Registers := 1     
 	                8 Bit    Registers := 2     
-	                1 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
 +---Muxes : 
-	   2 Input    344 Bit        Muxes := 4     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input      8 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 12    
+	   2 Input    336 Bit        Muxes := 4     
+	   5 Input     16 Bit        Muxes := 2     
+	   4 Input     12 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 4     
+	   3 Input      7 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   3 Input      6 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
 Module mkDummyMessage 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     11 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
 +---Muxes : 
-	   3 Input     11 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
 Module mk_parser 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
+	                1 Bit    Registers := 4     
 +---Muxes : 
-	  11 Input      8 Bit        Muxes := 1     
+	  13 Input      8 Bit        Muxes := 1     
 	   4 Input      3 Bit        Muxes := 1     
-	  11 Input      3 Bit        Muxes := 1     
-	  11 Input      1 Bit        Muxes := 7     
+	  13 Input      3 Bit        Muxes := 1     
+	  13 Input      1 Bit        Muxes := 10    
 	   4 Input      1 Bit        Muxes := 2     
+Module seg_display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module debounce 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -615,66 +563,43 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[0]' (FDRE) to 'parser/cancelMessage/price_out_reg[1]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[1]' (FDRE) to 'parser/cancelMessage/price_out_reg[2]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[2]' (FDRE) to 'parser/cancelMessage/price_out_reg[6]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[3]' (FDRE) to 'parser/cancelMessage/price_out_reg[4]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[4]' (FDRE) to 'parser/cancelMessage/price_out_reg[5]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[5]' (FDRE) to 'parser/cancelMessage/stock_symbol_out_reg[0]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[6]' (FDRE) to 'parser/cancelMessage/price_out_reg[7]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[7]' (FDRE) to 'parser/cancelMessage/price_out_reg[8]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[8]' (FDRE) to 'parser/cancelMessage/price_out_reg[9]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[9]' (FDRE) to 'parser/cancelMessage/price_out_reg[10]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[10]' (FDRE) to 'parser/cancelMessage/price_out_reg[11]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[11]' (FDRE) to 'parser/cancelMessage/price_out_reg[12]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[12]' (FDRE) to 'parser/cancelMessage/price_out_reg[13]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[13]' (FDRE) to 'parser/cancelMessage/price_out_reg[14]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[14]' (FDRE) to 'parser/cancelMessage/price_out_reg[15]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[15]' (FDRE) to 'parser/cancelMessage/stock_symbol_out_reg[3]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/stock_symbol_out_reg[0]' (FDRE) to 'parser/cancelMessage/stock_symbol_out_reg[1]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/stock_symbol_out_reg[1]' (FDRE) to 'parser/cancelMessage/stock_symbol_out_reg[2]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/stock_symbol_out_reg[2]' (FDRE) to 'parser/cancelMessage/stock_symbol_out_reg[5]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/stock_symbol_out_reg[3]' (FDRE) to 'parser/cancelMessage/stock_symbol_out_reg[4]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/stock_symbol_out_reg[4]' (FDRE) to 'parser/cancelMessage/stock_symbol_out_reg[6]'
-INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/stock_symbol_out_reg[5]' (FDRE) to 'parser/cancelMessage/stock_symbol_out_reg[7]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\parser/cancelMessage/stock_symbol_out_reg[6] )
+INFO: [Synth 8-4471] merging register 'count_reg[10:0]' into 'count_reg[10:0]' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:483]
+WARNING: [Synth 8-3917] design parser_top has port dp driven by constant 1
+WARNING: [Synth 8-3331] design mkCancelMessage has unconnected port data_in[31]
+WARNING: [Synth 8-3331] design mkCancelMessage has unconnected port mess_type_in[2]
+WARNING: [Synth 8-3331] design mkCancelMessage has unconnected port mess_type_in[1]
+WARNING: [Synth 8-3331] design mkAddMessage has unconnected port data_in[31]
+WARNING: [Synth 8-3331] design mkAddMessage has unconnected port mess_type_in[2]
+WARNING: [Synth 8-3331] design mkAddMessage has unconnected port mess_type_in[1]
+WARNING: [Synth 8-3331] design parser_top has unconnected port order_type_out_add
+WARNING: [Synth 8-3331] design parser_top has unconnected port enable_in
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/quantity_out_reg[7]' (FDRE) to 'parser/cancelMessage/quantity_out_reg[6]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/quantity_out_reg[6]' (FDRE) to 'parser/cancelMessage/quantity_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/quantity_out_reg[5]' (FDRE) to 'parser/cancelMessage/quantity_out_reg[3]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/quantity_out_reg[4]' (FDRE) to 'parser/cancelMessage/quantity_out_reg[2]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/quantity_out_reg[3]' (FDRE) to 'parser/cancelMessage/quantity_out_reg[1]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/quantity_out_reg[1]' (FDRE) to 'parser/cancelMessage/quantity_out_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\parser/cancelMessage /\quantity_out_reg[0] )
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[15]' (FDRE) to 'parser/cancelMessage/price_out_reg[14]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[14]' (FDRE) to 'parser/cancelMessage/price_out_reg[13]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[13]' (FDRE) to 'parser/cancelMessage/price_out_reg[12]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[12]' (FDRE) to 'parser/cancelMessage/price_out_reg[11]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[11]' (FDRE) to 'parser/cancelMessage/price_out_reg[10]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[10]' (FDRE) to 'parser/cancelMessage/price_out_reg[9]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[9]' (FDRE) to 'parser/cancelMessage/price_out_reg[8]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[8]' (FDRE) to 'parser/cancelMessage/price_out_reg[7]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[7]' (FDRE) to 'parser/cancelMessage/price_out_reg[6]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[6]' (FDRE) to 'parser/cancelMessage/price_out_reg[2]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[5]' (FDRE) to 'parser/cancelMessage/price_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[4]' (FDRE) to 'parser/cancelMessage/price_out_reg[3]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[2]' (FDRE) to 'parser/cancelMessage/price_out_reg[1]'
+INFO: [Synth 8-3886] merging instance 'parser/cancelMessage/price_out_reg[1]' (FDRE) to 'parser/cancelMessage/price_out_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\parser/cancelMessage /\price_out_reg[0] )
+INFO: [Synth 8-3886] merging instance 'parser/operation_out_reg[1]' (LD) to 'parser/operation_out_reg[2]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\parser/operation_out_reg[2] )
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'parser/dummyMessage/ready_out_reg__0/Q' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'parser/dummyMessage/count_reg[10]__0/Q' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'parser/dummyMessage/count_reg[9]__0/Q' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'parser/dummyMessage/count_reg[8]__0/Q' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'parser/dummyMessage/count_reg[7]__0/Q' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'parser/dummyMessage/count_reg[6]__0/Q' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'parser/dummyMessage/count_reg[5]__0/Q' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'parser/dummyMessage/count_reg[4]__0/Q' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'parser/dummyMessage/count_reg[3]__0/Q' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'parser/dummyMessage/count_reg[2]__0/Q' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:408]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'parser/dummyMessage/start_reg/Q' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:420]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:420]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv:420]
 WARNING: [Synth 8-3332] Sequential element (parser/operation_out_reg[2]) is unused and will be removed from module parser_top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2030.227 ; gain = 386.840 ; free physical = 2056 ; free virtual = 13379
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 2007.699 ; gain = 354.859 ; free physical = 951 ; free virtual = 11655
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -686,13 +611,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2030.227 ; gain = 386.840 ; free physical = 1941 ; free virtual = 13264
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2007.699 ; gain = 354.859 ; free physical = 826 ; free virtual = 11537
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2030.227 ; gain = 386.840 ; free physical = 1941 ; free virtual = 13264
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2007.699 ; gain = 354.859 ; free physical = 826 ; free virtual = 11537
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -704,7 +629,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2030.227 ; gain = 386.840 ; free physical = 1937 ; free virtual = 13260
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 2007.699 ; gain = 354.859 ; free physical = 823 ; free virtual = 11533
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -728,7 +653,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2030.227 ; gain = 386.840 ; free physical = 1937 ; free virtual = 13260
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 2007.699 ; gain = 354.859 ; free physical = 823 ; free virtual = 11534
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -741,7 +666,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2030.227 ; gain = 386.840 ; free physical = 1937 ; free virtual = 13260
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 2007.699 ; gain = 354.859 ; free physical = 823 ; free virtual = 11534
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -753,25 +678,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2030.227 ; gain = 386.840 ; free physical = 1937 ; free virtual = 13259
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 2007.699 ; gain = 354.859 ; free physical = 823 ; free virtual = 11534
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2030.227 ; gain = 386.840 ; free physical = 1937 ; free virtual = 13259
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 2007.699 ; gain = 354.859 ; free physical = 823 ; free virtual = 11534
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2030.227 ; gain = 386.840 ; free physical = 1937 ; free virtual = 13259
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 2007.699 ; gain = 354.859 ; free physical = 823 ; free virtual = 11534
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2030.227 ; gain = 386.840 ; free physical = 1937 ; free virtual = 13259
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 2007.699 ; gain = 354.859 ; free physical = 823 ; free virtual = 11534
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -784,54 +709,61 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-----+------+
-|      |Cell |Count |
-+------+-----+------+
-|1     |BUFG |     1|
-|2     |LUT1 |     3|
-|3     |LUT2 |    37|
-|4     |LUT3 |    56|
-|5     |LUT4 |    33|
-|6     |LUT5 |    68|
-|7     |LUT6 |   221|
-|8     |FDRE |   185|
-|9     |LD   |     2|
-|10    |IBUF |    11|
-|11    |OBUF |   101|
-+------+-----+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     8|
+|3     |LUT1   |    12|
+|4     |LUT2   |    41|
+|5     |LUT3   |    40|
+|6     |LUT4   |    68|
+|7     |LUT5   |   107|
+|8     |LUT6   |   168|
+|9     |FDRE   |   276|
+|10    |FDSE   |     1|
+|11    |LD     |     1|
+|12    |IBUF   |    52|
+|13    |OBUF   |   127|
+|14    |OBUFT  |     1|
++------+-------+------+
 
 Report Instance Areas: 
 +------+------------------+----------------+------+
 |      |Instance          |Module          |Cells |
 +------+------------------+----------------+------+
-|1     |top               |                |   718|
-|2     |  parser          |mk_parser       |   605|
-|3     |    addMessage    |mkAddMessage    |   343|
-|4     |    cancelMessage |mkCancelMessage |   226|
+|1     |top               |                |   903|
+|2     |  dis             |seg_display     |   125|
+|3     |  parser          |mk_parser       |   534|
+|4     |    addMessage    |mkAddMessage    |   219|
+|5     |    cancelMessage |mkCancelMessage |   237|
+|6     |    dummyMessage  |mkDummyMessage  |    32|
 +------+------------------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2030.227 ; gain = 386.840 ; free physical = 1937 ; free virtual = 13259
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 2007.699 ; gain = 354.859 ; free physical = 823 ; free virtual = 11534
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 33 critical warnings and 29 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2030.227 ; gain = 209.215 ; free physical = 1991 ; free virtual = 13314
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2030.227 ; gain = 386.840 ; free physical = 2004 ; free virtual = 13327
+Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2007.699 ; gain = 209.219 ; free physical = 878 ; free virtual = 11589
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 2007.699 ; gain = 354.859 ; free physical = 893 ; free virtual = 11604
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2030.227 ; gain = 0.000 ; free physical = 1937 ; free virtual = 13260
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2007.699 ; gain = 0.000 ; free physical = 824 ; free virtual = 11536
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 2 instances were transformed.
-  LD => LDCE: 2 instances
+  A total of 1 instances were transformed.
+  LD => LDCE: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-46 Infos, 213 Warnings, 116 Critical Warnings and 0 Errors encountered.
+56 Infos, 181 Warnings, 51 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2030.227 ; gain = 609.137 ; free physical = 2035 ; free virtual = 13358
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2030.227 ; gain = 0.000 ; free physical = 2035 ; free virtual = 13358
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 2007.699 ; gain = 584.062 ; free physical = 923 ; free virtual = 11635
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2007.699 ; gain = 0.000 ; free physical = 923 ; free virtual = 11635
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.runs/synth_1/parser_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file parser_top_utilization_synth.rpt -pb parser_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Dec  5 23:03:47 2019...
+INFO: [Common 17-206] Exiting Vivado at Mon Dec  9 02:01:17 2019...

@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date                      : Sat Dec  7 18:22:14 2019
-| Host                      : eecs-digital-37 running 64-bit Ubuntu 14.04.6 LTS
+| Date                      : Sun Dec  8 22:01:56 2019
+| Host                      : eecs-digital-48 running 64-bit Ubuntu 14.04.6 LTS
 | Command                   : report_io -file design_1_wrapper_io_placed.rpt
 | Design                    : design_1_wrapper
 | Device                    : xc7a100t

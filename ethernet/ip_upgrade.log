@@ -1,6 +1,324 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
+| Date         : Sun Dec  8 21:26:50 2019
+| Host         : eecs-digital-48 running 64-bit Ubuntu 14.04.6 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_ip_top_level_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the conversion of design_1_ip_top_level_0_0 (user.org:user:ip_top_level:1.0 (Rev. 2)) to Vivado generation flows.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_ip_top_level_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'led17_b'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
+| Date         : Sun Dec  8 19:59:40 2019
+| Host         : eecs-digital-37 running 64-bit Ubuntu 14.04.6 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_ip_top_level_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the conversion of design_1_ip_top_level_0_0 (user.org:user:ip_top_level:1.0 (Rev. 2)) to Vivado generation flows.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_ip_top_level_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'led17_b'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
+| Date         : Sun Dec  8 19:33:25 2019
+| Host         : eecs-digital-37 running 64-bit Ubuntu 14.04.6 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_ip_top_level_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_ip_top_level_0_0 (user.org:user:ip_top_level:1.0 (Rev. 2)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
+| Date         : Sun Dec  8 17:34:21 2019
+| Host         : eecs-digital-48 running 64-bit Ubuntu 14.04.6 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_parser_top_1_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_parser_top_1_0 (user.org:user:parser_top:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
+| Date         : Sun Dec  8 17:34:21 2019
+| Host         : eecs-digital-48 running 64-bit Ubuntu 14.04.6 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_parser_top_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_parser_top_0_0 (user.org:user:parser_top:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
+| Date         : Sun Dec  8 16:45:31 2019
+| Host         : eecs-digital-48 running 64-bit Ubuntu 14.04.6 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_parser_top_1_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_parser_top_1_0 (user.org:user:parser_top:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
+| Date         : Sun Dec  8 16:45:30 2019
+| Host         : eecs-digital-48 running 64-bit Ubuntu 14.04.6 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_parser_top_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_parser_top_0_0 (user.org:user:parser_top:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
+| Date         : Sun Dec  8 16:45:30 2019
+| Host         : eecs-digital-48 running 64-bit Ubuntu 14.04.6 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_ip_top_level_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_ip_top_level_0_0 (user.org:user:ip_top_level:1.0 (Rev. 2)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
+| Date         : Sun Dec  8 11:47:09 2019
+| Host         : eecs-digital-37 running 64-bit Ubuntu 14.04.6 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_parser_top_1_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_parser_top_1_0 (user.org:user:parser_top:1.0) from (Rev. 2) to (Rev. 1)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_parser_top_1_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'order_type_out_add'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
+| Date         : Sun Dec  8 11:47:09 2019
+| Host         : eecs-digital-37 running 64-bit Ubuntu 14.04.6 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_parser_top_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_parser_top_0_0 (user.org:user:parser_top:1.0) from (Rev. 2) to (Rev. 1)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_parser_top_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'order_type_out_add'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
+| Date         : Sun Dec  8 11:37:10 2019
+| Host         : eecs-digital-37 running 64-bit Ubuntu 14.04.6 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_parser_top_1_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_parser_top_1_0 (user.org:user:parser_top:1.0) from (Rev. 1) to (Rev. 2)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_parser_top_1_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'delete_out'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
+| Date         : Sun Dec  8 11:37:10 2019
+| Host         : eecs-digital-37 running 64-bit Ubuntu 14.04.6 LTS
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_parser_top_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_parser_top_0_0 (user.org:user:parser_top:1.0) from (Rev. 1) to (Rev. 2)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_parser_top_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'delete_out'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
 | Date         : Sat Dec  7 17:31:59 2019
 | Host         : eecs-digital-37 running 64-bit Ubuntu 14.04.6 LTS
 | Command      : upgrade_ip

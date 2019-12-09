@@ -1,8 +1,8 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-//Date        : Sat Dec  7 17:32:25 2019
-//Host        : eecs-digital-37 running 64-bit Ubuntu 14.04.6 LTS
+//Date        : Sun Dec  8 21:51:48 2019
+//Host        : eecs-digital-48 running 64-bit Ubuntu 14.04.6 LTS
 //Command     : generate_target design_1.bd
 //Design      : design_1
 //Purpose     : IP block netlist
@@ -176,6 +176,8 @@ module design_1
   wire microblaze_0_M1_AXIS_TVALID;
   wire [31:0]microblaze_0_M2_AXIS_TDATA;
   wire microblaze_0_M2_AXIS_TVALID;
+  wire [31:0]microblaze_0_M3_AXIS_TDATA;
+  wire microblaze_0_M3_AXIS_TVALID;
   wire [31:0]microblaze_0_M_AXI_DC_ARADDR;
   wire [1:0]microblaze_0_M_AXI_DC_ARBURST;
   wire [3:0]microblaze_0_M_AXI_DC_ARCACHE;
@@ -224,7 +226,7 @@ module design_1
   wire microblaze_0_M_AXI_IC_RREADY;
   wire [1:0]microblaze_0_M_AXI_IC_RRESP;
   wire microblaze_0_M_AXI_IC_RVALID;
-  wire microblaze_0_S2_AXIS_TREADY;
+  wire microblaze_0_S3_AXIS_TREADY;
   wire [31:0]microblaze_0_axi_dp_ARADDR;
   wire [2:0]microblaze_0_axi_dp_ARPROT;
   wire [0:0]microblaze_0_axi_dp_ARREADY;
@@ -371,9 +373,12 @@ module design_1
   wire [1:0]mii_to_rmii_0_RMII_PHY_M_TXD;
   wire mii_to_rmii_0_RMII_PHY_M_TX_EN;
   wire [31:0]parser_book_interface_0_order_to_add;
+  wire parser_top_0_delete_out;
+  wire parser_top_0_last_master_out;
   wire [2:0]parser_top_0_operation_out;
   wire [15:0]parser_top_0_order_id_out_add;
   wire [15:0]parser_top_0_order_id_out_cancel;
+  wire parser_top_0_order_type_out_add;
   wire [15:0]parser_top_0_price_out_add;
   wire [7:0]parser_top_0_quantity_out_add;
   wire [7:0]parser_top_0_quantity_out_cancel;
@@ -383,6 +388,7 @@ module design_1
   wire parser_top_1_last_master_out;
   wire [15:0]parser_top_1_price_out_add;
   wire parser_top_1_ready_out;
+  wire parser_top_1_ready_to_microblaze_out;
   wire reset_1;
   wire [0:0]rst_clk_wiz_1_100M_bus_struct_reset;
   wire rst_clk_wiz_1_100M_mb_reset;
@@ -613,6 +619,7 @@ module design_1
         .cf(ip_top_level_0_cf),
         .cg(ip_top_level_0_cg),
         .clk_100mhz(microblaze_0_Clk),
+        .delete(parser_top_0_delete_out),
         .dp(ip_top_level_0_dp),
         .entry(parser_book_interface_0_order_to_add),
         .led16_b(ip_top_level_0_led16_b),
@@ -693,6 +700,11 @@ module design_1
         .M2_AXIS_TDATA(microblaze_0_M2_AXIS_TDATA),
         .M2_AXIS_TREADY(parser_top_0_ready_to_microblaze_out),
         .M2_AXIS_TVALID(microblaze_0_M2_AXIS_TVALID),
+        .M3_AXIS_TDATA(microblaze_0_M3_AXIS_TDATA),
+        .M3_AXIS_TREADY(parser_top_1_ready_to_microblaze_out),
+        .M3_AXIS_TVALID(microblaze_0_M3_AXIS_TVALID),
+        .M4_AXIS_TREADY(1'b1),
+        .M5_AXIS_TREADY(1'b1),
         .M_AXI_DC_ARADDR(microblaze_0_M_AXI_DC_ARADDR),
         .M_AXI_DC_ARBURST(microblaze_0_M_AXI_DC_ARBURST),
         .M_AXI_DC_ARCACHE(microblaze_0_M_AXI_DC_ARCACHE),
@@ -778,10 +790,19 @@ module design_1
         .S1_AXIS_TLAST(master_axi_test_0_M00_AXIS_TLAST),
         .S1_AXIS_TREADY(master_axi_test_0_M00_AXIS_TREADY),
         .S1_AXIS_TVALID(master_axi_test_0_M00_AXIS_TVALID),
-        .S2_AXIS_TDATA({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,parser_top_1_price_out_add}),
-        .S2_AXIS_TLAST(parser_top_1_last_master_out),
-        .S2_AXIS_TREADY(microblaze_0_S2_AXIS_TREADY),
-        .S2_AXIS_TVALID(parser_top_1_ready_out),
+        .S2_AXIS_TDATA({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,parser_top_0_order_id_out_cancel}),
+        .S2_AXIS_TLAST(parser_top_0_last_master_out),
+        .S2_AXIS_TVALID(parser_top_0_ready_out),
+        .S3_AXIS_TDATA({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,parser_top_1_price_out_add}),
+        .S3_AXIS_TLAST(parser_top_1_last_master_out),
+        .S3_AXIS_TREADY(microblaze_0_S3_AXIS_TREADY),
+        .S3_AXIS_TVALID(parser_top_1_ready_out),
+        .S4_AXIS_TDATA({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .S4_AXIS_TLAST(1'b0),
+        .S4_AXIS_TVALID(1'b0),
+        .S5_AXIS_TDATA({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .S5_AXIS_TLAST(1'b0),
+        .S5_AXIS_TVALID(1'b0),
         .Write_Strobe(microblaze_0_dlmb_1_WRITESTROBE));
   design_1_microblaze_0_axi_intc_0 microblaze_0_axi_intc
        (.interrupt_address(microblaze_0_interrupt_ADDRESS),
@@ -1026,15 +1047,19 @@ module design_1
   design_1_parser_book_interface_0_0 parser_book_interface_0
        (.order_id_out_add(parser_top_0_order_id_out_add),
         .order_to_add(parser_book_interface_0_order_to_add),
+        .order_type_out_add(parser_top_0_order_type_out_add),
         .price_out_add(parser_top_0_price_out_add),
         .quantity_out_add(parser_top_0_quantity_out_add));
   design_1_parser_top_0_0 parser_top_0
        (.clk_in(microblaze_0_Clk),
         .data_in(microblaze_0_M2_AXIS_TDATA),
+        .delete_out(parser_top_0_delete_out),
         .enable_in(1'b0),
+        .last_master_out(parser_top_0_last_master_out),
         .operation_out(parser_top_0_operation_out),
         .order_id_out_add(parser_top_0_order_id_out_add),
         .order_id_out_cancel(parser_top_0_order_id_out_cancel),
+        .order_type_out_add(parser_top_0_order_type_out_add),
         .price_out_add(parser_top_0_price_out_add),
         .quantity_out_add(parser_top_0_quantity_out_add),
         .quantity_out_cancel(parser_top_0_quantity_out_cancel),
@@ -1047,15 +1072,16 @@ module design_1
         .valid_microblaze_in(microblaze_0_M2_AXIS_TVALID));
   design_1_parser_top_1_0 parser_top_1
        (.clk_in(microblaze_0_Clk),
-        .data_in({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .data_in(microblaze_0_M3_AXIS_TDATA),
         .enable_in(1'b0),
         .last_master_out(parser_top_1_last_master_out),
         .price_out_add(parser_top_1_price_out_add),
         .ready_out(parser_top_1_ready_out),
+        .ready_to_microblaze_out(parser_top_1_ready_to_microblaze_out),
         .reset_in(rst_clk_wiz_1_100M_mb_reset),
         .sw({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .valid_master_in(microblaze_0_S2_AXIS_TREADY),
-        .valid_microblaze_in(1'b0));
+        .valid_master_in(microblaze_0_S3_AXIS_TREADY),
+        .valid_microblaze_in(microblaze_0_M3_AXIS_TVALID));
   design_1_rst_clk_wiz_1_100M_0 rst_clk_wiz_1_100M
        (.aux_reset_in(1'b1),
         .bus_struct_reset(rst_clk_wiz_1_100M_bus_struct_reset),

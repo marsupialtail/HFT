@@ -36,7 +36,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c9c3cb95</spirit:value>
+            <spirit:value>e432ed85</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -52,7 +52,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>6d5cbffd</spirit:value>
+            <spirit:value>7f15ea09</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -393,6 +393,19 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
+        <spirit:name>order_type_out_add</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
         <spirit:name>stock_symbol_out_cancel</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
@@ -454,6 +467,19 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>delete_out</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
               <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
@@ -538,7 +564,7 @@
       <spirit:file>
         <spirit:name>sources_1/new/parser_top.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_6d5cbffd</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_7f15ea09</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -633,13 +659,13 @@
       <xilinx:displayName>parser_top_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-12-07T22:31:28Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2019-12-08T16:45:50Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2019.1.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="68510d7d"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="94635ed2"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="e852671c"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="4c0d393a"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="0e3d0c09"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="7e9f04e9"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="acc13099"/>
     </xilinx:packagingInfo>

@@ -1303,3 +1303,2296 @@ Finished building: axi_stream.elf.size
 16:48:01 **** Incremental Build of configuration Debug for project axi_stream ****
 make all 
 make: Nothing to be done for `all'.
+18:14:48 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:84:6: warning: unused variable 'errority' [-Wunused-variable]
+  int errority = 1;
+      ^~~~~~~~
+../src/echo.c:83:6: warning: unused variable 'validity' [-Wunused-variable]
+  int validity = 1;
+      ^~~~~~~~
+../src/echo.c:82:9: warning: unused variable 'payload' [-Wunused-variable]
+  void * payload = buffer;
+         ^~~~~~~
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 109984	   1792	3962320	4074096	 3e2a70	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+18:23:23 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:135:5: error: 'next_buffer' undeclared (first use in this function); did you mean 'new_buffer'?
+     next_buffer = next_buffer + 1;
+     ^~~~~~~~~~~
+     new_buffer
+../src/echo.c:135:5: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/echo.o] Error 1
+18:23:43 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:140:18: error: 'new_buffer' undeclared (first use in this function); did you mean 'next_buffer'?
+           getfsl(new_buffer, 3);
+                  ^~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:84: note: in definition of macro 'getfsl'
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                    ^~~
+../src/echo.c:140:18: note: each undeclared identifier is reported only once for each function it appears in
+           getfsl(new_buffer, 3);
+                  ^~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:84: note: in definition of macro 'getfsl'
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                    ^~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:140:11: note: in expansion of macro 'getfsl'
+           getfsl(new_buffer, 3);
+           ^~~~~~
+make: *** [src/echo.o] Error 1
+18:23:47 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'recv_callback':
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: impossible constraint in 'asm'
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:128:11: note: in expansion of macro 'getfsl'
+           getfsl(buffer, 2);
+           ^~~~~~
+make: *** [src/echo.o] Error 1
+18:39:46 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'recv_callback':
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: impossible constraint in 'asm'
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:128:11: note: in expansion of macro 'getfsl'
+           getfsl(buffer, 2);
+           ^~~~~~
+make: *** [src/echo.o] Error 1
+18:41:21 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:91:16: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+          u16_t len;
+                ^~~
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112156	   1792	3962324	4076272	 3e32f0	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+18:41:25 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+18:45:56 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:84:6: warning: unused variable 'errority' [-Wunused-variable]
+  int errority = 1;
+      ^~~~~~~~
+../src/echo.c:83:6: warning: unused variable 'validity' [-Wunused-variable]
+  int validity = 1;
+      ^~~~~~~~
+../src/echo.c:82:9: warning: unused variable 'payload' [-Wunused-variable]
+  void * payload = buffer;
+         ^~~~~~~
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 109984	   1792	3962320	4074096	 3e2a70	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+18:46:00 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:84:6: warning: unused variable 'errority' [-Wunused-variable]
+  int errority = 1;
+      ^~~~~~~~
+../src/echo.c:83:6: warning: unused variable 'validity' [-Wunused-variable]
+  int validity = 1;
+      ^~~~~~~~
+../src/echo.c:82:9: warning: unused variable 'payload' [-Wunused-variable]
+  void * payload = buffer;
+         ^~~~~~~
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 111860	   1792	3962324	4075976	 3e31c8	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+18:46:38 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+18:49:57 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+18:58:48 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+19:07:42 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:84:6: warning: unused variable 'errority' [-Wunused-variable]
+  int errority = 1;
+      ^~~~~~~~
+../src/echo.c:83:6: warning: unused variable 'validity' [-Wunused-variable]
+  int validity = 1;
+      ^~~~~~~~
+../src/echo.c:82:9: warning: unused variable 'payload' [-Wunused-variable]
+  void * payload = buffer;
+         ^~~~~~~
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 111864	   1792	3962320	4075976	 3e31c8	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+19:08:03 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+19:09:32 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:84:6: warning: unused variable 'errority' [-Wunused-variable]
+  int errority = 1;
+      ^~~~~~~~
+../src/echo.c:83:6: warning: unused variable 'validity' [-Wunused-variable]
+  int validity = 1;
+      ^~~~~~~~
+../src/echo.c:82:9: warning: unused variable 'payload' [-Wunused-variable]
+  void * payload = buffer;
+         ^~~~~~~
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 111864	   1792	3962320	4075976	 3e31c8	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+19:09:36 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+19:11:29 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'transfer_data':
+../src/echo.c:48:12: warning: passing argument 1 of 'print' makes pointer from integer without a cast [-Wint-conversion]
+      print(val);
+            ^~~
+In file included from ../src/echo.c:29:
+/var/local/xilinx-local/SDK/2019.1/gnu/microblaze/lin/microblaze-xilinx-elf/include/stdio.h:250:13: note: expected 'const char *' but argument is of type 'uint' {aka 'unsigned int'}
+ void print (const char* );
+             ^~~~~~~~~~~
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:84:6: warning: unused variable 'errority' [-Wunused-variable]
+  int errority = 1;
+      ^~~~~~~~
+../src/echo.c:83:6: warning: unused variable 'validity' [-Wunused-variable]
+  int validity = 1;
+      ^~~~~~~~
+../src/echo.c:82:9: warning: unused variable 'payload' [-Wunused-variable]
+  void * payload = buffer;
+         ^~~~~~~
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 111884	   1792	3962324	4076000	 3e31e0	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+19:11:33 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+19:13:00 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:83:6: warning: unused variable 'errority' [-Wunused-variable]
+  int errority = 1;
+      ^~~~~~~~
+../src/echo.c:82:6: warning: unused variable 'validity' [-Wunused-variable]
+  int validity = 1;
+      ^~~~~~~~
+../src/echo.c:81:9: warning: unused variable 'payload' [-Wunused-variable]
+  void * payload = buffer;
+         ^~~~~~~
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 111864	   1792	3962320	4075976	 3e31c8	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+19:15:32 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:84:6: warning: unused variable 'errority' [-Wunused-variable]
+  int errority = 1;
+      ^~~~~~~~
+../src/echo.c:83:6: warning: unused variable 'validity' [-Wunused-variable]
+  int validity = 1;
+      ^~~~~~~~
+../src/echo.c:82:9: warning: unused variable 'payload' [-Wunused-variable]
+  void * payload = buffer;
+         ^~~~~~~
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 109984	   1792	3962320	4074096	 3e2a70	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+19:15:49 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../src/echo.c:34:
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:149:25: error: 'i' undeclared (first use in this function)
+          getfslx(buffer[i + 1], 2, FSL_NONBLOCKING);
+                         ^
+../../axi_stream_bsp/microblaze_0/include/fsl.h:50:106: note: in definition of macro 'getfslx'
+ #define getfslx(val, id, flags)      asm volatile (stringify(flags) "get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                                          ^~~
+../src/echo.c:149:25: note: each undeclared identifier is reported only once for each function it appears in
+          getfslx(buffer[i + 1], 2, FSL_NONBLOCKING);
+                         ^
+../../axi_stream_bsp/microblaze_0/include/fsl.h:50:106: note: in definition of macro 'getfslx'
+ #define getfslx(val, id, flags)      asm volatile (stringify(flags) "get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                                          ^~~
+../../axi_stream_bsp/microblaze_0/include/fsl.h:50:38: error: invalid lvalue in asm output 0
+ #define getfslx(val, id, flags)      asm volatile (stringify(flags) "get\t%0,rfsl" stringify(id) : "=d" (val))
+                                      ^~~
+../src/echo.c:149:10: note: in expansion of macro 'getfslx'
+          getfslx(buffer[i + 1], 2, FSL_NONBLOCKING);
+          ^~~~~~~
+make: *** [src/echo.o] Error 1
+19:15:52 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../src/echo.c:34:
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:149:25: error: 'i' undeclared (first use in this function)
+          getfslx(buffer[i + 1], 2, FSL_NONBLOCKING);
+                         ^
+../../axi_stream_bsp/microblaze_0/include/fsl.h:50:106: note: in definition of macro 'getfslx'
+ #define getfslx(val, id, flags)      asm volatile (stringify(flags) "get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                                          ^~~
+../src/echo.c:149:25: note: each undeclared identifier is reported only once for each function it appears in
+          getfslx(buffer[i + 1], 2, FSL_NONBLOCKING);
+                         ^
+../../axi_stream_bsp/microblaze_0/include/fsl.h:50:106: note: in definition of macro 'getfslx'
+ #define getfslx(val, id, flags)      asm volatile (stringify(flags) "get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                                          ^~~
+../../axi_stream_bsp/microblaze_0/include/fsl.h:50:38: error: invalid lvalue in asm output 0
+ #define getfslx(val, id, flags)      asm volatile (stringify(flags) "get\t%0,rfsl" stringify(id) : "=d" (val))
+                                      ^~~
+../src/echo.c:149:10: note: in expansion of macro 'getfslx'
+          getfslx(buffer[i + 1], 2, FSL_NONBLOCKING);
+          ^~~~~~~
+make: *** [src/echo.o] Error 1
+19:34:57 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112016	   1792	3962320	4076128	 3e3260	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+19:35:03 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+19:43:47 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112016	   1792	3962320	4076128	 3e3260	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+20:06:52 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112016	   1792	3962320	4076128	 3e3260	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+20:07:42 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../src/echo.c:34:
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:94:26: error: 'i' undeclared (first use in this function)
+           getfslx(buffer[i + 1], 2, FSL_NONBLOCKING);
+                          ^
+../../axi_stream_bsp/microblaze_0/include/fsl.h:50:106: note: in definition of macro 'getfslx'
+ #define getfslx(val, id, flags)      asm volatile (stringify(flags) "get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                                          ^~~
+../src/echo.c:94:26: note: each undeclared identifier is reported only once for each function it appears in
+           getfslx(buffer[i + 1], 2, FSL_NONBLOCKING);
+                          ^
+../../axi_stream_bsp/microblaze_0/include/fsl.h:50:106: note: in definition of macro 'getfslx'
+ #define getfslx(val, id, flags)      asm volatile (stringify(flags) "get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                                          ^~~
+../src/echo.c:91:16: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+          u16_t len;
+                ^~~
+In file included from ../src/echo.c:34:
+../../axi_stream_bsp/microblaze_0/include/fsl.h:50:38: error: invalid lvalue in asm output 0
+ #define getfslx(val, id, flags)      asm volatile (stringify(flags) "get\t%0,rfsl" stringify(id) : "=d" (val))
+                                      ^~~
+../src/echo.c:94:11: note: in expansion of macro 'getfslx'
+           getfslx(buffer[i + 1], 2, FSL_NONBLOCKING);
+           ^~~~~~~
+make: *** [src/echo.o] Error 1
+20:07:46 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../src/echo.c:34:
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:94:26: error: 'i' undeclared (first use in this function)
+           getfslx(buffer[i + 1], 2, FSL_NONBLOCKING);
+                          ^
+../../axi_stream_bsp/microblaze_0/include/fsl.h:50:106: note: in definition of macro 'getfslx'
+ #define getfslx(val, id, flags)      asm volatile (stringify(flags) "get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                                          ^~~
+../src/echo.c:94:26: note: each undeclared identifier is reported only once for each function it appears in
+           getfslx(buffer[i + 1], 2, FSL_NONBLOCKING);
+                          ^
+../../axi_stream_bsp/microblaze_0/include/fsl.h:50:106: note: in definition of macro 'getfslx'
+ #define getfslx(val, id, flags)      asm volatile (stringify(flags) "get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                                          ^~~
+../src/echo.c:91:16: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+          u16_t len;
+                ^~~
+In file included from ../src/echo.c:34:
+../../axi_stream_bsp/microblaze_0/include/fsl.h:50:38: error: invalid lvalue in asm output 0
+ #define getfslx(val, id, flags)      asm volatile (stringify(flags) "get\t%0,rfsl" stringify(id) : "=d" (val))
+                                      ^~~
+../src/echo.c:94:11: note: in expansion of macro 'getfslx'
+           getfslx(buffer[i + 1], 2, FSL_NONBLOCKING);
+           ^~~~~~~
+make: *** [src/echo.o] Error 1
+20:08:45 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112148	   1792	3962324	4076264	 3e32e8	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+20:08:47 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+20:11:28 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+20:14:38 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+20:15:30 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+20:15:58 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+20:16:34 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+20:20:02 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112016	   1792	3962320	4076128	 3e3260	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+20:20:25 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+20:23:39 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'recv_callback':
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:37: error: expected '(' before 'volatile'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                     ^~~~~~~~
+../src/echo.c:85:5: note: in expansion of macro 'putfsl'
+     putfsl(p->payload, 2);
+     ^~~~~~
+../src/echo.c:89:5: error: 'errority' undeclared (first use in this function); did you mean 'erro'?
+     errority = 1;
+     ^~~~~~~~
+     erro
+../src/echo.c:89:5: note: each undeclared identifier is reported only once for each function it appears in
+../src/echo.c:109:42: error: 'rity' undeclared (first use in this function)
+     tcp_write(tpcb, payload, len + 2, 1);rity = 1;
+                                          ^~~~
+../src/echo.c:169:12: error: redefinition of 'next_buffer'
+     char * next_buffer = buffer;
+            ^~~~~~~~~~~
+../src/echo.c:95:11: note: previous definition of 'next_buffer' was here
+    char * next_buffer = buffer;
+           ^~~~~~~~~~~
+../src/echo.c:170:9: error: redefinition of 'len'
+     int len = 0;
+         ^~~
+../src/echo.c:96:8: note: previous definition of 'len' was here
+    int len = 0;
+        ^~~
+../src/echo.c:84:6: warning: unused variable 'erro' [-Wunused-variable]
+  int erro
+      ^~~~
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'start_application':
+../src/echo.c:235:12: error: 'p' undeclared (first use in this function)
+     putfsl(p->payload, 2);
+            ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../src/echo.c:238:5: error: 'validity' undeclared (first use in this function); did you mean 'va_list'?
+     validity = 1;
+     ^~~~~~~~
+     va_list
+../src/echo.c:239:5: error: 'errority' undeclared (first use in this function); did you mean 'err_t'?
+     errority = 1;
+     ^~~~~~~~
+     err_t
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c:241:12: error: 'buffer' undeclared (first use in this function); did you mean 'setbuffer'?
+     getfsl(buffer[0], 2);
+            ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:84: note: in definition of macro 'getfsl'
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                    ^~~
+../src/echo.c:259:15: error: 'tpcb' undeclared (first use in this function); did you mean 'pcb'?
+     tcp_write(tpcb, payload, len + 2, 1);
+               ^~~~
+               pcb
+../src/echo.c:259:21: error: 'payload' undeclared (first use in this function)
+     tcp_write(tpcb, payload, len + 2, 1);
+                     ^~~~~~~
+../src/echo.c:277:11: error: redefinition of 'next_buffer'
+    char * next_buffer = buffer;
+           ^~~~~~~~~~~
+../src/echo.c:245:11: note: previous definition of 'next_buffer' was here
+    char * next_buffer = buffer;
+           ^~~~~~~~~~~
+../src/echo.c:278:8: error: redefinition of 'len'
+    int len = 0;
+        ^~~
+../src/echo.c:246:8: note: previous definition of 'len' was here
+    int len = 0;
+        ^~~
+../src/echo.c:298:3: error: 'xi' undeclared (first use in this function)
+   xi
+   ^~
+../src/echo.c:298:5: error: expected ';' before 'asm'
+   xi
+     ^
+     ;
+../src/echo.c:323:46: warning: implicit declaration of function 'l_printf'; did you mean 'vdprintf'? [-Wimplicit-function-declaration]
+         tcp_write(tpcb, payload, len + 2, 1);l_printf("Out of memory while tcp_listen\n\r");
+                                              ^~~~~~~~
+                                              vdprintf
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'recv_callback':
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:93:4: note: in expansion of macro 'fsl_iserror'
+    fsl_iserror(errority);
+    ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:167:5: note: in expansion of macro 'fsl_iserror'
+     fsl_iserror(errority);
+     ^~~~~~~~~~~
+../src/echo.c: In function 'start_application':
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:241:5: note: in expansion of macro 'getfsl'
+     getfsl(buffer[0], 2);
+     ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:242:4: note: in expansion of macro 'fsl_isinvalid'
+    fsl_isinvalid(validity);
+    ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:243:4: note: in expansion of macro 'fsl_iserror'
+    fsl_iserror(errority);
+    ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:273:5: note: in expansion of macro 'getfsl'
+     getfsl(buffer[0], 2);
+     ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:274:4: note: in expansion of macro 'fsl_isinvalid'
+    fsl_isinvalid(validity);
+    ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:275:4: note: in expansion of macro 'fsl_iserror'
+    fsl_iserror(errority);
+    ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:305:9: note: in expansion of macro 'getfsl'
+         getfsl(buffer[0], 2);
+         ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:306:5: note: in expansion of macro 'fsl_isinvalid'
+     fsl_isinvalid(validity);
+     ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:307:5: note: in expansion of macro 'fsl_iserror'
+     fsl_iserror(errority);
+     ^~~~~~~~~~~
+make: *** [src/echo.o] Error 1
+20:24:18 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:131:12: error: 'len' undeclared (first use in this function); did you mean 'mblen'?
+     buffer[len + 1] = '\n';
+            ^~~
+            mblen
+../src/echo.c:131:12: note: each undeclared identifier is reported only once for each function it appears in
+../src/echo.c:132:42: error: 'rity' undeclared (first use in this function)
+     tcp_write(tpcb, payload, len + 2, 1);rity = 1;
+                                          ^~~~
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'start_application':
+../src/echo.c:212:12: error: 'p' undeclared (first use in this function)
+     putfsl(p->payload, 2);
+            ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../src/echo.c:215:5: error: 'validity' undeclared (first use in this function); did you mean 'va_list'?
+     validity = 1;
+     ^~~~~~~~
+     va_list
+../src/echo.c:216:5: error: 'errority' undeclared (first use in this function); did you mean 'err_t'?
+     errority = 1;
+     ^~~~~~~~
+     err_t
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c:218:12: error: 'buffer' undeclared (first use in this function); did you mean 'setbuffer'?
+     getfsl(buffer[0], 2);
+            ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:84: note: in definition of macro 'getfsl'
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                    ^~~
+../src/echo.c:236:15: error: 'tpcb' undeclared (first use in this function); did you mean 'pcb'?
+     tcp_write(tpcb, payload, len + 2, 1);
+               ^~~~
+               pcb
+../src/echo.c:236:21: error: 'payload' undeclared (first use in this function)
+     tcp_write(tpcb, payload, len + 2, 1);
+                     ^~~~~~~
+../src/echo.c:254:11: error: redefinition of 'next_buffer'
+    char * next_buffer = buffer;
+           ^~~~~~~~~~~
+../src/echo.c:222:11: note: previous definition of 'next_buffer' was here
+    char * next_buffer = buffer;
+           ^~~~~~~~~~~
+../src/echo.c:255:8: error: redefinition of 'len'
+    int len = 0;
+        ^~~
+../src/echo.c:223:8: note: previous definition of 'len' was here
+    int len = 0;
+        ^~~
+../src/echo.c:275:3: error: 'xi' undeclared (first use in this function)
+   xi
+   ^~
+../src/echo.c:275:5: error: expected ';' before 'asm'
+   xi
+     ^
+     ;
+../src/echo.c:300:46: warning: implicit declaration of function 'l_printf'; did you mean 'vdprintf'? [-Wimplicit-function-declaration]
+         tcp_write(tpcb, payload, len + 2, 1);l_printf("Out of memory while tcp_listen\n\r");
+                                              ^~~~~~~~
+                                              vdprintf
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:218:5: note: in expansion of macro 'getfsl'
+     getfsl(buffer[0], 2);
+     ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:219:4: note: in expansion of macro 'fsl_isinvalid'
+    fsl_isinvalid(validity);
+    ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:220:4: note: in expansion of macro 'fsl_iserror'
+    fsl_iserror(errority);
+    ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:250:5: note: in expansion of macro 'getfsl'
+     getfsl(buffer[0], 2);
+     ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:251:4: note: in expansion of macro 'fsl_isinvalid'
+    fsl_isinvalid(validity);
+    ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:252:4: note: in expansion of macro 'fsl_iserror'
+    fsl_iserror(errority);
+    ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:282:9: note: in expansion of macro 'getfsl'
+         getfsl(buffer[0], 2);
+         ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:283:5: note: in expansion of macro 'fsl_isinvalid'
+     fsl_isinvalid(validity);
+     ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:284:5: note: in expansion of macro 'fsl_iserror'
+     fsl_iserror(errority);
+     ^~~~~~~~~~~
+make: *** [src/echo.o] Error 1
+20:24:28 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:131:12: error: 'len' undeclared (first use in this function); did you mean 'mblen'?
+     buffer[len + 1] = '\n';
+            ^~~
+            mblen
+../src/echo.c:131:12: note: each undeclared identifier is reported only once for each function it appears in
+../src/echo.c:132:42: error: 'rity' undeclared (first use in this function)
+     tcp_write(tpcb, payload, len + 2, 1);rity = 1;
+                                          ^~~~
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'start_application':
+../src/echo.c:212:12: error: 'p' undeclared (first use in this function)
+     putfsl(p->payload, 2);
+            ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../src/echo.c:215:5: error: 'validity' undeclared (first use in this function); did you mean 'va_list'?
+     validity = 1;
+     ^~~~~~~~
+     va_list
+../src/echo.c:216:5: error: 'errority' undeclared (first use in this function); did you mean 'err_t'?
+     errority = 1;
+     ^~~~~~~~
+     err_t
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c:218:12: error: 'buffer' undeclared (first use in this function); did you mean 'setbuffer'?
+     getfsl(buffer[0], 2);
+            ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:84: note: in definition of macro 'getfsl'
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                    ^~~
+../src/echo.c:236:15: error: 'tpcb' undeclared (first use in this function); did you mean 'pcb'?
+     tcp_write(tpcb, payload, len + 2, 1);
+               ^~~~
+               pcb
+../src/echo.c:236:21: error: 'payload' undeclared (first use in this function)
+     tcp_write(tpcb, payload, len + 2, 1);
+                     ^~~~~~~
+../src/echo.c:254:11: error: redefinition of 'next_buffer'
+    char * next_buffer = buffer;
+           ^~~~~~~~~~~
+../src/echo.c:222:11: note: previous definition of 'next_buffer' was here
+    char * next_buffer = buffer;
+           ^~~~~~~~~~~
+../src/echo.c:255:8: error: redefinition of 'len'
+    int len = 0;
+        ^~~
+../src/echo.c:223:8: note: previous definition of 'len' was here
+    int len = 0;
+        ^~~
+../src/echo.c:275:3: error: 'xi' undeclared (first use in this function)
+   xi
+   ^~
+../src/echo.c:275:5: error: expected ';' before 'asm'
+   xi
+     ^
+     ;
+../src/echo.c:300:46: warning: implicit declaration of function 'l_printf'; did you mean 'vdprintf'? [-Wimplicit-function-declaration]
+         tcp_write(tpcb, payload, len + 2, 1);l_printf("Out of memory while tcp_listen\n\r");
+                                              ^~~~~~~~
+                                              vdprintf
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:218:5: note: in expansion of macro 'getfsl'
+     getfsl(buffer[0], 2);
+     ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:219:4: note: in expansion of macro 'fsl_isinvalid'
+    fsl_isinvalid(validity);
+    ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:220:4: note: in expansion of macro 'fsl_iserror'
+    fsl_iserror(errority);
+    ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:250:5: note: in expansion of macro 'getfsl'
+     getfsl(buffer[0], 2);
+     ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:251:4: note: in expansion of macro 'fsl_isinvalid'
+    fsl_isinvalid(validity);
+    ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:252:4: note: in expansion of macro 'fsl_iserror'
+    fsl_iserror(errority);
+    ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:282:9: note: in expansion of macro 'getfsl'
+         getfsl(buffer[0], 2);
+         ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:283:5: note: in expansion of macro 'fsl_isinvalid'
+     fsl_isinvalid(validity);
+     ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:284:5: note: in expansion of macro 'fsl_iserror'
+     fsl_iserror(errority);
+     ^~~~~~~~~~~
+make: *** [src/echo.o] Error 1
+20:25:29 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'start_application':
+../src/echo.c:210:12: error: 'p' undeclared (first use in this function)
+     putfsl(p->payload, 2);
+            ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../src/echo.c:210:12: note: each undeclared identifier is reported only once for each function it appears in
+     putfsl(p->payload, 2);
+            ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../src/echo.c:213:5: error: 'validity' undeclared (first use in this function); did you mean 'va_list'?
+     validity = 1;
+     ^~~~~~~~
+     va_list
+../src/echo.c:214:5: error: 'errority' undeclared (first use in this function); did you mean 'err_t'?
+     errority = 1;
+     ^~~~~~~~
+     err_t
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c:216:12: error: 'buffer' undeclared (first use in this function); did you mean 'setbuffer'?
+     getfsl(buffer[0], 2);
+            ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:84: note: in definition of macro 'getfsl'
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                    ^~~
+../src/echo.c:234:15: error: 'tpcb' undeclared (first use in this function); did you mean 'pcb'?
+     tcp_write(tpcb, payload, len + 2, 1);
+               ^~~~
+               pcb
+../src/echo.c:234:21: error: 'payload' undeclared (first use in this function)
+     tcp_write(tpcb, payload, len + 2, 1);
+                     ^~~~~~~
+../src/echo.c:252:11: error: redefinition of 'next_buffer'
+    char * next_buffer = buffer;
+           ^~~~~~~~~~~
+../src/echo.c:220:11: note: previous definition of 'next_buffer' was here
+    char * next_buffer = buffer;
+           ^~~~~~~~~~~
+../src/echo.c:253:8: error: redefinition of 'len'
+    int len = 0;
+        ^~~
+../src/echo.c:221:8: note: previous definition of 'len' was here
+    int len = 0;
+        ^~~
+../src/echo.c:273:3: error: 'xi' undeclared (first use in this function)
+   xi
+   ^~
+../src/echo.c:273:5: error: expected ';' before 'asm'
+   xi
+     ^
+     ;
+../src/echo.c:298:46: warning: implicit declaration of function 'l_printf'; did you mean 'vdprintf'? [-Wimplicit-function-declaration]
+         tcp_write(tpcb, payload, len + 2, 1);l_printf("Out of memory while tcp_listen\n\r");
+                                              ^~~~~~~~
+                                              vdprintf
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:216:5: note: in expansion of macro 'getfsl'
+     getfsl(buffer[0], 2);
+     ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:217:4: note: in expansion of macro 'fsl_isinvalid'
+    fsl_isinvalid(validity);
+    ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:218:4: note: in expansion of macro 'fsl_iserror'
+    fsl_iserror(errority);
+    ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:248:5: note: in expansion of macro 'getfsl'
+     getfsl(buffer[0], 2);
+     ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:249:4: note: in expansion of macro 'fsl_isinvalid'
+    fsl_isinvalid(validity);
+    ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:250:4: note: in expansion of macro 'fsl_iserror'
+    fsl_iserror(errority);
+    ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:280:9: note: in expansion of macro 'getfsl'
+         getfsl(buffer[0], 2);
+         ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:281:5: note: in expansion of macro 'fsl_isinvalid'
+     fsl_isinvalid(validity);
+     ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:282:5: note: in expansion of macro 'fsl_iserror'
+     fsl_iserror(errority);
+     ^~~~~~~~~~~
+make: *** [src/echo.o] Error 1
+20:25:31 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'start_application':
+../src/echo.c:210:12: error: 'p' undeclared (first use in this function)
+     putfsl(p->payload, 2);
+            ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../src/echo.c:210:12: note: each undeclared identifier is reported only once for each function it appears in
+     putfsl(p->payload, 2);
+            ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../src/echo.c:213:5: error: 'validity' undeclared (first use in this function); did you mean 'va_list'?
+     validity = 1;
+     ^~~~~~~~
+     va_list
+../src/echo.c:214:5: error: 'errority' undeclared (first use in this function); did you mean 'err_t'?
+     errority = 1;
+     ^~~~~~~~
+     err_t
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c:216:12: error: 'buffer' undeclared (first use in this function); did you mean 'setbuffer'?
+     getfsl(buffer[0], 2);
+            ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:84: note: in definition of macro 'getfsl'
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                    ^~~
+../src/echo.c:234:15: error: 'tpcb' undeclared (first use in this function); did you mean 'pcb'?
+     tcp_write(tpcb, payload, len + 2, 1);
+               ^~~~
+               pcb
+../src/echo.c:234:21: error: 'payload' undeclared (first use in this function)
+     tcp_write(tpcb, payload, len + 2, 1);
+                     ^~~~~~~
+../src/echo.c:252:11: error: redefinition of 'next_buffer'
+    char * next_buffer = buffer;
+           ^~~~~~~~~~~
+../src/echo.c:220:11: note: previous definition of 'next_buffer' was here
+    char * next_buffer = buffer;
+           ^~~~~~~~~~~
+../src/echo.c:253:8: error: redefinition of 'len'
+    int len = 0;
+        ^~~
+../src/echo.c:221:8: note: previous definition of 'len' was here
+    int len = 0;
+        ^~~
+../src/echo.c:273:3: error: 'xi' undeclared (first use in this function)
+   xi
+   ^~
+../src/echo.c:273:5: error: expected ';' before 'asm'
+   xi
+     ^
+     ;
+../src/echo.c:298:46: warning: implicit declaration of function 'l_printf'; did you mean 'vdprintf'? [-Wimplicit-function-declaration]
+         tcp_write(tpcb, payload, len + 2, 1);l_printf("Out of memory while tcp_listen\n\r");
+                                              ^~~~~~~~
+                                              vdprintf
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:216:5: note: in expansion of macro 'getfsl'
+     getfsl(buffer[0], 2);
+     ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:217:4: note: in expansion of macro 'fsl_isinvalid'
+    fsl_isinvalid(validity);
+    ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:218:4: note: in expansion of macro 'fsl_iserror'
+    fsl_iserror(errority);
+    ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:248:5: note: in expansion of macro 'getfsl'
+     getfsl(buffer[0], 2);
+     ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:249:4: note: in expansion of macro 'fsl_isinvalid'
+    fsl_isinvalid(validity);
+    ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:250:4: note: in expansion of macro 'fsl_iserror'
+    fsl_iserror(errority);
+    ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:280:9: note: in expansion of macro 'getfsl'
+         getfsl(buffer[0], 2);
+         ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:281:5: note: in expansion of macro 'fsl_isinvalid'
+     fsl_isinvalid(validity);
+     ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:282:5: note: in expansion of macro 'fsl_iserror'
+     fsl_iserror(errority);
+     ^~~~~~~~~~~
+make: *** [src/echo.o] Error 1
+20:29:09 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'start_application':
+../src/echo.c:210:12: error: 'p' undeclared (first use in this function)
+     putfsl(p->payload, 2);
+            ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../src/echo.c:210:12: note: each undeclared identifier is reported only once for each function it appears in
+     putfsl(p->payload, 2);
+            ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../src/echo.c:213:5: error: 'validity' undeclared (first use in this function); did you mean 'va_list'?
+     validity = 1;
+     ^~~~~~~~
+     va_list
+../src/echo.c:214:5: error: 'errority' undeclared (first use in this function); did you mean 'err_t'?
+     errority = 1;
+     ^~~~~~~~
+     err_t
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c:216:12: error: 'buffer' undeclared (first use in this function); did you mean 'setbuffer'?
+     getfsl(buffer[0], 2);
+            ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:84: note: in definition of macro 'getfsl'
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                    ^~~
+../src/echo.c:234:15: error: 'tpcb' undeclared (first use in this function); did you mean 'pcb'?
+     tcp_write(tpcb, payload, len + 2, 1);
+               ^~~~
+               pcb
+../src/echo.c:234:21: error: 'payload' undeclared (first use in this function)
+     tcp_write(tpcb, payload, len + 2, 1);
+                     ^~~~~~~
+../src/echo.c:252:11: error: redefinition of 'next_buffer'
+    char * next_buffer = buffer;
+           ^~~~~~~~~~~
+../src/echo.c:220:11: note: previous definition of 'next_buffer' was here
+    char * next_buffer = buffer;
+           ^~~~~~~~~~~
+../src/echo.c:253:8: error: redefinition of 'len'
+    int len = 0;
+        ^~~
+../src/echo.c:221:8: note: previous definition of 'len' was here
+    int len = 0;
+        ^~~
+../src/echo.c:273:3: error: 'xi' undeclared (first use in this function)
+   xi
+   ^~
+../src/echo.c:273:5: error: expected ';' before 'asm'
+   xi
+     ^
+     ;
+../src/echo.c:298:46: warning: implicit declaration of function 'l_printf'; did you mean 'vdprintf'? [-Wimplicit-function-declaration]
+         tcp_write(tpcb, payload, len + 2, 1);l_printf("Out of memory while tcp_listen\n\r");
+                                              ^~~~~~~~
+                                              vdprintf
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:216:5: note: in expansion of macro 'getfsl'
+     getfsl(buffer[0], 2);
+     ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:217:4: note: in expansion of macro 'fsl_isinvalid'
+    fsl_isinvalid(validity);
+    ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:218:4: note: in expansion of macro 'fsl_iserror'
+    fsl_iserror(errority);
+    ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:248:5: note: in expansion of macro 'getfsl'
+     getfsl(buffer[0], 2);
+     ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:249:4: note: in expansion of macro 'fsl_isinvalid'
+    fsl_isinvalid(validity);
+    ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:250:4: note: in expansion of macro 'fsl_iserror'
+    fsl_iserror(errority);
+    ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:280:9: note: in expansion of macro 'getfsl'
+         getfsl(buffer[0], 2);
+         ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:281:5: note: in expansion of macro 'fsl_isinvalid'
+     fsl_isinvalid(validity);
+     ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:282:5: note: in expansion of macro 'fsl_iserror'
+     fsl_iserror(errority);
+     ^~~~~~~~~~~
+make: *** [src/echo.o] Error 1
+20:29:52 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'start_application':
+../src/echo.c:210:12: error: 'p' undeclared (first use in this function)
+     putfsl(p->payload, 2);
+            ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../src/echo.c:210:12: note: each undeclared identifier is reported only once for each function it appears in
+     putfsl(p->payload, 2);
+            ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../src/echo.c:213:5: error: 'validity' undeclared (first use in this function); did you mean 'va_list'?
+     validity = 1;
+     ^~~~~~~~
+     va_list
+../src/echo.c:214:5: error: 'errority' undeclared (first use in this function); did you mean 'err_t'?
+     errority = 1;
+     ^~~~~~~~
+     err_t
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c:216:12: error: 'buffer' undeclared (first use in this function); did you mean 'setbuffer'?
+     getfsl(buffer[0], 2);
+            ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:84: note: in definition of macro 'getfsl'
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                    ^~~
+../src/echo.c:234:15: error: 'tpcb' undeclared (first use in this function); did you mean 'pcb'?
+     tcp_write(tpcb, payload, len + 2, 1);
+               ^~~~
+               pcb
+../src/echo.c:234:21: error: 'payload' undeclared (first use in this function)
+     tcp_write(tpcb, payload, len + 2, 1);
+                     ^~~~~~~
+../src/echo.c:252:11: error: redefinition of 'next_buffer'
+    char * next_buffer = buffer;
+           ^~~~~~~~~~~
+../src/echo.c:220:11: note: previous definition of 'next_buffer' was here
+    char * next_buffer = buffer;
+           ^~~~~~~~~~~
+../src/echo.c:253:8: error: redefinition of 'len'
+    int len = 0;
+        ^~~
+../src/echo.c:221:8: note: previous definition of 'len' was here
+    int len = 0;
+        ^~~
+../src/echo.c:273:3: error: 'xi' undeclared (first use in this function)
+   xi
+   ^~
+../src/echo.c:273:5: error: expected ';' before 'asm'
+   xi
+     ^
+     ;
+../src/echo.c:298:46: warning: implicit declaration of function 'l_printf'; did you mean 'vdprintf'? [-Wimplicit-function-declaration]
+         tcp_write(tpcb, payload, len + 2, 1);l_printf("Out of memory while tcp_listen\n\r");
+                                              ^~~~~~~~
+                                              vdprintf
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:216:5: note: in expansion of macro 'getfsl'
+     getfsl(buffer[0], 2);
+     ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:217:4: note: in expansion of macro 'fsl_isinvalid'
+    fsl_isinvalid(validity);
+    ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:218:4: note: in expansion of macro 'fsl_iserror'
+    fsl_iserror(errority);
+    ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:248:5: note: in expansion of macro 'getfsl'
+     getfsl(buffer[0], 2);
+     ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:249:4: note: in expansion of macro 'fsl_isinvalid'
+    fsl_isinvalid(validity);
+    ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:250:4: note: in expansion of macro 'fsl_iserror'
+    fsl_iserror(errority);
+    ^~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:280:9: note: in expansion of macro 'getfsl'
+         getfsl(buffer[0], 2);
+         ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:281:5: note: in expansion of macro 'fsl_isinvalid'
+     fsl_isinvalid(validity);
+     ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:282:5: note: in expansion of macro 'fsl_iserror'
+     fsl_iserror(errority);
+     ^~~~~~~~~~~
+make: *** [src/echo.o] Error 1
+20:29:56 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'start_application':
+../src/echo.c:223:3: error: 'xi' undeclared (first use in this function)
+   xi
+   ^~
+../src/echo.c:223:3: note: each undeclared identifier is reported only once for each function it appears in
+../src/echo.c:223:5: error: expected ';' before 'asm'
+   xi
+     ^
+     ;
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c:225:16: error: 'p' undeclared (first use in this function)
+         putfsl(p->payload, 3);
+                ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../src/echo.c:227:9: error: 'validity' undeclared (first use in this function); did you mean 'va_list'?
+         validity = 1;
+         ^~~~~~~~
+         va_list
+../src/echo.c:228:9: error: 'errority' undeclared (first use in this function); did you mean 'err_t'?
+         errority = 1;
+         ^~~~~~~~
+         err_t
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c:230:16: error: 'buffer' undeclared (first use in this function); did you mean 'setbuffer'?
+         getfsl(buffer[0], 2);
+                ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:84: note: in definition of macro 'getfsl'
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                                                                    ^~~
+../src/echo.c:248:19: error: 'tpcb' undeclared (first use in this function); did you mean 'pcb'?
+         tcp_write(tpcb, payload, len + 2, 1);l_printf("Out of memory while tcp_listen\n\r");
+                   ^~~~
+                   pcb
+../src/echo.c:248:25: error: 'payload' undeclared (first use in this function)
+         tcp_write(tpcb, payload, len + 2, 1);l_printf("Out of memory while tcp_listen\n\r");
+                         ^~~~~~~
+../src/echo.c:248:46: warning: implicit declaration of function 'l_printf'; did you mean 'vdprintf'? [-Wimplicit-function-declaration]
+         tcp_write(tpcb, payload, len + 2, 1);l_printf("Out of memory while tcp_listen\n\r");
+                                              ^~~~~~~~
+                                              vdprintf
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:93:33: error: invalid lvalue in asm output 0
+ #define getfsl(val, id)         asm volatile ("get\t%0,rfsl" stringify(id) : "=d" (val))
+                                 ^~~
+../src/echo.c:230:9: note: in expansion of macro 'getfsl'
+         getfsl(buffer[0], 2);
+         ^~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:129:45: error: invalid lvalue in asm output 0
+ #define fsl_isinvalid(result)               asm volatile ("addic\t%0,r0,0"  : "=d" (result))
+                                             ^~~
+../src/echo.c:231:5: note: in expansion of macro 'fsl_isinvalid'
+     fsl_isinvalid(validity);
+     ^~~~~~~~~~~~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:130:45: error: invalid lvalue in asm output 0
+ #define fsl_iserror(error)                  asm volatile ("mfs\t%0,rmsr\n\t"  \
+                                             ^~~
+../src/echo.c:232:5: note: in expansion of macro 'fsl_iserror'
+     fsl_iserror(errority);
+     ^~~~~~~~~~~
+make: *** [src/echo.o] Error 1
+20:30:05 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112148	   1792	3962324	4076264	 3e32e8	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+20:31:25 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:84:6: warning: unused variable 'errority' [-Wunused-variable]
+  int errority = 1;
+      ^~~~~~~~
+../src/echo.c:83:6: warning: unused variable 'validity' [-Wunused-variable]
+  int validity = 1;
+      ^~~~~~~~
+../src/echo.c:82:9: warning: unused variable 'payload' [-Wunused-variable]
+  void * payload = buffer;
+         ^~~~~~~
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 109984	   1792	3962320	4074096	 3e2a70	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+20:31:51 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112016	   1792	3962320	4076128	 3e3260	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+20:32:23 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+20:32:48 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+20:35:20 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+20:42:17 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+20:48:59 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+20:52:42 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112008	   1792	3962320	4076120	 3e3258	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+20:53:18 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+20:56:21 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:273: error: unterminated argument list invoking macro "getfslx"
+ }
+ 
+../src/echo.c:152:11: error: 'getfslx' undeclared (first use in this function); did you mean 'gets'?
+           getfslx(next_buffer, 3,FSL_NONBLOCKING;
+           ^~~~~~~
+           gets
+../src/echo.c:152:11: note: each undeclared identifier is reported only once for each function it appears in
+../src/echo.c:152:18: error: expected ';' at end of input
+           getfslx(next_buffer, 3,FSL_NONBLOCKING;
+                  ^
+                  ;
+../src/echo.c:273:
+ }
+                   
+../src/echo.c:152:11: error: expected declaration or statement at end of input
+           getfslx(next_buffer, 3,FSL_NONBLOCKING;
+           ^~~~~~~
+../src/echo.c:82:9: warning: unused variable 'payload' [-Wunused-variable]
+  void * payload = buffer;
+         ^~~~~~~
+../src/echo.c:152:11: warning: control reaches end of non-void function [-Wreturn-type]
+           getfslx(next_buffer, 3,FSL_NONBLOCKING;
+           ^~~~~~~
+make: *** [src/echo.o] Error 1
+20:56:55 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:144:12: warning: unused variable 'next_buffer' [-Wunused-variable]
+     char * next_buffer = buffer;
+            ^~~~~~~~~~~
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112016	   1792	3962320	4076128	 3e3260	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+20:57:00 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112008	   1792	3962320	4076120	 3e3258	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+20:57:05 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+21:10:42 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+21:12:36 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+23:18:59 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+23:19:29 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+23:19:44 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+23:22:15 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+23:30:21 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112008	   1792	3962320	4076120	 3e3258	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+23:31:22 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:134:28: warning: dereferencing 'void *' pointer
+           putfsl(p->payload[0], 2);
+                            ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:33: error: invalid use of void expression
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                 ^~~
+../src/echo.c:134:11: note: in expansion of macro 'putfsl'
+           putfsl(p->payload[0], 2);
+           ^~~~~~
+make: *** [src/echo.o] Error 1
+23:31:25 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:134:28: warning: dereferencing 'void *' pointer
+           putfsl(p->payload[0], 2);
+                            ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:33: error: invalid use of void expression
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                 ^~~
+../src/echo.c:134:11: note: in expansion of macro 'putfsl'
+           putfsl(p->payload[0], 2);
+           ^~~~~~
+In file included from ../src/echo.c:34:
+../src/echo.c:135:29: warning: dereferencing 'void *' pointer
+           putfslx(p->payload[0], 3,FSL_NONBLOCKING);
+                             ^
+../../axi_stream_bsp/microblaze_0/include/fsl.h:58:106: note: in definition of macro 'putfslx'
+ #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                                          ^~~
+../../axi_stream_bsp/microblaze_0/include/fsl.h:58:38: error: invalid use of void expression
+ #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
+                                      ^~~
+../src/echo.c:135:11: note: in expansion of macro 'putfslx'
+           putfslx(p->payload[0], 3,FSL_NONBLOCKING);
+           ^~~~~~~
+make: *** [src/echo.o] Error 1
+23:31:33 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:134:28: warning: dereferencing 'void *' pointer
+           putfsl(p->payload[0], 2);
+                            ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:33: error: invalid use of void expression
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                 ^~~
+../src/echo.c:134:11: note: in expansion of macro 'putfsl'
+           putfsl(p->payload[0], 2);
+           ^~~~~~
+In file included from ../src/echo.c:34:
+../src/echo.c:135:29: warning: dereferencing 'void *' pointer
+           putfslx(p->payload[0], 3,FSL_NONBLOCKING);
+                             ^
+../../axi_stream_bsp/microblaze_0/include/fsl.h:58:106: note: in definition of macro 'putfslx'
+ #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                                          ^~~
+../../axi_stream_bsp/microblaze_0/include/fsl.h:58:38: error: invalid use of void expression
+ #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
+                                      ^~~
+../src/echo.c:135:11: note: in expansion of macro 'putfslx'
+           putfslx(p->payload[0], 3,FSL_NONBLOCKING);
+           ^~~~~~~
+make: *** [src/echo.o] Error 1
+23:34:08 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:134:28: warning: dereferencing 'void *' pointer
+           putfsl(p->payload[1], 2);
+                            ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:33: error: invalid use of void expression
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                 ^~~
+../src/echo.c:134:11: note: in expansion of macro 'putfsl'
+           putfsl(p->payload[1], 2);
+           ^~~~~~
+In file included from ../src/echo.c:34:
+../src/echo.c:135:29: warning: dereferencing 'void *' pointer
+           putfslx(p->payload[0], 3,FSL_NONBLOCKING);
+                             ^
+../../axi_stream_bsp/microblaze_0/include/fsl.h:58:106: note: in definition of macro 'putfslx'
+ #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                                          ^~~
+../../axi_stream_bsp/microblaze_0/include/fsl.h:58:38: error: invalid use of void expression
+ #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
+                                      ^~~
+../src/echo.c:135:11: note: in expansion of macro 'putfslx'
+           putfslx(p->payload[0], 3,FSL_NONBLOCKING);
+           ^~~~~~~
+make: *** [src/echo.o] Error 1
+23:34:11 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:134:28: warning: dereferencing 'void *' pointer
+           putfsl(p->payload[1], 2);
+                            ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:33: error: invalid use of void expression
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                 ^~~
+../src/echo.c:134:11: note: in expansion of macro 'putfsl'
+           putfsl(p->payload[1], 2);
+           ^~~~~~
+In file included from ../src/echo.c:34:
+../src/echo.c:135:29: warning: dereferencing 'void *' pointer
+           putfslx(p->payload[0], 3,FSL_NONBLOCKING);
+                             ^
+../../axi_stream_bsp/microblaze_0/include/fsl.h:58:106: note: in definition of macro 'putfslx'
+ #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                                          ^~~
+../../axi_stream_bsp/microblaze_0/include/fsl.h:58:38: error: invalid use of void expression
+ #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
+                                      ^~~
+../src/echo.c:135:11: note: in expansion of macro 'putfslx'
+           putfslx(p->payload[0], 3,FSL_NONBLOCKING);
+           ^~~~~~~
+make: *** [src/echo.o] Error 1
+23:39:21 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:134:16: error: conflicting types for 'val'
+           char val = vals[0];
+                ^~~
+../src/echo.c:133:18: note: previous definition of 'val' was here
+           char * val = p->payload;
+                  ^~~
+../src/echo.c:134:22: error: 'vals' undeclared (first use in this function); did you mean 'val'?
+           char val = vals[0];
+                      ^~~~
+                      val
+../src/echo.c:134:22: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../../axi_stream_bsp/microblaze_0/include/lwip/opt.h:55,
+                 from ../../axi_stream_bsp/microblaze_0/include/lwip/err.h:39,
+                 from ../src/echo.c:32:
+../src/echo.c:135:28: warning: dereferencing 'void *' pointer
+           putfsl(p->payload[1], 2);
+                            ^
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:84: note: in definition of macro 'putfsl'
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                    ^~~
+../../axi_stream_bsp/microblaze_0/include/mb_interface.h:94:33: error: invalid use of void expression
+ #define putfsl(val, id)         asm volatile ("put\t%0,rfsl" stringify(id) :: "d" (val))
+                                 ^~~
+../src/echo.c:135:11: note: in expansion of macro 'putfsl'
+           putfsl(p->payload[1], 2);
+           ^~~~~~
+In file included from ../src/echo.c:34:
+../src/echo.c:136:29: warning: dereferencing 'void *' pointer
+           putfslx(p->payload[0], 3,FSL_NONBLOCKING);
+                             ^
+../../axi_stream_bsp/microblaze_0/include/fsl.h:58:106: note: in definition of macro 'putfslx'
+ #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                                          ^~~
+../../axi_stream_bsp/microblaze_0/include/fsl.h:58:38: error: invalid use of void expression
+ #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
+                                      ^~~
+../src/echo.c:136:11: note: in expansion of macro 'putfslx'
+           putfslx(p->payload[0], 3,FSL_NONBLOCKING);
+           ^~~~~~~
+../src/echo.c:134:16: warning: unused variable 'val' [-Wunused-variable]
+           char val = vals[0];
+                ^~~
+make: *** [src/echo.o] Error 1
+23:39:29 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../src/echo.c:34:
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:136:29: warning: dereferencing 'void *' pointer
+           putfslx(p->payload[0], 3,FSL_NONBLOCKING);
+                             ^
+../../axi_stream_bsp/microblaze_0/include/fsl.h:58:106: note: in definition of macro 'putfslx'
+ #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                                          ^~~
+../../axi_stream_bsp/microblaze_0/include/fsl.h:58:38: error: invalid use of void expression
+ #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
+                                      ^~~
+../src/echo.c:136:11: note: in expansion of macro 'putfslx'
+           putfslx(p->payload[0], 3,FSL_NONBLOCKING);
+           ^~~~~~~
+make: *** [src/echo.o] Error 1
+23:39:32 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../src/echo.c:34:
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:136:29: warning: dereferencing 'void *' pointer
+           putfslx(p->payload[0], 3,FSL_NONBLOCKING);
+                             ^
+../../axi_stream_bsp/microblaze_0/include/fsl.h:58:106: note: in definition of macro 'putfslx'
+ #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                                          ^~~
+../../axi_stream_bsp/microblaze_0/include/fsl.h:58:38: error: invalid use of void expression
+ #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
+                                      ^~~
+../src/echo.c:136:11: note: in expansion of macro 'putfslx'
+           putfslx(p->payload[0], 3,FSL_NONBLOCKING);
+           ^~~~~~~
+make: *** [src/echo.o] Error 1
+23:43:08 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+In file included from ../src/echo.c:34:
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:136:29: warning: dereferencing 'void *' pointer
+           putfslx(p->payload[0], 3,FSL_NONBLOCKING);
+                             ^
+../../axi_stream_bsp/microblaze_0/include/fsl.h:58:106: note: in definition of macro 'putfslx'
+ #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
+                                                                                                          ^~~
+../../axi_stream_bsp/microblaze_0/include/fsl.h:58:38: error: invalid use of void expression
+ #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
+                                      ^~~
+../src/echo.c:136:11: note: in expansion of macro 'putfslx'
+           putfslx(p->payload[0], 3,FSL_NONBLOCKING);
+           ^~~~~~~
+make: *** [src/echo.o] Error 1
+23:43:56 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112024	   1792	3962320	4076136	 3e3268	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+23:44:00 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+23:52:15 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112040	   1792	3962320	4076152	 3e3278	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+23:52:24 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+23:52:29 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112032	   1792	3962320	4076144	 3e3270	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+23:52:36 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+23:53:21 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+23:53:48 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+23:54:04 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+23:54:33 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+23:57:06 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112032	   1792	3962320	4076144	 3e3270	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+23:57:11 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112032	   1792	3962320	4076144	 3e3270	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+23:59:02 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112032	   1792	3962320	4076144	 3e3270	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+00:02:15 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112032	   1792	3962320	4076144	 3e3270	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+00:44:50 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+00:49:28 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:152:17: error: 'len' undeclared (first use in this function); did you mean 'mblen'?
+          buffer[len + 1] = '\n';
+                 ^~~
+                 mblen
+../src/echo.c:152:17: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/echo.o] Error 1
+00:49:43 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112200	   1792	3962320	4076312	 3e3318	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+00:50:25 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112200	   1792	3962320	4076312	 3e3318	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+00:50:37 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+../src/echo.c: In function 'recv_callback':
+../src/echo.c:140:23: error: macro "putfslx" requires 3 arguments, but only 2 given
+         putfslx(val, 3);
+                       ^
+../src/echo.c:140:9: error: 'putfslx' undeclared (first use in this function); did you mean 'puts'?
+         putfslx(val, 3);
+         ^~~~~~~
+         puts
+../src/echo.c:140:9: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/echo.o] Error 1
+00:50:40 **** Auto Build of configuration Debug for project axi_stream ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mxl-frequency -I../../axi_stream_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: axi_stream.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../axi_stream_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "axi_stream.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: axi_stream.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size axi_stream.elf  |tee "axi_stream.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112208	   1792	3962320	4076320	 3e3320	axi_stream.elf
+Finished building: axi_stream.elf.size
+ 
+00:50:50 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.
+00:50:51 **** Incremental Build of configuration Debug for project axi_stream ****
+make all 
+make: Nothing to be done for `all'.

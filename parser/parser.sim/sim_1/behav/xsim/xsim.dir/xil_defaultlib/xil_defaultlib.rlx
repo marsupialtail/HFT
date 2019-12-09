@@ -3,5 +3,5 @@
 Aug  9 2019
 16:44:31
 /afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
-/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sim_1/new/parser_sim.sv,1575514723,systemVerilog,,,,parser_sim,,,,,,,,
-/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv,1575604756,systemVerilog,,/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sim_1/new/parser_sim.sv,,mkAddMessage;mkCancelMessage;mkDummyMessage;mk_parser;parser_top,,,,,,,,
+/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sim_1/new/parser_sim.sv,1575882698,systemVerilog,,,,parser_sim,,,,,,,,
+/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sources_1/new/parser_top.sv,1575883203,systemVerilog,,/afs/athena.mit.edu/user/n/k/nkk/fpga_6115/HFT/parser/parser.srcs/sim_1/new/parser_sim.sv,,binary_to_seven_seg;debounce;mkAddMessage;mkCancelMessage;mkDummyMessage;mk_parser;parser_top;seg_display,,,,,,,,

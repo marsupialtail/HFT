@@ -302,6 +302,8 @@ proc create_root_design { parentCell } {
   # Create instance: clk_wiz_1, and set properties
   set clk_wiz_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_1 ]
   set_property -dict [ list \
+   CONFIG.CLKOUT1_JITTER {151.636} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {50} \
    CONFIG.CLKOUT2_JITTER {114.829} \
    CONFIG.CLKOUT2_PHASE_ERROR {98.575} \
    CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {200.000} \
@@ -311,6 +313,7 @@ proc create_root_design { parentCell } {
    CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {50.000} \
    CONFIG.CLKOUT3_USED {true} \
    CONFIG.CLK_IN1_BOARD_INTERFACE {sys_clock} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {20.000} \
    CONFIG.MMCM_CLKOUT1_DIVIDE {5} \
    CONFIG.MMCM_CLKOUT2_DIVIDE {20} \
    CONFIG.NUM_OUT_CLKS {3} \
@@ -340,7 +343,7 @@ proc create_root_design { parentCell } {
    CONFIG.C_D_AXI {1} \
    CONFIG.C_D_LMB {1} \
    CONFIG.C_ENABLE_DISCRETE_PORTS {0} \
-   CONFIG.C_FSL_LINKS {3} \
+   CONFIG.C_FSL_LINKS {6} \
    CONFIG.C_I_AXI {0} \
    CONFIG.C_I_LMB {1} \
    CONFIG.C_USE_DCACHE {1} \
@@ -462,26 +465,30 @@ proc create_root_design { parentCell } {
   connect_bd_net -net microblaze_0_Clk [get_bd_pins axi_ethernetlite_0/s_axi_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins axi_timer_0/s_axi_aclk] [get_bd_pins axi_uartlite_0/s_axi_aclk] [get_bd_pins clk_wiz_1/clk_out1] [get_bd_pins ip_top_level_0/clk_100mhz] [get_bd_pins master_axi_test_0/m00_axis_aclk] [get_bd_pins master_axi_test_0/s00_axis_aclk] [get_bd_pins microblaze_0/Clk] [get_bd_pins microblaze_0_axi_intc/processor_clk] [get_bd_pins microblaze_0_axi_intc/s_axi_aclk] [get_bd_pins microblaze_0_axi_periph/ACLK] [get_bd_pins microblaze_0_axi_periph/M00_ACLK] [get_bd_pins microblaze_0_axi_periph/M01_ACLK] [get_bd_pins microblaze_0_axi_periph/M02_ACLK] [get_bd_pins microblaze_0_axi_periph/M03_ACLK] [get_bd_pins microblaze_0_axi_periph/S00_ACLK] [get_bd_pins microblaze_0_local_memory/LMB_Clk] [get_bd_pins microblaze_com_axi_0/m00_axis_aclk] [get_bd_pins microblaze_com_axi_0/s00_axis_aclk] [get_bd_pins parser_top_0/clk_in] [get_bd_pins parser_top_1/clk_in] [get_bd_pins rst_clk_wiz_1_100M/slowest_sync_clk] [get_bd_pins system_ila_0/clk]
   connect_bd_net -net microblaze_0_M2_AXIS_TDATA [get_bd_pins microblaze_0/M2_AXIS_TDATA] [get_bd_pins parser_top_0/data_in] [get_bd_pins system_ila_0/probe0]
   connect_bd_net -net microblaze_0_M2_AXIS_TVALID [get_bd_pins microblaze_0/M2_AXIS_TVALID] [get_bd_pins parser_top_0/valid_microblaze_in] [get_bd_pins system_ila_0/probe1]
-  connect_bd_net -net microblaze_0_S2_AXIS_TREADY [get_bd_pins microblaze_0/S2_AXIS_TREADY] [get_bd_pins parser_top_1/valid_master_in]
+  connect_bd_net -net microblaze_0_M3_AXIS_TDATA [get_bd_pins microblaze_0/M3_AXIS_TDATA] [get_bd_pins parser_top_1/data_in]
+  connect_bd_net -net microblaze_0_M3_AXIS_TVALID [get_bd_pins microblaze_0/M3_AXIS_TVALID] [get_bd_pins parser_top_1/valid_microblaze_in]
+  connect_bd_net -net microblaze_0_S3_AXIS_TREADY [get_bd_pins microblaze_0/S3_AXIS_TREADY] [get_bd_pins parser_top_1/valid_master_in]
   connect_bd_net -net microblaze_0_intr [get_bd_pins microblaze_0_axi_intc/intr] [get_bd_pins microblaze_0_xlconcat/dout]
   connect_bd_net -net mig_7series_0_mmcm_locked [get_bd_pins mig_7series_0/mmcm_locked] [get_bd_pins rst_mig_7series_0_81M/dcm_locked]
   connect_bd_net -net mig_7series_0_ui_clk [get_bd_pins axi_smc/aclk1] [get_bd_pins mig_7series_0/ui_clk] [get_bd_pins rst_mig_7series_0_81M/slowest_sync_clk]
   connect_bd_net -net mig_7series_0_ui_clk_sync_rst [get_bd_pins mig_7series_0/ui_clk_sync_rst] [get_bd_pins rst_mig_7series_0_81M/ext_reset_in]
   connect_bd_net -net parser_book_interface_0_order_to_add [get_bd_pins ip_top_level_0/entry] [get_bd_pins parser_book_interface_0/order_to_add]
-  connect_bd_net -net parser_top_0_delete_out [get_bd_pins ip_top_level_0/delete]
+  connect_bd_net -net parser_top_0_delete_out [get_bd_pins ip_top_level_0/delete] [get_bd_pins parser_top_0/delete_out]
+  connect_bd_net -net parser_top_0_last_master_out [get_bd_pins microblaze_0/S2_AXIS_TLAST] [get_bd_pins parser_top_0/last_master_out]
   connect_bd_net -net parser_top_0_operation_out [get_bd_pins ip_top_level_0/request] [get_bd_pins parser_top_0/operation_out]
   connect_bd_net -net parser_top_0_order_id_out_add [get_bd_pins parser_book_interface_0/order_id_out_add] [get_bd_pins parser_top_0/order_id_out_add]
-  connect_bd_net -net parser_top_0_order_id_out_cancel [get_bd_pins ip_top_level_0/order_id] [get_bd_pins parser_top_0/order_id_out_cancel]
-  connect_bd_net -net parser_top_0_order_type_out_add [get_bd_pins parser_book_interface_0/order_type_out_add]
+  connect_bd_net -net parser_top_0_order_id_out_cancel [get_bd_pins ip_top_level_0/order_id] [get_bd_pins microblaze_0/S2_AXIS_TDATA] [get_bd_pins parser_top_0/order_id_out_cancel]
+  connect_bd_net -net parser_top_0_order_type_out_add [get_bd_pins parser_book_interface_0/order_type_out_add] [get_bd_pins parser_top_0/order_type_out_add]
   connect_bd_net -net parser_top_0_price_out_add [get_bd_pins parser_book_interface_0/price_out_add] [get_bd_pins parser_top_0/price_out_add]
   connect_bd_net -net parser_top_0_quantity_out_add [get_bd_pins parser_book_interface_0/quantity_out_add] [get_bd_pins parser_top_0/quantity_out_add]
   connect_bd_net -net parser_top_0_quantity_out_cancel [get_bd_pins ip_top_level_0/quantity] [get_bd_pins parser_top_0/quantity_out_cancel]
-  connect_bd_net -net parser_top_0_ready_out [get_bd_pins ip_top_level_0/start] [get_bd_pins parser_top_0/ready_out]
+  connect_bd_net -net parser_top_0_ready_out [get_bd_pins ip_top_level_0/start] [get_bd_pins microblaze_0/S2_AXIS_TVALID] [get_bd_pins parser_top_0/ready_out]
   connect_bd_net -net parser_top_0_ready_to_microblaze_out [get_bd_pins microblaze_0/M2_AXIS_TREADY] [get_bd_pins parser_top_0/ready_to_microblaze_out] [get_bd_pins system_ila_0/probe2]
   connect_bd_net -net parser_top_0_stock_symbol_out_add [get_bd_pins ip_top_level_0/stock_to_add] [get_bd_pins parser_top_0/stock_symbol_out_add]
-  connect_bd_net -net parser_top_1_last_master_out [get_bd_pins microblaze_0/S2_AXIS_TLAST] [get_bd_pins parser_top_1/last_master_out]
-  connect_bd_net -net parser_top_1_price_out_add [get_bd_pins microblaze_0/S2_AXIS_TDATA] [get_bd_pins parser_top_1/price_out_add]
-  connect_bd_net -net parser_top_1_ready_out [get_bd_pins microblaze_0/S2_AXIS_TVALID] [get_bd_pins parser_top_1/ready_out]
+  connect_bd_net -net parser_top_1_last_master_out [get_bd_pins microblaze_0/S3_AXIS_TLAST] [get_bd_pins parser_top_1/last_master_out]
+  connect_bd_net -net parser_top_1_price_out_add [get_bd_pins microblaze_0/S3_AXIS_TDATA] [get_bd_pins parser_top_1/price_out_add]
+  connect_bd_net -net parser_top_1_ready_out [get_bd_pins microblaze_0/S3_AXIS_TVALID] [get_bd_pins parser_top_1/ready_out]
+  connect_bd_net -net parser_top_1_ready_to_microblaze_out [get_bd_pins microblaze_0/M3_AXIS_TREADY] [get_bd_pins parser_top_1/ready_to_microblaze_out]
   connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins clk_wiz_1/resetn] [get_bd_pins mig_7series_0/sys_rst] [get_bd_pins mii_to_rmii_0/rst_n] [get_bd_pins rst_clk_wiz_1_100M/ext_reset_in]
   connect_bd_net -net rst_clk_wiz_1_100M_bus_struct_reset [get_bd_pins microblaze_0_local_memory/SYS_Rst] [get_bd_pins rst_clk_wiz_1_100M/bus_struct_reset]
   connect_bd_net -net rst_clk_wiz_1_100M_mb_reset [get_bd_pins microblaze_0/Reset] [get_bd_pins microblaze_0_axi_intc/processor_rst] [get_bd_pins parser_top_0/reset_in] [get_bd_pins parser_top_1/reset_in] [get_bd_pins rst_clk_wiz_1_100M/mb_reset] [get_bd_pins util_vector_logic_0/Op1]

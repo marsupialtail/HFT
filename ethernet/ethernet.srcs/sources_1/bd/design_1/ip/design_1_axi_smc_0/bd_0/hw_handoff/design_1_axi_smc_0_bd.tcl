@@ -1556,8 +1556,8 @@ proc create_hier_cell_clk_map { parentCell nameHier } {
  ] $psr_aclk1
 
   # Create port connections
-  connect_bd_net -net clk_map_aclk1_net [get_bd_pins M00_ACLK] [get_bd_pins aclk1] [get_bd_pins psr0/slowest_sync_clk] [get_bd_pins psr_aclk1/slowest_sync_clk]
-  connect_bd_net -net clk_map_aclk_net [get_bd_pins S00_ACLK] [get_bd_pins S01_ACLK] [get_bd_pins aclk] [get_bd_pins swbd_aclk] [get_bd_pins psr_aclk/slowest_sync_clk]
+  connect_bd_net -net clk_map_aclk1_net [get_bd_pins M00_ACLK] [get_bd_pins aclk1] [get_bd_pins psr_aclk1/slowest_sync_clk]
+  connect_bd_net -net clk_map_aclk_net [get_bd_pins S00_ACLK] [get_bd_pins S01_ACLK] [get_bd_pins aclk] [get_bd_pins swbd_aclk] [get_bd_pins psr0/slowest_sync_clk] [get_bd_pins psr_aclk/slowest_sync_clk]
   connect_bd_net -net clk_map_aresetn_net [get_bd_pins aresetn] [get_bd_pins psr0/aux_reset_in] [get_bd_pins psr_aclk/aux_reset_in] [get_bd_pins psr_aclk1/aux_reset_in]
   connect_bd_net -net one_dout [get_bd_pins one/dout] [get_bd_pins psr0/ext_reset_in]
   connect_bd_net -net psr0_interconnect_aresetn [get_bd_pins psr0/interconnect_aresetn] [get_bd_pins psr_aclk/ext_reset_in] [get_bd_pins psr_aclk1/ext_reset_in]
